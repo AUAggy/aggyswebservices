@@ -8,6 +8,19 @@ interface ServiceAccordionProps {
 
 type SectionKey = "plain" | "technical" | "example";
 
+// Parse technical content to separate main content from Gotchas
+function parseTechnicalContent(content: string) {
+  const gotchasMatch = content.match(/Gotchas\s*(?:and|&)?\s*Constraints:?(.*)/is);
+  
+  if (gotchasMatch) {
+    const mainContent = content.slice(0, gotchasMatch.index).trim();
+    const gotchas = gotchasMatch[1].trim();
+    return { mainContent, gotchas };
+  }
+  
+  return { mainContent: content, gotchas: null };
+}
+
 export function ServiceAccordion({ service }: ServiceAccordionProps) {
   const [openSection, setOpenSection] = useState<SectionKey>("plain");
 
@@ -33,6 +46,37 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
     setOpenSection((prev) => (prev === key ? prev : key));
   };
 
+  const renderContent = (section: typeof sections[0]) => {
+    if (section.key === "technical") {
+      const { mainContent, gotchas } = parseTechnicalContent(section.content);
+      
+      return (
+        <div className="space-y-6">
+          <p className="text-foreground leading-relaxed whitespace-pre-wrap">
+            {mainContent}
+          </p>
+          
+          {gotchas && (
+            <div className="pt-4 border-t border-border/60">
+              <h4 className="text-sm font-semibold text-accent uppercase tracking-wide mb-3">
+                Gotchas & Constraints
+              </h4>
+              <p className="text-foreground/90 leading-relaxed whitespace-pre-wrap">
+                {gotchas}
+              </p>
+            </div>
+          )}
+        </div>
+      );
+    }
+    
+    return (
+      <p className="text-foreground leading-relaxed whitespace-pre-wrap">
+        {section.content}
+      </p>
+    );
+  };
+
   return (
     <div className="space-y-3">
       {sections.map((section) => {
@@ -46,7 +90,7 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
             <button
               onClick={() => toggleSection(section.key)}
               className={`
-                w-full px-5 py-4 flex items-center justify-between text-left
+                w-full px-4 sm:px-5 py-3.5 sm:py-4 flex items-center justify-between text-left
                 transition-colors
                 ${isOpen ? "bg-secondary/50" : "hover:bg-secondary/30"}
               `}
@@ -56,7 +100,7 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
               </span>
               <ChevronDown 
                 className={`
-                  w-5 h-5 text-muted-foreground transition-transform duration-200
+                  w-5 h-5 text-muted-foreground transition-transform duration-200 shrink-0 ml-2
                   ${isOpen ? "rotate-180" : ""}
                 `}
               />
@@ -65,13 +109,11 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
             <div
               className={`
                 overflow-hidden transition-all duration-200 ease-out
-                ${isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}
+                ${isOpen ? "max-h-[3000px] opacity-100" : "max-h-0 opacity-0"}
               `}
             >
-              <div className="px-5 py-5 border-t border-border">
-                <p className="text-foreground leading-relaxed whitespace-pre-wrap">
-                  {section.content}
-                </p>
+              <div className="px-4 sm:px-5 py-4 sm:py-5 border-t border-border">
+                {renderContent(section)}
               </div>
             </div>
           </div>
@@ -83,12 +125,12 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
         href={service.aws_user_guide_documentation}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center justify-between px-5 py-4 border border-border rounded-lg bg-card hover:border-accent/30 hover:shadow-subtle transition-all"
+        className="group flex items-center justify-between px-4 sm:px-5 py-3.5 sm:py-4 border border-border rounded-lg bg-card hover:border-accent/30 hover:shadow-subtle transition-all"
       >
         <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">
           Official AWS Documentation
         </span>
-        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent external-link-icon" />
+        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent external-link-icon shrink-0 ml-2" />
       </a>
     </div>
   );

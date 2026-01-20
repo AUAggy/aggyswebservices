@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
+import { MobileNav } from "@/components/MobileNav";
 import { BackButton } from "@/components/BackButton";
 import { ServiceListItem } from "@/components/ServiceListItem";
 import { getCategoryBySlug, getServicesByCategory } from "@/lib/aws-data";
@@ -19,11 +20,12 @@ const Category = () => {
   return (
     <div className="flex min-h-screen">
       <Sidebar currentCategory={categorySlug} />
+      <MobileNav currentCategory={categorySlug} />
       
       <div className="flex-1 min-w-0">
         <Header />
         
-        <main className="container-narrow py-8">
+        <main className="container-narrow py-6 px-4 sm:py-8">
           <BackButton to="/" label="All Categories" />
           
           <div className="mt-6 mb-8">
