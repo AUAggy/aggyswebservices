@@ -29,7 +29,7 @@ const Category = () => {
       <div className="lg:pl-64">
         <Header />
         
-        <main className="px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto lg:mx-0 lg:max-w-none lg:pr-8">
+        <main className="px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto">
           <BackButton to="/" label="All Categories" />
           
           <div className="mt-6 mb-8">
@@ -44,7 +44,7 @@ const Category = () => {
             </p>
           </div>
 
-          <div className="space-y-3 max-w-xl lg:max-w-lg">
+          <div className="space-y-3">
             {services.map((service) => (
               <ServiceListItem 
                 key={service.service_name} 
