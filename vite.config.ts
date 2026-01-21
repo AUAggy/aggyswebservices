@@ -4,8 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Only add base path for production builds
-  base: mode === 'production' ? "/aws/" : "/",
+  base: "/",
   server: {
     host: "::",
     port: 8080,
