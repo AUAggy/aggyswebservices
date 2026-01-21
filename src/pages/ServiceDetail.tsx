@@ -32,7 +32,7 @@ const ServiceDetail = () => {
       <div className="lg:pl-64">
         <Header />
         
-        <main className="px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto lg:mx-0 lg:max-w-xl lg:pr-8">
+        <main className="px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto">
           <BackButton to={`/category/${categorySlug}`} label={category.name} />
           
           <div className="mt-6 mb-8">
