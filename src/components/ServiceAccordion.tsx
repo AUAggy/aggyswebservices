@@ -8,17 +8,31 @@ interface ServiceAccordionProps {
 
 type SectionKey = "plain" | "technical" | "example";
 
-// Parse technical content to separate main content from Gotchas
+// Parse technical content to separate main content from Gotchas/Constraints
 function parseTechnicalContent(content: string) {
-  const gotchasMatch = content.match(/Gotchas\s*(?:and|&)?\s*Constraints:?(.*)/is);
+  // Match patterns like "Common gotcha #1:", "Gotcha #1:", "Gotcha:", "Constraints:"
+  const gotchasMatch = content.match(/((?:Common\s+)?(?:Gotcha|Gotchas)(?:\s*(?:and|&)\s*Constraints)?(?:\s*#?\d*)?:)/i);
   
-  if (gotchasMatch) {
+  if (gotchasMatch && gotchasMatch.index !== undefined) {
     const mainContent = content.slice(0, gotchasMatch.index).trim();
-    const gotchas = gotchasMatch[1].trim();
+    const gotchas = content.slice(gotchasMatch.index).trim();
     return { mainContent, gotchas };
   }
   
   return { mainContent: content, gotchas: null };
+}
+
+// Parse example content to separate main content from Results
+function parseExampleContent(content: string) {
+  const resultsMatch = content.match(/\b(Results?:)/i);
+  
+  if (resultsMatch && resultsMatch.index !== undefined) {
+    const mainContent = content.slice(0, resultsMatch.index).trim();
+    const results = content.slice(resultsMatch.index).trim();
+    return { mainContent, results };
+  }
+  
+  return { mainContent: content, results: null };
 }
 
 export function ServiceAccordion({ service }: ServiceAccordionProps) {
@@ -57,12 +71,36 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
           </p>
           
           {gotchas && (
-            <div className="pt-4 border-t border-border/60">
-              <h4 className="text-sm font-semibold text-accent uppercase tracking-wide mb-3">
+            <div className="pt-5 mt-5 border-t-2 border-accent/30">
+              <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
+                <span className="w-1 h-4 bg-gradient-to-b from-accent to-accent/60 rounded-full"></span>
                 Gotchas & Constraints
               </h4>
-              <p className="text-foreground/90 leading-relaxed whitespace-pre-wrap">
+              <p className="text-foreground/90 leading-relaxed whitespace-pre-wrap pl-3 border-l-2 border-accent/20">
                 {gotchas}
+              </p>
+            </div>
+          )}
+        </div>
+      );
+    }
+    
+    if (section.key === "example") {
+      const { mainContent, results } = parseExampleContent(section.content);
+      
+      return (
+        <div className="space-y-6">
+          <p className="text-foreground leading-relaxed whitespace-pre-wrap">
+            {mainContent}
+          </p>
+          
+          {results && (
+            <div className="pt-5 mt-5 border-t border-border/60">
+              <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                Results
+              </h4>
+              <p className="text-foreground leading-relaxed whitespace-pre-wrap">
+                {results.replace(/^Results?:\s*/i, '')}
               </p>
             </div>
           )}
