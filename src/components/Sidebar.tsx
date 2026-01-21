@@ -12,8 +12,8 @@ export function Sidebar({ currentCategory, currentService }: SidebarProps) {
   const activeCategory = categories.find((c) => c.slug === currentCategory);
 
   return (
-    <aside className="hidden lg:block w-64 shrink-0 border-r border-border bg-sidebar h-screen sticky top-0 overflow-y-auto">
-      <div className="p-4">
+    <aside className="hidden lg:flex lg:flex-col lg:fixed lg:inset-y-0 lg:left-0 w-64 border-r border-border bg-sidebar overflow-y-auto z-30">
+      <div className="p-4 flex-1">
         <Link 
           to="/" 
           className="block text-lg font-semibold text-sidebar-foreground tracking-tight mb-6 hover:text-accent transition-colors"

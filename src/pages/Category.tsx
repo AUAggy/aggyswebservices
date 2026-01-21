@@ -18,14 +18,18 @@ const Category = () => {
   if (!category) return <NotFound />;
 
   return (
-    <div className="flex min-h-screen">
+    <div className="min-h-screen">
+      {/* Desktop sidebar */}
       <Sidebar currentCategory={categorySlug} />
+      
+      {/* Mobile navigation */}
       <MobileNav currentCategory={categorySlug} />
       
-      <div className="flex-1 min-w-0">
+      {/* Main content - offset for desktop sidebar */}
+      <div className="lg:pl-64">
         <Header />
         
-        <main className="container-narrow py-6 px-4 sm:py-8">
+        <main className="px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto lg:mx-0 lg:max-w-none lg:pr-8">
           <BackButton to="/" label="All Categories" />
           
           <div className="mt-6 mb-8">
@@ -40,7 +44,7 @@ const Category = () => {
             </p>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-3 max-w-xl lg:max-w-lg">
             {services.map((service) => (
               <ServiceListItem 
                 key={service.service_name} 

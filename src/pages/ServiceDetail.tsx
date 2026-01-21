@@ -21,14 +21,18 @@ const ServiceDetail = () => {
   if (!category || !service) return <NotFound />;
 
   return (
-    <div className="flex min-h-screen">
+    <div className="min-h-screen">
+      {/* Desktop sidebar */}
       <Sidebar currentCategory={categorySlug} currentService={serviceSlug} />
+      
+      {/* Mobile navigation */}
       <MobileNav currentCategory={categorySlug} currentService={serviceSlug} />
       
-      <div className="flex-1 min-w-0">
+      {/* Main content - offset for desktop sidebar */}
+      <div className="lg:pl-64">
         <Header />
         
-        <main className="container-narrow py-6 px-4 sm:py-8">
+        <main className="px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto lg:mx-0 lg:max-w-xl lg:pr-8">
           <BackButton to={`/category/${categorySlug}`} label={category.name} />
           
           <div className="mt-6 mb-8">
