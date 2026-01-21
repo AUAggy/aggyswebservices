@@ -15,7 +15,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      {/* Conditionally set basename only for production */}
+      <BrowserRouter basename={process.env.NODE_ENV === 'production' ? "/aws" : ""}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/category/:categorySlug" element={<Category />} />
