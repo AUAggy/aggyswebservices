@@ -20,8 +20,9 @@ This project makes AWS accessible to everyone through:
 
 - 📚 **69 AWS Services** documented across 12 categories
 - 🔍 **Fuzzy Search** - Find services instantly
-- 🎨 **Beautiful Design** - Modern 2026 aesthetic with glass morphism
+- 🎨 **Beautiful Design** - Modern, wide layout with optimized tablet experience
 - 📱 **Mobile Responsive** - Works perfectly on all devices
+- 🖼️ **SEO Ready** - Custom social previews and professional branding
 - ⚡ **Lightning Fast** - Only 148KB gzipped
 - 🔓 **Free & Open** - No authentication, no paywalls
 
@@ -154,4 +155,4 @@ If this project helped you understand AWS better, consider:
 
 **Built with clarity in mind. No jargon, just understanding.**
 
-*Last updated: January 20, 2026*
+*Last updated: February 1, 2026*

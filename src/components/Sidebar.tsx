@@ -12,10 +12,10 @@ export function Sidebar({ currentCategory, currentService }: SidebarProps) {
   const activeCategory = categories.find((c) => c.slug === currentCategory);
 
   return (
-    <aside className="hidden lg:flex lg:flex-col lg:fixed lg:inset-y-0 lg:left-0 w-64 border-r border-border bg-sidebar overflow-y-auto z-30">
+    <aside className="hidden xl:flex xl:flex-col xl:fixed xl:inset-y-0 xl:left-0 w-64 border-r border-border bg-sidebar overflow-y-auto z-30">
       <div className="p-4 flex-1">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="block text-lg font-semibold text-sidebar-foreground tracking-tight mb-6 hover:text-accent transition-colors"
         >
           AWS <span className="text-gradient-orange">Explained</span>
@@ -32,8 +32,8 @@ export function Sidebar({ currentCategory, currentService }: SidebarProps) {
                   to={`/category/${category.slug}`}
                   className={`
                     block px-3 py-2 rounded-md text-sm transition-colors
-                    ${isActive 
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium" 
+                    ${isActive
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
                       : "text-sidebar-foreground hover:bg-sidebar-accent/50"
                     }
                   `}
@@ -41,21 +41,21 @@ export function Sidebar({ currentCategory, currentService }: SidebarProps) {
                   <span className="mr-2">{category.icon}</span>
                   {category.name}
                 </Link>
-                
+
                 {isActive && services.length > 0 && (
                   <div className="ml-6 mt-1 mb-2 space-y-0.5 border-l border-sidebar-border pl-3">
                     {services.map((service) => {
                       const slug = getServiceSlug(service.service_name);
                       const isServiceActive = slug === currentService;
-                      
+
                       return (
                         <Link
                           key={slug}
                           to={`/category/${category.slug}/${slug}`}
                           className={`
                             block py-1.5 text-sm transition-colors truncate
-                            ${isServiceActive 
-                              ? "text-accent font-medium" 
+                            ${isServiceActive
+                              ? "text-accent font-medium"
                               : "text-sidebar-foreground/70 hover:text-sidebar-foreground"
                             }
                           `}

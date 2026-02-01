@@ -1,5 +1,15 @@
 import { useState } from "react";
-import { ExternalLink, ChevronDown } from "lucide-react";
+import {
+  ExternalLink,
+  ChevronDown,
+  Lightbulb,
+  BookOpen,
+  Layers,
+  CheckCircle,
+  AlertTriangle,
+  ArrowRight,
+  Zap
+} from "lucide-react";
 import type { AWSService } from "@/types/aws";
 
 interface ServiceAccordionProps {
@@ -8,51 +18,94 @@ interface ServiceAccordionProps {
 
 type SectionKey = "plain" | "technical" | "example";
 
-// Parse technical content to separate main content from Gotchas/Constraints
+// Helper component for section icons
+const IconWrapper = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
+  <div className={`p-2 rounded-lg ${className} flex items-center justify-center`}>
+    {children}
+  </div>
+);
+
+// Improved technical content parser
 function parseTechnicalContent(content: string) {
-  // Match patterns like "Common gotcha #1:", "Gotcha #1:", "Gotcha:", "Constraints:"
+  let mainContent = content;
+  let gotchas = null;
+  let keyFeatures = null;
+
+  // extracted "Gotchas" or "Constraints" block
+  // Matches: "Common gotcha #1:", "Gotcha #1:", "Gotcha:", "Constraints:", etc.
+  // We capture everything after this match as the separate block.
   const gotchasMatch = content.match(/((?:Common\s+)?(?:Gotcha|Gotchas)(?:\s*(?:and|&)\s*Constraints)?(?:\s*#?\d*)?:)/i);
-  
+
   if (gotchasMatch && gotchasMatch.index !== undefined) {
-    const mainContent = content.slice(0, gotchasMatch.index).trim();
-    const gotchas = content.slice(gotchasMatch.index).trim();
-    return { mainContent, gotchas };
+    // Everything before the match is the potential main content + key features
+    const beforeGotchas = content.slice(0, gotchasMatch.index).trim();
+    gotchas = content.slice(gotchasMatch.index).trim();
+    mainContent = beforeGotchas;
   }
-  
-  return { mainContent: content, gotchas: null };
+
+  // Extract "Key features" or "Key configurations" block from the main content
+  // Matches: "Key features:", "Key configurations:", "Key components:"
+  const featuresMatch = mainContent.match(/(Key\s+(?:features|configurations|components|integrations):)/i);
+
+  if (featuresMatch && featuresMatch.index !== undefined) {
+    const beforeFeatures = mainContent.slice(0, featuresMatch.index).trim();
+    keyFeatures = mainContent.slice(featuresMatch.index).trim();
+    mainContent = beforeFeatures;
+  }
+
+  return { mainContent, keyFeatures, gotchas };
 }
 
-// Parse example content to separate main content from Results
+// Improved example content parser
 function parseExampleContent(content: string) {
   const resultsMatch = content.match(/\b(Results?:)/i);
-  
+
   if (resultsMatch && resultsMatch.index !== undefined) {
     const mainContent = content.slice(0, resultsMatch.index).trim();
     const results = content.slice(resultsMatch.index).trim();
     return { mainContent, results };
   }
-  
+
   return { mainContent: content, results: null };
 }
+
+// Helper to render text with better paragraph formatting
+const FormattedText = ({ text, className = "" }: { text: string; className?: string }) => {
+  if (!text) return null;
+  return (
+    <p className={`leading-relaxed text-foreground/90 whitespace-pre-wrap ${className}`}>
+      {text}
+    </p>
+  );
+};
 
 export function ServiceAccordion({ service }: ServiceAccordionProps) {
   const [openSection, setOpenSection] = useState<SectionKey>("plain");
 
-  const sections: { key: SectionKey; title: string; content: string }[] = [
+  const sections = [
     {
-      key: "plain",
+      key: "plain" as SectionKey,
       title: "Plain English",
+      icon: <Lightbulb className="w-5 h-5 text-amber-500" />,
       content: service.feynman_definition,
+      bgActive: "bg-amber-500/10",
+      borderActive: "border-amber-500/20",
     },
     {
-      key: "technical",
+      key: "technical" as SectionKey,
       title: "Technical Deep Dive",
+      icon: <Layers className="w-5 h-5 text-blue-500" />,
       content: service.architectural_deep_dive,
+      bgActive: "bg-blue-500/10",
+      borderActive: "border-blue-500/20",
     },
     {
-      key: "example",
+      key: "example" as SectionKey,
       title: "Real-World Example",
+      icon: <BookOpen className="w-5 h-5 text-emerald-500" />,
       content: service.scenario_example,
+      bgActive: "bg-emerald-500/10",
+      borderActive: "border-emerald-500/20",
     },
   ];
 
@@ -62,113 +115,169 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
 
   const renderContent = (section: typeof sections[0]) => {
     if (section.key === "technical") {
-      const { mainContent, gotchas } = parseTechnicalContent(section.content);
-      
+      const { mainContent, keyFeatures, gotchas } = parseTechnicalContent(section.content);
+
+      // Format gotchas to ensure they start on new lines
+      const formattedGotchas = gotchas
+        ? gotchas.replace(/(\s+)((?:Common\s+)?(?:Gotcha #\d+|Constraints):)/g, '\n\n$2')
+        : null;
+
       return (
-        <div className="space-y-6">
-          <p className="text-foreground leading-relaxed whitespace-pre-wrap">
-            {mainContent}
-          </p>
-          
+        <div className="space-y-6 animate-in fade-in duration-300">
+          <FormattedText text={mainContent} className="text-lg" />
+
+          {keyFeatures && (
+            <div className="bg-secondary/30 rounded-lg p-5 border border-border/50">
+              <h4 className="flex items-center gap-2 font-semibold text-foreground mb-3">
+                <Zap className="w-4 h-4 text-amber-500 fill-amber-500/20" />
+                Key Capabilities
+              </h4>
+              <FormattedText text={keyFeatures} className="text-sm border-l-2 border-primary/20 pl-4 py-1" />
+            </div>
+          )}
+
           {gotchas && (
-            <div className="pt-5 mt-5 border-t-2 border-accent/30">
-              <h4 className="text-sm font-semibold text-accent uppercase tracking-wider mb-4 flex items-center gap-2">
-                <span className="w-1 h-4 bg-gradient-to-b from-accent to-accent/60 rounded-full"></span>
+            <div className="bg-destructive/5 border border-destructive/20 rounded-lg p-5">
+              <h4 className="flex items-center gap-2 font-semibold text-destructive mb-3 uppercase tracking-wider text-xs">
+                <AlertTriangle className="w-4 h-4" />
                 Gotchas & Constraints
               </h4>
-              <p className="text-foreground/90 leading-relaxed whitespace-pre-wrap pl-3 border-l-2 border-accent/20">
-                {gotchas}
-              </p>
+              <FormattedText text={formattedGotchas || gotchas} className="text-sm pl-1" />
             </div>
           )}
         </div>
       );
     }
-    
+
     if (section.key === "example") {
       const { mainContent, results } = parseExampleContent(section.content);
-      
+
       return (
-        <div className="space-y-6">
-          <p className="text-foreground leading-relaxed whitespace-pre-wrap">
-            {mainContent}
-          </p>
-          
+        <div className="space-y-6 animate-in fade-in duration-300">
+          <div className="flex gap-4">
+            <div className="hidden sm:flex flex-col items-center pt-1">
+              <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+              <div className="w-0.5 h-full bg-border mt-2 -mb-8"></div>
+            </div>
+            <FormattedText text={mainContent} className="text-lg flex-1" />
+          </div>
+
           {results && (
-            <div className="pt-5 mt-5 border-t border-border/60">
-              <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-                Results
-              </h4>
-              <p className="text-foreground leading-relaxed whitespace-pre-wrap">
-                {results.replace(/^Results?:\s*/i, '')}
-              </p>
+            <div className="flex gap-4 pt-2">
+              <div className="hidden sm:flex flex-col items-center">
+                <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white shrink-0 z-10">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
+              </div>
+
+              <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-5 flex-1 shadow-sm">
+                <h4 className="font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider text-xs mb-2">
+                  The Result
+                </h4>
+                <FormattedText
+                  text={results.replace(/^Results?:\s*/i, '')}
+                  className="font-medium text-foreground"
+                />
+              </div>
             </div>
           )}
         </div>
       );
     }
-    
+
+    // Plain English Visualization
     return (
-      <p className="text-foreground leading-relaxed whitespace-pre-wrap">
-        {section.content}
-      </p>
+      <div className="animate-in fade-in duration-300">
+        <div className="prose prose-lg dark:prose-invert max-w-none">
+          <blockquote className="border-l-4 border-amber-500/50 bg-amber-500/5 px-6 py-4 rounded-r-lg not-italic my-0">
+            <FormattedText text={section.content} className="text-lg sm:text-xl font-medium leading-relaxed" />
+          </blockquote>
+        </div>
+      </div>
     );
   };
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       {sections.map((section) => {
         const isOpen = openSection === section.key;
-        
+
         return (
           <div
             key={section.key}
-            className="border border-border rounded-lg overflow-hidden bg-card"
+            className={`
+              border rounded-xl overflow-hidden transition-all duration-300 ease-in-out
+              ${isOpen
+                ? `${section.bgActive} ${section.borderActive} shadow-md`
+                : "bg-card border-border hover:border-border/80 shadow-sm hover:shadow-md"
+              }
+            `}
           >
             <button
               onClick={() => toggleSection(section.key)}
-              className={`
-                w-full px-4 sm:px-5 py-3.5 sm:py-4 flex items-center justify-between text-left
-                transition-colors
-                ${isOpen ? "bg-secondary/50" : "hover:bg-secondary/30"}
-              `}
+              className="w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none group"
             >
-              <span className={`font-medium ${isOpen ? "text-foreground" : "text-muted-foreground"}`}>
-                {section.title}
-              </span>
-              <ChevronDown 
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className={`
+                  p-2 rounded-lg transition-colors duration-300
+                  ${isOpen ? "bg-background shadow-sm" : "bg-secondary/50 group-hover:bg-secondary"}
+                `}>
+                  {section.icon}
+                </div>
+                <span className={`
+                  font-semibold text-lg transition-colors
+                  ${isOpen ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"}
+                `}>
+                  {section.title}
+                </span>
+              </div>
+              <ChevronDown
                 className={`
-                  w-5 h-5 text-muted-foreground transition-transform duration-200 shrink-0 ml-2
-                  ${isOpen ? "rotate-180" : ""}
+                  w-5 h-5 text-muted-foreground transition-transform duration-300 ease-in-out shrink-0
+                  ${isOpen ? "rotate-180 text-foreground" : "group-hover:text-foreground"}
                 `}
               />
             </button>
-            
+
             <div
               className={`
-                overflow-hidden transition-all duration-200 ease-out
-                ${isOpen ? "max-h-[3000px] opacity-100" : "max-h-0 opacity-0"}
+                grid transition-all duration-300 ease-in-out
+                ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
               `}
             >
-              <div className="px-4 sm:px-5 py-4 sm:py-5 border-t border-border">
-                {renderContent(section)}
+              <div className="overflow-hidden">
+                <div className="px-5 pb-6 sm:px-20 sm:pb-8 pt-2">
+                  {renderContent(section)}
+                </div>
               </div>
             </div>
           </div>
         );
       })}
 
-      {/* AWS Documentation Link - Always visible */}
+      {/* AWS Documentation Link - Modernized */}
       <a
         href={service.aws_user_guide_documentation}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center justify-between px-4 sm:px-5 py-3.5 sm:py-4 border border-border rounded-lg bg-card hover:border-accent/30 hover:shadow-subtle transition-all"
+        className="
+          mt-6 group flex items-center justify-between px-5 py-4 
+          border border-border/60 rounded-xl bg-card/50 
+          hover:bg-card hover:border-primary/20 hover:shadow-md 
+          transition-all duration-300
+        "
       >
-        <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-          Official AWS Documentation
-        </span>
-        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent external-link-icon shrink-0 ml-2" />
+        <div className="flex items-center gap-3">
+          <div className="p-2 rounded-md bg-secondary/50 group-hover:bg-primary/10 transition-colors">
+            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          </div>
+          <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+            Official AWS Documentation
+          </span>
+        </div>
+        <ArrowRight className="w-4 h-4 text-muted-foreground/50 group-hover:text-primary group-hover:translate-x-1 transition-all" />
       </a>
     </div>
   );
