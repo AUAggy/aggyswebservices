@@ -14,17 +14,17 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
 
   return (
     <>
-      {/* Mobile Header */}
-      <div className="lg:hidden sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      {/* Mobile Header - Visible up to xl breakpoint */}
+      <div className="xl:hidden sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="flex items-center justify-between px-4 py-3">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="text-lg font-semibold tracking-tight"
             onClick={() => setIsOpen(false)}
           >
             AWS <span className="text-gradient-orange">Explained</span>
           </Link>
-          
+
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 -mr-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -37,8 +37,8 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 z-40 bg-background/80 backdrop-blur-sm"
+        <div
+          className="xl:hidden fixed inset-0 z-40 bg-background/80 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
       )}
@@ -46,7 +46,7 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
       {/* Mobile Menu Panel */}
       <div
         className={`
-          lg:hidden fixed top-[57px] right-0 bottom-0 z-50 w-72 bg-sidebar border-l border-border
+          xl:hidden fixed top-[57px] right-0 bottom-0 z-50 w-72 bg-sidebar border-l border-border
           transform transition-transform duration-200 ease-out overflow-y-auto
           ${isOpen ? "translate-x-0" : "translate-x-full"}
         `}
@@ -63,8 +63,8 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
                   onClick={() => setIsOpen(false)}
                   className={`
                     block px-3 py-2.5 rounded-md text-sm transition-colors
-                    ${isActive 
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium" 
+                    ${isActive
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
                       : "text-sidebar-foreground hover:bg-sidebar-accent/50"
                     }
                   `}
@@ -72,13 +72,13 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
                   <span className="mr-2">{category.icon}</span>
                   {category.name}
                 </Link>
-                
+
                 {isActive && services.length > 0 && (
                   <div className="ml-6 mt-1 mb-2 space-y-0.5 border-l border-sidebar-border pl-3">
                     {services.map((service) => {
                       const slug = getServiceSlug(service.service_name);
                       const isServiceActive = slug === currentService;
-                      
+
                       return (
                         <Link
                           key={slug}
@@ -86,8 +86,8 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
                           onClick={() => setIsOpen(false)}
                           className={`
                             block py-2 text-sm transition-colors
-                            ${isServiceActive 
-                              ? "text-accent font-medium" 
+                            ${isServiceActive
+                              ? "text-accent font-medium"
                               : "text-sidebar-foreground/70 hover:text-sidebar-foreground"
                             }
                           `}
