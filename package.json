@@ -1,5 +1,6 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "aws-in-plain-english",
+  "description": "A beautifully designed educational resource that explains 69 AWS services using clear analogies and real-world examples. No jargon, no confusion: just straightforward explanations.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
