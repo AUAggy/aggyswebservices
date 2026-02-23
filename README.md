@@ -2,7 +2,7 @@
 
 > Understanding AWS shouldn't require a PhD.
 
-A beautifully designed educational resource that explains 69 AWS services using clear analogies and real-world examples. No jargon, no confusion—just straightforward explanations.
+A beautifully designed educational resource that explains 69 AWS services using clear analogies and real-world examples. No jargon, no confusion: just straightforward explanations.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)
