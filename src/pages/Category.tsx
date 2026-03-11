@@ -35,8 +35,8 @@ const Category = () => {
     getCategoryJsonLd({
       name: category.name,
       description,
-      url: `${baseUrl}/category/${category.slug}`,
-      itemUrls,
+      url: `${baseUrl}/category/${category.slug}/`,
+      itemUrls: itemUrls.map((itemUrl) => `${itemUrl}/`),
     }),
   ];
 
@@ -45,7 +45,7 @@ const Category = () => {
       <Seo
         title={`${category.name} AWS Services`}
         description={description}
-        canonicalPath={`/category/${category.slug}`}
+        canonicalPath={`/category/${category.slug}/`}
         jsonLd={jsonLd}
       />
       {/* Desktop sidebar */}
