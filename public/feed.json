@@ -10,483 +10,483 @@
       "url": "https://aggyswebservices.com/category/compute/amazon-ec2",
       "title": "Amazon EC2",
       "summary": "Virtual servers in the cloud with configurable compute capacity",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/compute/aws-lambda",
       "url": "https://aggyswebservices.com/category/compute/aws-lambda",
       "title": "AWS Lambda",
       "summary": "Serverless compute service that runs code in response to events",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/compute/aws-elastic-beanstalk",
       "url": "https://aggyswebservices.com/category/compute/aws-elastic-beanstalk",
       "title": "AWS Elastic Beanstalk",
       "summary": "Managed platform for deploying and scaling web applications",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/compute/aws-fargate",
       "url": "https://aggyswebservices.com/category/compute/aws-fargate",
       "title": "AWS Fargate",
       "summary": "Serverless compute engine for containers",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/compute/amazon-lightsail",
       "url": "https://aggyswebservices.com/category/compute/amazon-lightsail",
       "title": "Amazon Lightsail",
       "summary": "Easy-to-use virtual private servers with simplified management",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/compute/aws-batch",
       "url": "https://aggyswebservices.com/category/compute/aws-batch",
       "title": "AWS Batch",
       "summary": "Fully managed batch processing at any scale",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/compute/aws-mgn-application-migration-service",
       "url": "https://aggyswebservices.com/category/compute/aws-mgn-application-migration-service",
       "title": "AWS MGN (Application Migration Service)",
       "summary": "Automated lift-and-shift migration service for moving applications to AWS",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/storage/amazon-s3",
       "url": "https://aggyswebservices.com/category/storage/amazon-s3",
       "title": "Amazon S3",
       "summary": "Scalable object storage for any type of data with high durability",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/storage/amazon-ebs",
       "url": "https://aggyswebservices.com/category/storage/amazon-ebs",
       "title": "Amazon EBS",
       "summary": "Block-level storage volumes for use with EC2 instances",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/storage/amazon-efs",
       "url": "https://aggyswebservices.com/category/storage/amazon-efs",
       "title": "Amazon EFS",
       "summary": "Scalable, elastic file storage for Linux-based workloads",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/storage/amazon-glacier",
       "url": "https://aggyswebservices.com/category/storage/amazon-glacier",
       "title": "Amazon Glacier",
       "summary": "Low-cost archival storage for long-term data retention",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/storage/aws-backup",
       "url": "https://aggyswebservices.com/category/storage/aws-backup",
       "title": "AWS Backup",
       "summary": "Centralized backup service across AWS services",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/database/amazon-rds",
       "url": "https://aggyswebservices.com/category/database/amazon-rds",
       "title": "Amazon RDS",
       "summary": "Managed relational database service supporting MySQL, PostgreSQL, Oracle, SQL Server",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/database/amazon-dynamodb",
       "url": "https://aggyswebservices.com/category/database/amazon-dynamodb",
       "title": "Amazon DynamoDB",
       "summary": "Fast, flexible NoSQL database with single-digit millisecond latency",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/database/amazon-aurora",
       "url": "https://aggyswebservices.com/category/database/amazon-aurora",
       "title": "Amazon Aurora",
       "summary": "High-performance MySQL and PostgreSQL-compatible relational database",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/database/amazon-elasticache",
       "url": "https://aggyswebservices.com/category/database/amazon-elasticache",
       "title": "Amazon ElastiCache",
       "summary": "In-memory caching service supporting Redis and Memcached",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/database/amazon-redshift",
       "url": "https://aggyswebservices.com/category/database/amazon-redshift",
       "title": "Amazon Redshift",
       "summary": "Fully managed petabyte-scale data warehouse service",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/database/amazon-neptune",
       "url": "https://aggyswebservices.com/category/database/amazon-neptune",
       "title": "Amazon Neptune",
       "summary": "Fully managed graph database for connected datasets",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/database/amazon-documentdb",
       "url": "https://aggyswebservices.com/category/database/amazon-documentdb",
       "title": "Amazon DocumentDB",
       "summary": "MongoDB-compatible document database service",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/database/aws-dms-database-migration-service",
       "url": "https://aggyswebservices.com/category/database/aws-dms-database-migration-service",
       "title": "AWS DMS (Database Migration Service)",
       "summary": "Migrate databases to AWS with minimal downtime and continuous data replication",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/networking-content-delivery/amazon-vpc",
       "url": "https://aggyswebservices.com/category/networking-content-delivery/amazon-vpc",
       "title": "Amazon VPC",
       "summary": "Isolated virtual network environment to launch AWS resources",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/networking-content-delivery/amazon-route-53",
       "url": "https://aggyswebservices.com/category/networking-content-delivery/amazon-route-53",
       "title": "Amazon Route 53",
       "summary": "Scalable DNS and domain name registration service",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/networking-content-delivery/amazon-cloudfront",
       "url": "https://aggyswebservices.com/category/networking-content-delivery/amazon-cloudfront",
       "title": "Amazon CloudFront",
       "summary": "Global content delivery network (CDN) for fast content distribution",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/networking-content-delivery/aws-direct-connect",
       "url": "https://aggyswebservices.com/category/networking-content-delivery/aws-direct-connect",
       "title": "AWS Direct Connect",
       "summary": "Dedicated network connection from on-premises to AWS",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/networking-content-delivery/elastic-load-balancing-alb-nlb",
       "url": "https://aggyswebservices.com/category/networking-content-delivery/elastic-load-balancing-alb-nlb",
       "title": "Elastic Load Balancing (ALB/NLB)",
       "summary": "Automatically distributes incoming traffic across multiple targets",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/networking-content-delivery/aws-transit-gateway",
       "url": "https://aggyswebservices.com/category/networking-content-delivery/aws-transit-gateway",
       "title": "AWS Transit Gateway",
       "summary": "Cloud router connecting VPCs and on-premises networks through a central hub",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-iam",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-iam",
       "title": "AWS IAM",
       "summary": "Manage user access and encryption keys securely",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-kms",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-kms",
       "title": "AWS KMS",
       "summary": "Managed service for creating and controlling encryption keys",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-waf",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-waf",
       "title": "AWS WAF",
       "summary": "Web application firewall to protect against common web exploits",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-cloudtrail",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-cloudtrail",
       "title": "AWS CloudTrail",
       "summary": "Records AWS API calls for governance and compliance auditing",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-secrets-manager",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-secrets-manager",
       "title": "AWS Secrets Manager",
       "summary": "Centrally manage and rotate database credentials and API keys",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/amazon-cognito",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/amazon-cognito",
       "title": "Amazon Cognito",
       "summary": "User authentication and access control for web and mobile apps",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-shield",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-shield",
       "title": "AWS Shield",
       "summary": "Managed DDoS protection service for applications",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub",
       "title": "AWS Security Hub",
       "summary": "Centralized security and compliance monitoring across AWS accounts",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/security-identity-compliance/amazon-detective",
       "url": "https://aggyswebservices.com/category/security-identity-compliance/amazon-detective",
       "title": "Amazon Detective",
       "summary": "Analyze and investigate potential security issues using machine learning",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/management-governance/aws-cloudformation",
       "url": "https://aggyswebservices.com/category/management-governance/aws-cloudformation",
       "title": "AWS CloudFormation",
       "summary": "Infrastructure as code for provisioning AWS resources via templates",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/management-governance/amazon-cloudwatch",
       "url": "https://aggyswebservices.com/category/management-governance/amazon-cloudwatch",
       "title": "Amazon CloudWatch",
       "summary": "Monitoring and observability service for AWS resources and applications",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/management-governance/aws-organizations",
       "url": "https://aggyswebservices.com/category/management-governance/aws-organizations",
       "title": "AWS Organizations",
       "summary": "Centrally manage and govern multiple AWS accounts",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/management-governance/aws-auto-scaling",
       "url": "https://aggyswebservices.com/category/management-governance/aws-auto-scaling",
       "title": "AWS Auto Scaling",
       "summary": "Automatically adjust capacity to maintain performance at lowest cost",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/management-governance/aws-systems-manager",
       "url": "https://aggyswebservices.com/category/management-governance/aws-systems-manager",
       "title": "AWS Systems Manager",
       "summary": "Unified interface for viewing operational data from AWS services",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/management-governance/aws-config",
       "url": "https://aggyswebservices.com/category/management-governance/aws-config",
       "title": "AWS Config",
       "summary": "Track resources; Configurations and compliance over time",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/management-governance/aws-resource-access-manager",
       "url": "https://aggyswebservices.com/category/management-governance/aws-resource-access-manager",
       "title": "AWS Resource Access Manager",
       "summary": "Share AWS resources securely across accounts and organizations",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/application-integration/amazon-sqs",
       "url": "https://aggyswebservices.com/category/application-integration/amazon-sqs",
       "title": "Amazon SQS",
       "summary": "Fully managed message queuing service for decoupling applications",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/application-integration/amazon-sns",
       "url": "https://aggyswebservices.com/category/application-integration/amazon-sns",
       "title": "Amazon SNS",
       "summary": "Pub/sub messaging and mobile push notification service",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/application-integration/aws-step-functions",
       "url": "https://aggyswebservices.com/category/application-integration/aws-step-functions",
       "title": "AWS Step Functions",
       "summary": "Orchestration service for coordinating distributed applications",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/application-integration/amazon-api-gateway",
       "url": "https://aggyswebservices.com/category/application-integration/amazon-api-gateway",
       "title": "Amazon API Gateway",
       "summary": "Create, publish, and manage APIs at any scale",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/application-integration/amazon-eventbridge",
       "url": "https://aggyswebservices.com/category/application-integration/amazon-eventbridge",
       "title": "Amazon EventBridge",
       "summary": "Serverless event bus for connecting applications with real-time data",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-kinesis",
       "url": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-kinesis",
       "title": "Amazon Kinesis",
       "summary": "Real-time streaming data collection and processing",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/analytics-business-intelligence/aws-glue",
       "url": "https://aggyswebservices.com/category/analytics-business-intelligence/aws-glue",
       "title": "AWS Glue",
       "summary": "Fully managed ETL service for data preparation and loading",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-emr",
       "url": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-emr",
       "title": "Amazon EMR",
       "summary": "Managed Hadoop framework for processing big data workloads",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-athena",
       "url": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-athena",
       "title": "Amazon Athena",
       "summary": "Query data in S3 using standard SQL without infrastructure",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quicksight",
       "url": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quicksight",
       "title": "Amazon QuickSight",
       "summary": "AI-powered business intelligence and data visualization service",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-bedrock",
       "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-bedrock",
       "title": "Amazon Bedrock",
       "summary": "Build and scale generative AI applications with foundation models",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker",
       "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker",
       "title": "Amazon SageMaker",
       "summary": "Comprehensive platform to build, train, and deploy machine learning models",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-rekognition",
       "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-rekognition",
       "title": "Amazon Rekognition",
       "summary": "Computer vision service for image and video analysis",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-comprehend",
       "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-comprehend",
       "title": "Amazon Comprehend",
       "summary": "Natural language processing service for text analysis and insights",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-polly",
       "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-polly",
       "title": "Amazon Polly",
       "summary": "Convert text to lifelike speech with neural text-to-speech",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-transcribe",
       "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-transcribe",
       "title": "Amazon Transcribe",
       "summary": "Automatic speech recognition service to convert audio to text",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-translate",
       "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-translate",
       "title": "Amazon Translate",
       "summary": "Neural machine translation service for language translation",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-lex",
       "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-lex",
       "title": "Amazon Lex",
       "summary": "Build conversational interfaces and chatbots with voice and text",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/developer-tools/aws-codepipeline",
       "url": "https://aggyswebservices.com/category/developer-tools/aws-codepipeline",
       "title": "AWS CodePipeline",
       "summary": "Continuous integration and delivery service for automated releases",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/developer-tools/aws-codedeploy",
       "url": "https://aggyswebservices.com/category/developer-tools/aws-codedeploy",
       "title": "AWS CodeDeploy",
       "summary": "Automated application deployment to EC2, Lambda, or on-premises",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/developer-tools/aws-codecommit",
       "url": "https://aggyswebservices.com/category/developer-tools/aws-codecommit",
       "title": "AWS CodeCommit",
       "summary": "Fully managed source control service for Git repositories",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/developer-tools/aws-codebuild",
       "url": "https://aggyswebservices.com/category/developer-tools/aws-codebuild",
       "title": "AWS CodeBuild",
       "summary": "Fully managed continuous integration service that compiles and tests code",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/containers-orchestration/amazon-ecs",
       "url": "https://aggyswebservices.com/category/containers-orchestration/amazon-ecs",
       "title": "Amazon ECS",
       "summary": "Fully managed container orchestration service for Docker",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/containers-orchestration/amazon-eks",
       "url": "https://aggyswebservices.com/category/containers-orchestration/amazon-eks",
       "title": "Amazon EKS",
       "summary": "Managed Kubernetes service for running Kubernetes on AWS",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/containers-orchestration/amazon-ecr",
       "url": "https://aggyswebservices.com/category/containers-orchestration/amazon-ecr",
       "title": "Amazon ECR",
       "summary": "Fully managed Docker container registry",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/iot/aws-iot-core",
       "url": "https://aggyswebservices.com/category/iot/aws-iot-core",
       "title": "AWS IoT Core",
       "summary": "Managed cloud service connecting IoT devices to cloud applications",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     },
     {
       "id": "https://aggyswebservices.com/category/iot/aws-iot-analytics",
       "url": "https://aggyswebservices.com/category/iot/aws-iot-analytics",
       "title": "AWS IoT Analytics",
       "summary": "Process and analyze IoT data at scale with machine learning integration",
-      "date_modified": "2026-03-11T04:34:44.252Z"
+      "date_modified": "2026-03-11T05:13:31.352Z"
     }
   ]
 }
