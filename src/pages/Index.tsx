@@ -2,6 +2,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { CategoryCard } from "@/components/CategoryCard";
 import { getCategories, getMetadata } from "@/lib/aws-data";
 import Seo from "@/components/Seo";
+import SiteFooter from "@/components/SiteFooter";
 import {
   baseUrl,
   brandDescription,
@@ -89,13 +90,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-border">
-        <div className="container-wide text-center text-sm text-muted-foreground">
-          <p>
-            Built with the Feynman Technique. Learn AWS one service at a time.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 };

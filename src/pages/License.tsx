@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Seo from "@/components/Seo";
+import SiteFooter from "@/components/SiteFooter";
 import {
   baseUrl,
   getLegalPageJsonLd,
@@ -47,6 +48,7 @@ const License = () => {
           Back to Home
         </Link>
       </div>
+      <SiteFooter />
     </div>
   );
 };

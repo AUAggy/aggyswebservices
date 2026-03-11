@@ -6,6 +6,7 @@ import { BackButton } from "@/components/BackButton";
 import { ServiceAccordion } from "@/components/ServiceAccordion";
 import { getCategoryBySlug, getServiceBySlug, getServiceSlug } from "@/lib/aws-data";
 import Seo from "@/components/Seo";
+import SiteFooter from "@/components/SiteFooter";
 import {
   baseUrl,
   getOrganizationJsonLd,
@@ -76,6 +77,8 @@ const ServiceDetail = () => {
 
           <ServiceAccordion service={service} />
         </main>
+
+        <SiteFooter />
       </div>
     </div>
   );
