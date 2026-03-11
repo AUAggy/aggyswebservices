@@ -23,6 +23,7 @@ const Seo = ({ title, description, canonicalPath, jsonLd = [], noIndex = false }
   return (
     <Helmet>
       <title>{fullTitle}</title>
+      <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
       <meta name="author" content={brandName} />
       <meta name="copyright" content={brandName} />
