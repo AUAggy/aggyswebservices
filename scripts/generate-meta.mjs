@@ -35,14 +35,14 @@ const url = (pathname) => `${siteUrl}${pathname}`;
 
 const routes = [
   { loc: url("/"), lastmod: buildDate },
-  { loc: url("/terms"), lastmod: buildDate },
-  { loc: url("/license"), lastmod: buildDate },
+  { loc: url("/terms/"), lastmod: buildDate },
+  { loc: url("/license/"), lastmod: buildDate },
   ...categories.map((category) => ({
-    loc: url(`/category/${category.slug}`),
+    loc: url(`/category/${category.slug}/`),
     lastmod: buildDate,
   })),
   ...services.map((service) => ({
-    loc: url(`/category/${service.categorySlug}/${service.slug}`),
+    loc: url(`/category/${service.categorySlug}/${service.slug}/`),
     lastmod: buildDate,
   })),
 ];
@@ -62,10 +62,10 @@ fs.writeFileSync(path.join(publicDir, "sitemap.xml"), sitemapXml);
 const rssItems = services.slice(0, 200).map((service) => (
   `  <item>\n` +
   `    <title>${escapeXml(service.name)}</title>\n` +
-  `    <link>${url(`/category/${service.categorySlug}/${service.slug}`)}</link>\n` +
+  `    <link>${url(`/category/${service.categorySlug}/${service.slug}/`)}</link>\n` +
   `    <description>${escapeXml(service.description)}</description>\n` +
   `    <pubDate>${new Date(buildDate).toUTCString()}</pubDate>\n` +
-  `    <guid isPermaLink="true">${url(`/category/${service.categorySlug}/${service.slug}`)}</guid>\n` +
+  `    <guid isPermaLink="true">${url(`/category/${service.categorySlug}/${service.slug}/`)}</guid>\n` +
   `  </item>`
 )).join("\n");
 
@@ -89,8 +89,8 @@ const feedJson = {
   feed_url: `${siteUrl}/feed.json`,
   description: "Plain-English explanations of AWS services.",
   items: services.slice(0, 200).map((service) => ({
-    id: url(`/category/${service.categorySlug}/${service.slug}`),
-    url: url(`/category/${service.categorySlug}/${service.slug}`),
+    id: url(`/category/${service.categorySlug}/${service.slug}/`),
+    url: url(`/category/${service.categorySlug}/${service.slug}/`),
     title: service.name,
     summary: service.description,
     date_modified: buildDate,

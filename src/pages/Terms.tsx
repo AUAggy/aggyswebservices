@@ -16,7 +16,7 @@ const Terms = () => {
     getLegalPageJsonLd({
       name: "Terms of Use",
       description,
-      url: `${baseUrl}/terms`,
+      url: `${baseUrl}/terms/`,
     }),
   ];
 
@@ -25,7 +25,7 @@ const Terms = () => {
       <Seo
         title="Terms of Use"
         description={description}
-        canonicalPath="/terms"
+        canonicalPath="/terms/"
         jsonLd={jsonLd}
       />
       <div className="container-narrow">

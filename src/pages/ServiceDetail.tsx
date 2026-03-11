@@ -28,7 +28,7 @@ const ServiceDetail = () => {
 
   if (!category || !service) return <NotFound />;
 
-  const canonicalPath = `/category/${category.slug}/${getServiceSlug(service.service_name)}`;
+  const canonicalPath = `/category/${category.slug}/${getServiceSlug(service.service_name)}/`;
   const jsonLd = [
     getOrganizationJsonLd(),
     getWebSiteJsonLd(),
