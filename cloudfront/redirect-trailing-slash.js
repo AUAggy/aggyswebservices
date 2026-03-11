@@ -6,11 +6,16 @@ function handler(event) {
     return request;
   }
 
-  if (uri === "/" || uri.endsWith("/")) {
+  if (uri === "/") {
     return request;
   }
 
   if (uri.indexOf(".") !== -1) {
+    return request;
+  }
+
+  if (uri.endsWith("/")) {
+    request.uri = uri + "index.html";
     return request;
   }
 
