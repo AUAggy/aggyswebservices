@@ -41,7 +41,8 @@ Open `http://localhost:8080` (configured in `vite.config.ts`).
 │   ├── pages/             # Route-level pages
 │   ├── test/              # Vitest setup
 │   └── types/             # TypeScript types
-├── public/                # Static assets (icons, OG image, robots)
+├── public/                # Static assets + metadata (robots, sitemap, RSS, feed.json)
+├── scripts/               # Build-time generators (sitemap, RSS, feeds)
 ├── dist/                  # Build output (generated)
 └── deploy.sh              # S3 sync + CloudFront invalidation script
 ```
@@ -51,6 +52,9 @@ Open `http://localhost:8080` (configured in `vite.config.ts`).
 - React 18 + TypeScript
 - Vite
 - Tailwind CSS + Radix UI/shadcn-style components
+- React Router
+- react-helmet-async (SEO + JSON-LD)
+- vite-prerender-plugin (static prerender)
 - Vitest + Testing Library
 
 ## Service Categories (Validated Against `src/data/aws-services.json`)

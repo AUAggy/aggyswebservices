@@ -5,6 +5,7 @@ import { MobileNav } from "@/components/MobileNav";
 import { BackButton } from "@/components/BackButton";
 import { ServiceListItem } from "@/components/ServiceListItem";
 import Seo from "@/components/Seo";
+import SiteFooter from "@/components/SiteFooter";
 import { getCategoryBySlug, getServiceSlug, getServicesByCategory } from "@/lib/aws-data";
 import {
   baseUrl,
@@ -81,7 +82,10 @@ const Category = () => {
               />
             ))}
           </div>
+
         </main>
+
+        <SiteFooter />
       </div>
     </div>
   );

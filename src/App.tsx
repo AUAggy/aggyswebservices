@@ -15,7 +15,12 @@ const App = () => (
         <Toaster />
         <Sonner />
         {/* Conditionally set basename only for production */}
-        <BrowserRouter>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <AppRoutes />
         </BrowserRouter>
       </TooltipProvider>
