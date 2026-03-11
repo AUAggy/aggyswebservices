@@ -4,488 +4,488 @@
   <title>AWS in Plain English — Service Catalog</title>
   <link>https://aggyswebservices.com/</link>
   <description>Plain-English explanations of AWS services.</description>
-  <lastBuildDate>Wed, 11 Mar 2026 06:09:54 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 11 Mar 2026 07:28:21 GMT</lastBuildDate>
   <item>
     <title>Amazon EC2</title>
     <link>https://aggyswebservices.com/category/compute/amazon-ec2/</link>
     <description>Virtual servers in the cloud with configurable compute capacity</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/compute/amazon-ec2/</guid>
   </item>
   <item>
     <title>AWS Lambda</title>
     <link>https://aggyswebservices.com/category/compute/aws-lambda/</link>
     <description>Serverless compute service that runs code in response to events</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/compute/aws-lambda/</guid>
   </item>
   <item>
     <title>AWS Elastic Beanstalk</title>
     <link>https://aggyswebservices.com/category/compute/aws-elastic-beanstalk/</link>
     <description>Managed platform for deploying and scaling web applications</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/compute/aws-elastic-beanstalk/</guid>
   </item>
   <item>
     <title>AWS Fargate</title>
     <link>https://aggyswebservices.com/category/compute/aws-fargate/</link>
     <description>Serverless compute engine for containers</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/compute/aws-fargate/</guid>
   </item>
   <item>
     <title>Amazon Lightsail</title>
     <link>https://aggyswebservices.com/category/compute/amazon-lightsail/</link>
     <description>Easy-to-use virtual private servers with simplified management</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/compute/amazon-lightsail/</guid>
   </item>
   <item>
     <title>AWS Batch</title>
     <link>https://aggyswebservices.com/category/compute/aws-batch/</link>
     <description>Fully managed batch processing at any scale</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/compute/aws-batch/</guid>
   </item>
   <item>
     <title>AWS MGN (Application Migration Service)</title>
     <link>https://aggyswebservices.com/category/compute/aws-mgn-application-migration-service/</link>
     <description>Automated lift-and-shift migration service for moving applications to AWS</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/compute/aws-mgn-application-migration-service/</guid>
   </item>
   <item>
     <title>Amazon S3</title>
     <link>https://aggyswebservices.com/category/storage/amazon-s3/</link>
     <description>Scalable object storage for any type of data with high durability</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/storage/amazon-s3/</guid>
   </item>
   <item>
     <title>Amazon EBS</title>
     <link>https://aggyswebservices.com/category/storage/amazon-ebs/</link>
     <description>Block-level storage volumes for use with EC2 instances</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/storage/amazon-ebs/</guid>
   </item>
   <item>
     <title>Amazon EFS</title>
     <link>https://aggyswebservices.com/category/storage/amazon-efs/</link>
     <description>Scalable, elastic file storage for Linux-based workloads</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/storage/amazon-efs/</guid>
   </item>
   <item>
     <title>Amazon Glacier</title>
     <link>https://aggyswebservices.com/category/storage/amazon-glacier/</link>
     <description>Low-cost archival storage for long-term data retention</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/storage/amazon-glacier/</guid>
   </item>
   <item>
     <title>AWS Backup</title>
     <link>https://aggyswebservices.com/category/storage/aws-backup/</link>
     <description>Centralized backup service across AWS services</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/storage/aws-backup/</guid>
   </item>
   <item>
     <title>Amazon RDS</title>
     <link>https://aggyswebservices.com/category/database/amazon-rds/</link>
     <description>Managed relational database service supporting MySQL, PostgreSQL, Oracle, SQL Server</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/database/amazon-rds/</guid>
   </item>
   <item>
     <title>Amazon DynamoDB</title>
     <link>https://aggyswebservices.com/category/database/amazon-dynamodb/</link>
     <description>Fast, flexible NoSQL database with single-digit millisecond latency</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/database/amazon-dynamodb/</guid>
   </item>
   <item>
     <title>Amazon Aurora</title>
     <link>https://aggyswebservices.com/category/database/amazon-aurora/</link>
     <description>High-performance MySQL and PostgreSQL-compatible relational database</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/database/amazon-aurora/</guid>
   </item>
   <item>
     <title>Amazon ElastiCache</title>
     <link>https://aggyswebservices.com/category/database/amazon-elasticache/</link>
     <description>In-memory caching service supporting Redis and Memcached</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/database/amazon-elasticache/</guid>
   </item>
   <item>
     <title>Amazon Redshift</title>
     <link>https://aggyswebservices.com/category/database/amazon-redshift/</link>
     <description>Fully managed petabyte-scale data warehouse service</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/database/amazon-redshift/</guid>
   </item>
   <item>
     <title>Amazon Neptune</title>
     <link>https://aggyswebservices.com/category/database/amazon-neptune/</link>
     <description>Fully managed graph database for connected datasets</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/database/amazon-neptune/</guid>
   </item>
   <item>
     <title>Amazon DocumentDB</title>
     <link>https://aggyswebservices.com/category/database/amazon-documentdb/</link>
     <description>MongoDB-compatible document database service</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/database/amazon-documentdb/</guid>
   </item>
   <item>
     <title>AWS DMS (Database Migration Service)</title>
     <link>https://aggyswebservices.com/category/database/aws-dms-database-migration-service/</link>
     <description>Migrate databases to AWS with minimal downtime and continuous data replication</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/database/aws-dms-database-migration-service/</guid>
   </item>
   <item>
     <title>Amazon VPC</title>
     <link>https://aggyswebservices.com/category/networking-content-delivery/amazon-vpc/</link>
     <description>Isolated virtual network environment to launch AWS resources</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/networking-content-delivery/amazon-vpc/</guid>
   </item>
   <item>
     <title>Amazon Route 53</title>
     <link>https://aggyswebservices.com/category/networking-content-delivery/amazon-route-53/</link>
     <description>Scalable DNS and domain name registration service</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/networking-content-delivery/amazon-route-53/</guid>
   </item>
   <item>
     <title>Amazon CloudFront</title>
     <link>https://aggyswebservices.com/category/networking-content-delivery/amazon-cloudfront/</link>
     <description>Global content delivery network (CDN) for fast content distribution</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/networking-content-delivery/amazon-cloudfront/</guid>
   </item>
   <item>
     <title>AWS Direct Connect</title>
     <link>https://aggyswebservices.com/category/networking-content-delivery/aws-direct-connect/</link>
     <description>Dedicated network connection from on-premises to AWS</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/networking-content-delivery/aws-direct-connect/</guid>
   </item>
   <item>
     <title>Elastic Load Balancing (ALB/NLB)</title>
     <link>https://aggyswebservices.com/category/networking-content-delivery/elastic-load-balancing-alb-nlb/</link>
     <description>Automatically distributes incoming traffic across multiple targets</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/networking-content-delivery/elastic-load-balancing-alb-nlb/</guid>
   </item>
   <item>
     <title>AWS Transit Gateway</title>
     <link>https://aggyswebservices.com/category/networking-content-delivery/aws-transit-gateway/</link>
     <description>Cloud router connecting VPCs and on-premises networks through a central hub</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/networking-content-delivery/aws-transit-gateway/</guid>
   </item>
   <item>
     <title>AWS IAM</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/aws-iam/</link>
     <description>Manage user access and encryption keys securely</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-iam/</guid>
   </item>
   <item>
     <title>AWS KMS</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/aws-kms/</link>
     <description>Managed service for creating and controlling encryption keys</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-kms/</guid>
   </item>
   <item>
     <title>AWS WAF</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/aws-waf/</link>
     <description>Web application firewall to protect against common web exploits</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-waf/</guid>
   </item>
   <item>
     <title>AWS CloudTrail</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/aws-cloudtrail/</link>
     <description>Records AWS API calls for governance and compliance auditing</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-cloudtrail/</guid>
   </item>
   <item>
     <title>AWS Secrets Manager</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/aws-secrets-manager/</link>
     <description>Centrally manage and rotate database credentials and API keys</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-secrets-manager/</guid>
   </item>
   <item>
     <title>Amazon Cognito</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/amazon-cognito/</link>
     <description>User authentication and access control for web and mobile apps</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/amazon-cognito/</guid>
   </item>
   <item>
     <title>AWS Shield</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/aws-shield/</link>
     <description>Managed DDoS protection service for applications</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-shield/</guid>
   </item>
   <item>
     <title>AWS Security Hub</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub/</link>
     <description>Centralized security and compliance monitoring across AWS accounts</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub/</guid>
   </item>
   <item>
     <title>Amazon Detective</title>
     <link>https://aggyswebservices.com/category/security-identity-compliance/amazon-detective/</link>
     <description>Analyze and investigate potential security issues using machine learning</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/amazon-detective/</guid>
   </item>
   <item>
     <title>AWS CloudFormation</title>
     <link>https://aggyswebservices.com/category/management-governance/aws-cloudformation/</link>
     <description>Infrastructure as code for provisioning AWS resources via templates</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/management-governance/aws-cloudformation/</guid>
   </item>
   <item>
     <title>Amazon CloudWatch</title>
     <link>https://aggyswebservices.com/category/management-governance/amazon-cloudwatch/</link>
     <description>Monitoring and observability service for AWS resources and applications</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/management-governance/amazon-cloudwatch/</guid>
   </item>
   <item>
     <title>AWS Organizations</title>
     <link>https://aggyswebservices.com/category/management-governance/aws-organizations/</link>
     <description>Centrally manage and govern multiple AWS accounts</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/management-governance/aws-organizations/</guid>
   </item>
   <item>
     <title>AWS Auto Scaling</title>
     <link>https://aggyswebservices.com/category/management-governance/aws-auto-scaling/</link>
     <description>Automatically adjust capacity to maintain performance at lowest cost</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/management-governance/aws-auto-scaling/</guid>
   </item>
   <item>
     <title>AWS Systems Manager</title>
     <link>https://aggyswebservices.com/category/management-governance/aws-systems-manager/</link>
     <description>Unified interface for viewing operational data from AWS services</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/management-governance/aws-systems-manager/</guid>
   </item>
   <item>
     <title>AWS Config</title>
     <link>https://aggyswebservices.com/category/management-governance/aws-config/</link>
     <description>Track resources; Configurations and compliance over time</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/management-governance/aws-config/</guid>
   </item>
   <item>
     <title>AWS Resource Access Manager</title>
     <link>https://aggyswebservices.com/category/management-governance/aws-resource-access-manager/</link>
     <description>Share AWS resources securely across accounts and organizations</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/management-governance/aws-resource-access-manager/</guid>
   </item>
   <item>
     <title>Amazon SQS</title>
     <link>https://aggyswebservices.com/category/application-integration/amazon-sqs/</link>
     <description>Fully managed message queuing service for decoupling applications</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/application-integration/amazon-sqs/</guid>
   </item>
   <item>
     <title>Amazon SNS</title>
     <link>https://aggyswebservices.com/category/application-integration/amazon-sns/</link>
     <description>Pub/sub messaging and mobile push notification service</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/application-integration/amazon-sns/</guid>
   </item>
   <item>
     <title>AWS Step Functions</title>
     <link>https://aggyswebservices.com/category/application-integration/aws-step-functions/</link>
     <description>Orchestration service for coordinating distributed applications</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/application-integration/aws-step-functions/</guid>
   </item>
   <item>
     <title>Amazon API Gateway</title>
     <link>https://aggyswebservices.com/category/application-integration/amazon-api-gateway/</link>
     <description>Create, publish, and manage APIs at any scale</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/application-integration/amazon-api-gateway/</guid>
   </item>
   <item>
     <title>Amazon EventBridge</title>
     <link>https://aggyswebservices.com/category/application-integration/amazon-eventbridge/</link>
     <description>Serverless event bus for connecting applications with real-time data</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/application-integration/amazon-eventbridge/</guid>
   </item>
   <item>
     <title>Amazon Kinesis</title>
     <link>https://aggyswebservices.com/category/analytics-business-intelligence/amazon-kinesis/</link>
     <description>Real-time streaming data collection and processing</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/analytics-business-intelligence/amazon-kinesis/</guid>
   </item>
   <item>
     <title>AWS Glue</title>
     <link>https://aggyswebservices.com/category/analytics-business-intelligence/aws-glue/</link>
     <description>Fully managed ETL service for data preparation and loading</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/analytics-business-intelligence/aws-glue/</guid>
   </item>
   <item>
     <title>Amazon EMR</title>
     <link>https://aggyswebservices.com/category/analytics-business-intelligence/amazon-emr/</link>
     <description>Managed Hadoop framework for processing big data workloads</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/analytics-business-intelligence/amazon-emr/</guid>
   </item>
   <item>
     <title>Amazon Athena</title>
     <link>https://aggyswebservices.com/category/analytics-business-intelligence/amazon-athena/</link>
     <description>Query data in S3 using standard SQL without infrastructure</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/analytics-business-intelligence/amazon-athena/</guid>
   </item>
   <item>
     <title>Amazon QuickSight</title>
     <link>https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quicksight/</link>
     <description>AI-powered business intelligence and data visualization service</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quicksight/</guid>
   </item>
   <item>
     <title>Amazon Bedrock</title>
     <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-bedrock/</link>
     <description>Build and scale generative AI applications with foundation models</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-bedrock/</guid>
   </item>
   <item>
     <title>Amazon SageMaker</title>
     <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker/</link>
     <description>Comprehensive platform to build, train, and deploy machine learning models</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker/</guid>
   </item>
   <item>
     <title>Amazon Rekognition</title>
     <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-rekognition/</link>
     <description>Computer vision service for image and video analysis</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-rekognition/</guid>
   </item>
   <item>
     <title>Amazon Comprehend</title>
     <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-comprehend/</link>
     <description>Natural language processing service for text analysis and insights</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-comprehend/</guid>
   </item>
   <item>
     <title>Amazon Polly</title>
     <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-polly/</link>
     <description>Convert text to lifelike speech with neural text-to-speech</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-polly/</guid>
   </item>
   <item>
     <title>Amazon Transcribe</title>
     <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-transcribe/</link>
     <description>Automatic speech recognition service to convert audio to text</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-transcribe/</guid>
   </item>
   <item>
     <title>Amazon Translate</title>
     <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-translate/</link>
     <description>Neural machine translation service for language translation</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-translate/</guid>
   </item>
   <item>
     <title>Amazon Lex</title>
     <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-lex/</link>
     <description>Build conversational interfaces and chatbots with voice and text</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-lex/</guid>
   </item>
   <item>
     <title>AWS CodePipeline</title>
     <link>https://aggyswebservices.com/category/developer-tools/aws-codepipeline/</link>
     <description>Continuous integration and delivery service for automated releases</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/developer-tools/aws-codepipeline/</guid>
   </item>
   <item>
     <title>AWS CodeDeploy</title>
     <link>https://aggyswebservices.com/category/developer-tools/aws-codedeploy/</link>
     <description>Automated application deployment to EC2, Lambda, or on-premises</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/developer-tools/aws-codedeploy/</guid>
   </item>
   <item>
     <title>AWS CodeCommit</title>
     <link>https://aggyswebservices.com/category/developer-tools/aws-codecommit/</link>
     <description>Fully managed source control service for Git repositories</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/developer-tools/aws-codecommit/</guid>
   </item>
   <item>
     <title>AWS CodeBuild</title>
     <link>https://aggyswebservices.com/category/developer-tools/aws-codebuild/</link>
     <description>Fully managed continuous integration service that compiles and tests code</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/developer-tools/aws-codebuild/</guid>
   </item>
   <item>
     <title>Amazon ECS</title>
     <link>https://aggyswebservices.com/category/containers-orchestration/amazon-ecs/</link>
     <description>Fully managed container orchestration service for Docker</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/containers-orchestration/amazon-ecs/</guid>
   </item>
   <item>
     <title>Amazon EKS</title>
     <link>https://aggyswebservices.com/category/containers-orchestration/amazon-eks/</link>
     <description>Managed Kubernetes service for running Kubernetes on AWS</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/containers-orchestration/amazon-eks/</guid>
   </item>
   <item>
     <title>Amazon ECR</title>
     <link>https://aggyswebservices.com/category/containers-orchestration/amazon-ecr/</link>
     <description>Fully managed Docker container registry</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/containers-orchestration/amazon-ecr/</guid>
   </item>
   <item>
     <title>AWS IoT Core</title>
     <link>https://aggyswebservices.com/category/iot/aws-iot-core/</link>
     <description>Managed cloud service connecting IoT devices to cloud applications</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/iot/aws-iot-core/</guid>
   </item>
   <item>
     <title>AWS IoT Analytics</title>
     <link>https://aggyswebservices.com/category/iot/aws-iot-analytics/</link>
     <description>Process and analyze IoT data at scale with machine learning integration</description>
-    <pubDate>Wed, 11 Mar 2026 06:09:54 GMT</pubDate>
+    <pubDate>Wed, 11 Mar 2026 07:28:21 GMT</pubDate>
     <guid isPermaLink="true">https://aggyswebservices.com/category/iot/aws-iot-analytics/</guid>
   </item>
 </channel>
