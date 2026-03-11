@@ -27,10 +27,10 @@ const getPrerenderRoutes = () => {
 
   return [
     "/",
-    "/terms",
-    "/license",
-    ...categories.map((category) => `/category/${category.slug}`),
-    ...services.map((service) => `/category/${service.categorySlug}/${service.slug}`),
+    "/terms/",
+    "/license/",
+    ...categories.map((category) => `/category/${category.slug}/`),
+    ...services.map((service) => `/category/${service.categorySlug}/${service.slug}/`),
   ];
 };
 

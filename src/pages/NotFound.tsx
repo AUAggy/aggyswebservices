@@ -8,7 +8,7 @@ const NotFound = () => {
       <Seo
         title="Page Not Found"
         description="This page does not exist."
-        canonicalPath="/404"
+        canonicalPath="/404/"
         noIndex
       />
       <div className="flex-1 flex items-center justify-center">

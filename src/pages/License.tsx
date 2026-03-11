@@ -16,7 +16,7 @@ const License = () => {
     getLegalPageJsonLd({
       name: "Content License",
       description,
-      url: `${baseUrl}/license`,
+      url: `${baseUrl}/license/`,
     }),
   ];
 
@@ -25,7 +25,7 @@ const License = () => {
       <Seo
         title="Content License"
         description={description}
-        canonicalPath="/license"
+        canonicalPath="/license/"
         jsonLd={jsonLd}
       />
       <div className="container-narrow">
