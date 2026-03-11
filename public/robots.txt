@@ -1,14 +1,48 @@
+# Global default: allow normal crawling
+User-agent: *
+Disallow: /admin/
+Disallow: /internal/
+Disallow: /drafts/
+Disallow: /tmp/
+Disallow: /404.html
+Disallow: /thank-you/
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+
+# IMPORTANT: do NOT block CSS/JS/fonts or core content directories
+
+# Major search engines (override defaults if needed)
 User-agent: Googlebot
 Allow: /
+Disallow: /admin/
+Disallow: /internal/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin/
+Disallow: /internal/
 
-User-agent: Twitterbot
+# AI / LLM crawlers
+User-agent: GPTBot
 Allow: /
 
-User-agent: facebookexternalhit
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: *
+User-agent: Google-Extended
 Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Sitemaps
+Sitemap: https://aggyswebservices.com/sitemap.xml
