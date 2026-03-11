@@ -3,12 +3,12 @@ const SiteFooter = () => {
     <footer className="py-6 border-t border-border">
       <div className="container-wide text-center text-sm text-muted-foreground/80">
         <p>
-          aggyswebservices.com is a free educational tool by{" "}
+          <span className="text-foreground/80 font-medium">aggyswebservices.com</span> is a free educational tool by{" "}
           <a
             href="https://miaggy.com"
             target="_blank"
             rel="noreferrer"
-            className="transition-colors hover:text-orange-500"
+            className="text-foreground/80 font-medium transition-colors hover:text-orange-500"
           >
             miaggy.com
           </a>
