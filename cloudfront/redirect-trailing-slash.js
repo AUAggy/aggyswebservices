@@ -14,7 +14,18 @@ function handler(event) {
     return request;
   }
 
-  var query = request.querystring ? "?" + request.querystring : "";
+  var querystring = request.querystring || {};
+  var parts = [];
+  for (var key in querystring) {
+    if (!Object.prototype.hasOwnProperty.call(querystring, key)) continue;
+    var entry = querystring[key];
+    if (entry && typeof entry.value === "string") {
+      parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(entry.value));
+    } else {
+      parts.push(encodeURIComponent(key));
+    }
+  }
+  var query = parts.length ? "?" + parts.join("&") : "";
 
   return {
     statusCode: 301,
