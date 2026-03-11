@@ -1,13 +1,37 @@
 import { SearchBar } from "@/components/SearchBar";
 import { CategoryCard } from "@/components/CategoryCard";
 import { getCategories, getMetadata } from "@/lib/aws-data";
+import Seo from "@/components/Seo";
+import {
+  baseUrl,
+  brandDescription,
+  getCollectionPageJsonLd,
+  getOrganizationJsonLd,
+  getWebSiteJsonLd,
+} from "@/lib/seo";
 
 const Index = () => {
   const categories = getCategories();
   const metadata = getMetadata();
+  const description = `${metadata.total_services} cloud services demystified with plain English explanations, real examples, and technical deep dives.`;
+  const jsonLd = [
+    getOrganizationJsonLd(),
+    getWebSiteJsonLd(),
+    getCollectionPageJsonLd({
+      name: "AWS Services Explained Simply",
+      description: brandDescription,
+      url: `${baseUrl}/`,
+    }),
+  ];
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title="AWS Services Explained Simply"
+        description={description}
+        canonicalPath="/"
+        jsonLd={jsonLd}
+      />
       {/* Hero Section */}
       <section className="pt-12 sm:pt-16 md:pt-20 pb-10 sm:pb-16 px-4">
         <div className="container-wide">

@@ -4,7 +4,14 @@ import { Header } from "@/components/Header";
 import { MobileNav } from "@/components/MobileNav";
 import { BackButton } from "@/components/BackButton";
 import { ServiceListItem } from "@/components/ServiceListItem";
-import { getCategoryBySlug, getServicesByCategory } from "@/lib/aws-data";
+import Seo from "@/components/Seo";
+import { getCategoryBySlug, getServiceSlug, getServicesByCategory } from "@/lib/aws-data";
+import {
+  baseUrl,
+  getCategoryJsonLd,
+  getOrganizationJsonLd,
+  getWebSiteJsonLd,
+} from "@/lib/seo";
 import NotFound from "./NotFound";
 
 const Category = () => {
@@ -17,8 +24,29 @@ const Category = () => {
 
   if (!category) return <NotFound />;
 
+  const description = `${category.description} : ${services.length} services`;
+  const itemUrls = services.map(
+    (service) => `${baseUrl}/category/${category.slug}/${getServiceSlug(service.service_name)}`
+  );
+  const jsonLd = [
+    getOrganizationJsonLd(),
+    getWebSiteJsonLd(),
+    getCategoryJsonLd({
+      name: category.name,
+      description,
+      url: `${baseUrl}/category/${category.slug}`,
+      itemUrls,
+    }),
+  ];
+
   return (
     <div className="min-h-screen">
+      <Seo
+        title={`${category.name} AWS Services`}
+        description={description}
+        canonicalPath={`/category/${category.slug}`}
+        jsonLd={jsonLd}
+      />
       {/* Desktop sidebar */}
       <Sidebar currentCategory={categorySlug} />
 

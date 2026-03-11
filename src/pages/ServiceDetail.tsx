@@ -5,6 +5,13 @@ import { MobileNav } from "@/components/MobileNav";
 import { BackButton } from "@/components/BackButton";
 import { ServiceAccordion } from "@/components/ServiceAccordion";
 import { getCategoryBySlug, getServiceBySlug, getServiceSlug } from "@/lib/aws-data";
+import Seo from "@/components/Seo";
+import {
+  baseUrl,
+  getOrganizationJsonLd,
+  getServiceArticleJsonLd,
+  getWebSiteJsonLd,
+} from "@/lib/seo";
 import NotFound from "./NotFound";
 
 const ServiceDetail = () => {
@@ -20,8 +27,25 @@ const ServiceDetail = () => {
 
   if (!category || !service) return <NotFound />;
 
+  const canonicalPath = `/category/${category.slug}/${getServiceSlug(service.service_name)}`;
+  const jsonLd = [
+    getOrganizationJsonLd(),
+    getWebSiteJsonLd(),
+    getServiceArticleJsonLd({
+      serviceName: service.service_name,
+      description: service.description,
+      url: `${baseUrl}${canonicalPath}`,
+    }),
+  ];
+
   return (
     <div className="min-h-screen">
+      <Seo
+        title={service.service_name}
+        description={service.description}
+        canonicalPath={canonicalPath}
+        jsonLd={jsonLd}
+      />
       {/* Desktop sidebar */}
       <Sidebar currentCategory={categorySlug} currentService={serviceSlug} />
 
