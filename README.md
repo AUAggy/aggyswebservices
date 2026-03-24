@@ -59,11 +59,11 @@ Open `http://localhost:8080` (configured in `vite.config.ts`).
 
 ## Service Categories (Validated Against `src/data/aws-services.json`)
 
-1. Compute (7)
+1. Compute (6)
 2. Storage (5)
 3. Database (8)
 4. Networking & Content Delivery (6)
-5. Security, Identity & Compliance (9)
+5. Security, Identity & Compliance (10)
 6. Management & Governance (7)
 7. Application Integration (5)
 8. Analytics & Business Intelligence (5)
