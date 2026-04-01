@@ -115,7 +115,8 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
 
   const renderContent = (section: typeof sections[0]) => {
     if (section.key === "technical") {
-      const { mainContent, keyFeatures, gotchas } = parseTechnicalContent(section.content);
+      const { mainContent, gotchas } = parseTechnicalContent(section.content);
+      const capabilities = service.key_capabilities;
 
       // Format gotchas to ensure they start on new lines
       const formattedGotchas = gotchas
@@ -126,13 +127,20 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
         <div className="space-y-6 animate-in fade-in duration-300">
           <FormattedText text={mainContent} className="text-lg" />
 
-          {keyFeatures && (
+          {capabilities && capabilities.length > 0 && (
             <div className="bg-secondary/30 rounded-lg p-5 border border-border/50">
               <h4 className="flex items-center gap-2 font-semibold text-foreground mb-3">
                 <Zap className="w-4 h-4 text-amber-500 fill-amber-500/20" />
                 Key Capabilities
               </h4>
-              <FormattedText text={keyFeatures} className="text-sm border-l-2 border-primary/20 pl-4 py-1" />
+              <ul className="space-y-2">
+                {capabilities.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-foreground/90">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 
