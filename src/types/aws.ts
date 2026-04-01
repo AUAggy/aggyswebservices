@@ -3,6 +3,7 @@ export interface AWSService {
   category: string;
   description: string;
   feynman_definition: string;
+  key_capabilities?: string[];
   architectural_deep_dive: string;
   scenario_example: string;
   aws_user_guide_documentation: string;
