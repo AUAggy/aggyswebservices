@@ -49,9 +49,9 @@ const categoryMeta: Record<string, { icon: string; description: string }> = {
     icon: "🐳",
     description: "Run and manage containerized apps"
   },
-  "IoT": {
-    icon: "📡",
-    description: "Connect devices to the cloud"
+  "Migration & Transfer": {
+    icon: "🚛",
+    description: "Move data and workloads into AWS at any scale"
   },
 };
 
