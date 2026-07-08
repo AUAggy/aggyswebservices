@@ -5,10 +5,19 @@ const rootDir = process.cwd();
 const publicDir = path.join(rootDir, "public");
 const dataPath = path.join(rootDir, "src", "data", "aws-services.json");
 const siteUrl = "https://aggyswebservices.com";
-const buildDate = new Date().toISOString();
 
 const raw = fs.readFileSync(dataPath, "utf-8");
 const data = JSON.parse(raw);
+
+// Deterministic build date: derive from the dataset's own last_updated so the
+// generated meta files only change when the content does (no per-build timestamp
+// churn). Falls back to the current time only if last_updated is missing/invalid.
+const parsedLastUpdated = data.metadata?.last_updated
+  ? new Date(data.metadata.last_updated)
+  : null;
+const buildDate = parsedLastUpdated && !Number.isNaN(parsedLastUpdated.getTime())
+  ? parsedLastUpdated.toISOString()
+  : new Date().toISOString();
 
 const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+$/, "");
 
