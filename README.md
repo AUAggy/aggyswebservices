@@ -12,11 +12,16 @@ This project makes AWS services easier to understand through:
 - Scenario-based examples
 - Links to official AWS documentation
 
+> Note: the company names, dollar figures, and metrics in the scenario examples are
+> illustrative, not current AWS pricing or real customer data. They exist to make the
+> examples concrete. Treat the deep-dive facts (service names, limits, availability) as
+> the parts kept current; the scenario numbers are not maintained to the dollar.
+
 ## Features
 
 - 69 AWS services across 12 categories
 - Category pages and service detail pages
-- Keyword search across service name, description, and category
+- Keyword search across service name, description, category, and curated search keywords
 - Responsive UI for desktop and mobile
 - Static deployment ready for S3 + CloudFront
 
@@ -66,8 +71,8 @@ Open `http://localhost:8080` (configured in `vite.config.ts`).
 5. Security, Identity & Compliance (9)
 6. Management & Governance (7)
 7. Application Integration (6)
-8. Analytics & Business Intelligence (5)
-9. AI & Machine Learning (8)
+8. Analytics & Business Intelligence (6)
+9. AI & Machine Learning (7)
 10. Developer Tools (4)
 11. Containers & Orchestration (3)
 12. Migration & Transfer (2)
