@@ -992,20 +992,29 @@
       ]
     },
     {
-      "service_name": "Amazon Comprehend",
-      "category": "AI & Machine Learning",
-      "description": "Natural language processing service for text analysis and insights",
-      "feynman_definition": "Comprehend is like having a linguist who can read and understand text at scale. You give it documents (customer reviews, support tickets, social media posts) and it extracts insights: sentiment (positive/negative), entities (people, places, organizations), key phrases, language, and topics. It's pre-trained on massive text datasets, so you don't need NLP expertise. Perfect for analyzing customer feedback, categorizing documents, or extracting information from unstructured text. Think of it as giving your application the ability to read and understand human language.",
-      "architectural_deep_dive": "Comprehend provides APIs for text analysis: detect sentiment (positive, negative, neutral, mixed), extract entities (person, location, organization, date, etc.), detect key phrases, identify language, and analyze syntax (parts of speech). Comprehend also supports custom entity recognition, letting you train models to detect your specific entities (product names, internal codes). Key features: topic modeling (discover topics in document collections), events detection (identify real-world events), and PII detection (find personally identifiable information). Gotcha #1: Comprehend charges per unit (100 characters), and costs can add up for large text volumes. Gotcha #2: Accuracy varies by language; English has highest accuracy, other languages may be lower. Constraints: Maximum 5,000 bytes per document (synchronous), maximum 100MB per document (asynchronous), and custom models require minimum 1,000 training documents.",
-      "scenario_example": "An e-commerce company receives 100,000 customer reviews monthly. Manually reading them is impossible, but they need to understand customer sentiment and identify issues. They use Comprehend: for each review, they call detect sentiment API to classify as positive, negative, or neutral. They aggregate sentiment by product and identify products with declining sentiment. They use extract entities to identify mentioned features ('battery life', 'screen quality', 'customer service'). They use detect key phrases to find common complaints ('shipping delay', 'defective product'). For support tickets, they use custom entity recognition to extract order numbers, product SKUs, and issue types, automatically routing tickets to the right team. They process all reviews in real-time, creating dashboards showing sentiment trends and top issues. Result: proactive issue identification, data-driven product improvements, and 80% faster issue resolution.",
-      "aws_user_guide_documentation": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html",
+      "service_name": "Amazon OpenSearch Service",
+      "category": "Analytics & Business Intelligence",
+      "description": "Managed search, log analytics, and observability at scale (OpenSearch and Elasticsearch)",
+      "feynman_definition": "Amazon OpenSearch Service is often pictured as just the search box on a website, but most teams actually reach for it to make sense of mountains of logs. Imagine every server, application, and device you run is constantly scribbling notes about what it is doing, millions of lines a day. OpenSearch swallows all of that, indexes it so you can find any needle in seconds, and gives you dashboards to watch trends and spot trouble in real time. It is the managed version of the open-source OpenSearch project, a fork of Elasticsearch, so AWS runs the cluster, handles upgrades, and keeps it available. You just ask a question like show me every error in the last hour and get an answer almost instantly.",
+      "architectural_deep_dive": "Amazon OpenSearch Service runs managed OpenSearch or legacy Elasticsearch clusters, called domains. Data lives in indices made of shards that are distributed across data nodes, while dedicated master nodes coordinate the cluster and hold no data. You size a domain by node type, node count, storage per node, and shard strategy, or you use OpenSearch Serverless, which removes node management and scales indexing and search capacity independently. Ingestion arrives through Amazon Data Firehose, OpenSearch Ingestion pipelines, Logstash, or direct API writes, and OpenSearch Dashboards handle visualization, alerting, and anomaly detection. Gotcha #1: shard sizing dominates performance. Thousands of tiny shards waste heap and slow queries, while oversized shards resist rebalancing, so aim for shards in the tens of gigabytes and avoid over-sharding small indices. Gotcha #2: a domain in a single Availability Zone has no redundancy, so production domains should use a Multi-AZ deployment with standby. Constraints: storage per node is bounded by instance type, cross-cluster replication needs explicit setup, and heavy indexing competes with search for the same compute.",
+      "scenario_example": "A logistics company runs 300 microservices that together emit 4TB of logs per day. During incidents, engineers previously grepped scattered log files and mean time to resolution averaged 45 minutes. They stream logs through Amazon Data Firehose into an Amazon OpenSearch Service domain with 12 data nodes across 3 Availability Zones, keeping 30 days hot and rolling older indices to S3. During an outage, an on-call engineer opens OpenSearch Dashboards, filters every 5xx error across all services in the last 10 minutes, and pinpoints a failing payment node in under 2 minutes. They add anomaly detection that alerts when error rates drift from the baseline, catching a memory leak before customers noticed. A saved dashboard tracks p99 latency per service for capacity planning. Result: mean time to resolution dropped from 45 minutes to 8 minutes, log search became self-service for every engineer, and proactive alerts headed off an estimated 6 incidents per quarter.",
+      "aws_user_guide_documentation": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html",
       "key_capabilities": [
-        "Pre-trained APIs cover sentiment detection, entity recognition (people, places, organizations, dates, quantities), key phrase extraction, language detection (102 languages), syntax analysis, and PII identification",
-        "Comprehend Medical is a separate variant trained on clinical text for extracting medical conditions, medications, dosages, and procedures from unstructured health records",
-        "Custom Classification trains a document classifier on your own labeled categories for domain-specific routing or tagging tasks",
-        "Custom Entity Recognition trains a named entity recognition (NER) model on domain-specific entity types not covered by the pre-trained general models",
-        "Async batch processing submits large document sets stored in S3 as a single job, returning results to S3 without managing individual API calls per document",
-        "Flywheel automates continuous model retraining as new labeled data arrives, keeping custom models up to date without manual retraining pipelines"
+        "Full-text and vector search across large document sets with millisecond query latency",
+        "Log, metric, and trace analytics that ingest high-volume application, infrastructure, and security data",
+        "OpenSearch Dashboards deliver visualizations, alerting, and built-in anomaly detection without extra tooling",
+        "Managed cluster operations: provisioning, patching, node replacement, and version upgrades handled by AWS",
+        "OpenSearch Serverless auto-scales search and indexing capacity without provisioning or managing nodes",
+        "Ingestion integrations with Amazon Data Firehose, OpenSearch Ingestion, CloudWatch Logs, and S3"
+      ],
+      "search_keywords": [
+        "Elasticsearch",
+        "OpenSearch",
+        "log analytics",
+        "observability",
+        "Kibana",
+        "vector search",
+        "full-text search"
       ]
     },
     {
