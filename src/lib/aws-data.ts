@@ -104,7 +104,8 @@ export function searchServices(query: string): AWSService[] {
   return data.services.filter((s) =>
     s.service_name.toLowerCase().includes(q) ||
     s.description.toLowerCase().includes(q) ||
-    s.category.toLowerCase().includes(q)
+    s.category.toLowerCase().includes(q) ||
+    (s.search_keywords ?? []).some((k) => k.toLowerCase().includes(q))
   );
 }
 
