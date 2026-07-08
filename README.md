@@ -86,16 +86,6 @@ Total: 69 services.
 - Certification learners
 - Anyone seeking practical AWS understanding, including Sales teams
 
-## Performance
-
-Latest local production build (February 23, 2026):
-- JS bundle: `dist/assets/index-oJLvMowL.js` -> 529.21 kB minified / 167.50 kB gzip
-- CSS bundle: `dist/assets/index-6TL91Sv-.css` -> 68.21 kB minified / 11.94 kB gzip
-
-Notes:
-- These values come from `npm run build` output in this repository.
-- Lighthouse and runtime metrics can vary by device/network and are not hardcoded here.
-
 ## Deployment
 
 `deploy.sh` deploys to AWS:
