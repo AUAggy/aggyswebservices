@@ -7,6 +7,7 @@ export interface AWSService {
   architectural_deep_dive: string;
   scenario_example: string;
   aws_user_guide_documentation: string;
+  search_keywords?: string[];
 }
 
 export interface AWSData {
@@ -17,6 +18,7 @@ export interface AWSData {
     total_services: number;
     author: string;
     last_updated: string;
+    review_due?: string;
     categories: string[];
   };
   services: AWSService[];
