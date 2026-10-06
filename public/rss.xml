@@ -230,11 +230,11 @@
     <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-shield/</guid>
   </item>
   <item>
-    <title>AWS Security Hub</title>
-    <link>https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub/</link>
-    <description>Centralized security and compliance monitoring across AWS accounts</description>
+    <title>AWS Security Hub CSPM</title>
+    <link>https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub-cspm/</link>
+    <description>Cloud security posture management: aggregated security findings and compliance checks across AWS accounts</description>
     <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
-    <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub/</guid>
+    <guid isPermaLink="true">https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub-cspm/</guid>
   </item>
   <item>
     <title>Amazon GuardDuty</title>
@@ -363,11 +363,11 @@
     <guid isPermaLink="true">https://aggyswebservices.com/category/analytics-business-intelligence/amazon-athena/</guid>
   </item>
   <item>
-    <title>Amazon QuickSight</title>
-    <link>https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quicksight/</link>
-    <description>AI-powered business intelligence and data visualization service</description>
+    <title>Amazon Quick</title>
+    <link>https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quick/</link>
+    <description>AI-powered workspace for data analysis, dashboards, automation, and research, evolved from Amazon QuickSight</description>
     <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
-    <guid isPermaLink="true">https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quicksight/</guid>
+    <guid isPermaLink="true">https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quick/</guid>
   </item>
   <item>
     <title>Amazon Bedrock</title>
@@ -377,11 +377,11 @@
     <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-bedrock/</guid>
   </item>
   <item>
-    <title>Amazon SageMaker</title>
-    <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker/</link>
-    <description>Comprehensive platform to build, train, and deploy machine learning models</description>
+    <title>Amazon SageMaker AI</title>
+    <link>https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker-ai/</link>
+    <description>Complete machine learning platform to build, train, and deploy models, renamed from Amazon SageMaker in 2024</description>
     <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
-    <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker/</guid>
+    <guid isPermaLink="true">https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker-ai/</guid>
   </item>
   <item>
     <title>Amazon Rekognition</title>
@@ -482,11 +482,11 @@
     <guid isPermaLink="true">https://aggyswebservices.com/category/storage/aws-transfer-family/</guid>
   </item>
   <item>
-    <title>Amazon Connect</title>
-    <link>https://aggyswebservices.com/category/application-integration/amazon-connect/</link>
-    <description>Cloud-based AI-powered contact center for voice, chat, and SMS at any scale</description>
+    <title>Amazon Connect Customer</title>
+    <link>https://aggyswebservices.com/category/application-integration/amazon-connect-customer/</link>
+    <description>Cloud contact center for voice, chat, and SMS, renamed from Amazon Connect, with AI agents that resolve routine contacts</description>
     <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
-    <guid isPermaLink="true">https://aggyswebservices.com/category/application-integration/amazon-connect/</guid>
+    <guid isPermaLink="true">https://aggyswebservices.com/category/application-integration/amazon-connect-customer/</guid>
   </item>
 </channel>
 </rss>

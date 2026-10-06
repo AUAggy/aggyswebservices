@@ -230,10 +230,10 @@
       "date_modified": "2026-09-25T00:00:00.000Z"
     },
     {
-      "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub/",
-      "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub/",
-      "title": "AWS Security Hub",
-      "summary": "Centralized security and compliance monitoring across AWS accounts",
+      "id": "https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub-cspm/",
+      "url": "https://aggyswebservices.com/category/security-identity-compliance/aws-security-hub-cspm/",
+      "title": "AWS Security Hub CSPM",
+      "summary": "Cloud security posture management: aggregated security findings and compliance checks across AWS accounts",
       "date_modified": "2026-09-25T00:00:00.000Z"
     },
     {
@@ -363,10 +363,10 @@
       "date_modified": "2026-09-25T00:00:00.000Z"
     },
     {
-      "id": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quicksight/",
-      "url": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quicksight/",
-      "title": "Amazon QuickSight",
-      "summary": "AI-powered business intelligence and data visualization service",
+      "id": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quick/",
+      "url": "https://aggyswebservices.com/category/analytics-business-intelligence/amazon-quick/",
+      "title": "Amazon Quick",
+      "summary": "AI-powered workspace for data analysis, dashboards, automation, and research, evolved from Amazon QuickSight",
       "date_modified": "2026-09-25T00:00:00.000Z"
     },
     {
@@ -377,10 +377,10 @@
       "date_modified": "2026-09-25T00:00:00.000Z"
     },
     {
-      "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker/",
-      "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker/",
-      "title": "Amazon SageMaker",
-      "summary": "Comprehensive platform to build, train, and deploy machine learning models",
+      "id": "https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker-ai/",
+      "url": "https://aggyswebservices.com/category/ai-machine-learning/amazon-sagemaker-ai/",
+      "title": "Amazon SageMaker AI",
+      "summary": "Complete machine learning platform to build, train, and deploy models, renamed from Amazon SageMaker in 2024",
       "date_modified": "2026-09-25T00:00:00.000Z"
     },
     {
@@ -482,10 +482,10 @@
       "date_modified": "2026-09-25T00:00:00.000Z"
     },
     {
-      "id": "https://aggyswebservices.com/category/application-integration/amazon-connect/",
-      "url": "https://aggyswebservices.com/category/application-integration/amazon-connect/",
-      "title": "Amazon Connect",
-      "summary": "Cloud-based AI-powered contact center for voice, chat, and SMS at any scale",
+      "id": "https://aggyswebservices.com/category/application-integration/amazon-connect-customer/",
+      "url": "https://aggyswebservices.com/category/application-integration/amazon-connect-customer/",
+      "title": "Amazon Connect Customer",
+      "summary": "Cloud contact center for voice, chat, and SMS, renamed from Amazon Connect, with AI agents that resolve routine contacts",
       "date_modified": "2026-09-25T00:00:00.000Z"
     }
   ]
