@@ -1265,7 +1265,7 @@
       "service_name": "Amazon Connect Customer",
       "category": "Application Integration",
       "description": "Cloud contact center for voice, chat, and SMS, renamed from Amazon Connect, with AI agents that resolve routine contacts",
-      "feynman_definition": "A call center used to mean a room full of phones and a rack of hardware you bought, housed, and repaired. Connect Customer is that call center as a cloud service. You log into a browser, claim a phone number, and draw your call menu as a flowchart (press 1 for billing, press 2 for support). Agents wear headsets and sign in from anywhere. You pay for what you use instead of buying agent seats, so adding 50 people for a busy month needs no purchase order. The newest part is who answers first: an AI agent picks up, works out why the caller rang, and often finishes the job outright, speaking more than 50 languages. When it cannot, it hands the human agent the call, the transcript, and its notes. The flowchart still runs the show; the AI works inside it.",
+      "feynman_definition": "A call center used to mean a room full of phones and a rack of hardware you bought, housed, and repaired. Connect Customer is that call center as a cloud service. You log into a browser, claim a phone number, and draw your call menu as a flowchart (press 1 for billing, press 2 for support). Agents wear headsets and sign in from anywhere. You pay for what you use instead of buying agent seats, so adding 50 people for a busy month needs no purchase order. The newest part is who answers first: an AI agent picks up, works out why the caller rang, and often finishes the job outright, speaking more than 50 languages. When it cannot, it hands the human agent the call, the transcript, and its notes. The flowchart still runs the show; the AI works inside it. You build that AI conversation on a visual canvas called the Agentic CX designer, the same draw-it-out way you built the call menu.",
       "key_capabilities": [
         "Omnichannel contacts: voice, chat, email, SMS, and tasks land in one agent workspace with queues and routing profiles",
         "Contact flows: visual editor for IVR menus and routing, with Lambda lookups for live customer data; reusable flow modules now work in every flow type, even nested inside other modules",
@@ -1279,7 +1279,9 @@
       "aws_user_guide_documentation": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
       "search_keywords": [
         "call center",
-        "IVR"
+        "IVR",
+        "Agentic CX designer",
+        "ACXD"
       ]
     }
   ]
