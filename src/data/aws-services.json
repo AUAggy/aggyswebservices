@@ -5,7 +5,7 @@
     "version": "1.2",
     "total_services": 69,
     "author": "Richard Feynman AI",
-    "last_updated": "2026-09-25",
+    "last_updated": "2026-10-14",
     "categories": [
       "Compute",
       "Storage",
@@ -493,7 +493,7 @@
       "category": "Security, Identity & Compliance",
       "description": "Managed service for creating and controlling encryption keys",
       "feynman_definition": "KMS is like a high-security vault for encryption keys. Imagine you have a diary with a lock, and you need to keep the key safe. You could hide it under your mattress (risky), or you could put it in a bank vault where it's protected by guards, cameras, and alarms. KMS is that vault for your encryption keys. When you encrypt data (EBS volumes, S3 objects, RDS databases), KMS stores and manages the keys. You never see the actual key; you just tell KMS 'encrypt this' or 'decrypt that,' and KMS does it securely. KMS integrates with most AWS services, making encryption easy and automatic.",
-      "architectural_deep_dive": "KMS manages customer master keys (CMKs, now called KMS keys) used to encrypt data. KMS keys never leave KMS; all encryption/decryption happens within KMS's FIPS 140-2 validated hardware security modules (HSMs). You can use AWS-managed keys (free, automatic rotation), customer-managed keys (you control rotation, policies), or import your own keys. KMS supports envelope encryption: data is encrypted with a data key, and the data key is encrypted with a KMS key. Key features: automatic key rotation (annual), key policies (control who can use keys), grants (temporary permissions), and CloudTrail logging (audit all key usage). Gotcha #1: KMS has request rate limits (5,500-30,000 requests/second depending on region); high-volume encryption can hit limits. Use data key caching or request limit increases. Gotcha #2: Deleting a KMS key is irreversible after the waiting period (7-30 days); all data encrypted with that key becomes unrecoverable. Constraints: KMS keys are regional (must replicate for multi-region), maximum 4KB data size for direct encryption (use envelope encryption for larger data), and cross-account access requires key policies and IAM policies.",
+      "architectural_deep_dive": "KMS manages customer master keys used to encrypt data. Operations on KMS keys run inside KMS's FIPS 140-3 Level 3 validated hardware security modules (HSMs); HSMs in China Regions are locally certified instead. Envelope encryption: applications encrypt data with data keys, and KMS protects the data keys. You can use AWS-managed keys (free, automatic rotation), customer-managed keys (you control rotation and policies), or import your own keys. Key features: automatic annual rotation (where supported), key policies, grants (temporary permissions), and CloudTrail logging of key usage. Standard KMS is the default; choose AWS CloudHSM for HSM interfaces like PKCS #11 or JCE, or required single-tenant hardware. Gotcha #1: KMS has request rate limits (5,500-30,000 requests/second depending on region); high-volume encryption can hit limits. Use data key caching or request limit increases. Gotcha #2: Deleting a KMS key is irreversible after the waiting period (7-30 days); all data encrypted with that key becomes unrecoverable. Constraints: KMS keys are regional (replicate for multi-region), direct encryption caps at 4KB (use envelope encryption), and cross-account access needs key and IAM policies.",
       "scenario_example": "A healthcare company must encrypt all patient data per HIPAA requirements. They use KMS to create customer-managed keys for different data types: one for EBS volumes, one for S3 buckets, one for RDS databases. When they create an RDS instance, they specify the KMS key; RDS automatically encrypts data at rest. For S3, they enable default encryption with KMS, so all objects are encrypted automatically on upload. They set key policies restricting key usage to specific IAM roles; only the application role can decrypt patient data, not developers. KMS logs all key usage to CloudTrail, so they can audit who decrypted what and when. For disaster recovery, they create multi-region keys that replicate to a secondary region. When they need to share encrypted data with a partner, they use KMS grants to give temporary decrypt permissions that expire after 24 hours. Result: comprehensive encryption, centralized key management, and full audit trail for compliance.",
       "aws_user_guide_documentation": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html",
       "key_capabilities": [
@@ -503,6 +503,30 @@
         "Grants allow temporary, scoped delegation of key use to other principals without modifying the key policy",
         "Multi-region keys replicate a key across AWS regions for globally consistent encryption and decryption",
         "Every KMS API call is logged in CloudTrail; envelope encryption (KMS generates a data key used locally) handles high-throughput workloads without hitting API quotas"
+      ]
+    },
+    {
+      "service_name": "AWS CloudHSM",
+      "category": "Security, Identity & Compliance",
+      "description": "Dedicated cryptographic hardware for existing HSM-based applications and single-tenant key protection",
+      "feynman_definition": "KMS already protects encryption keys in security hardware. CloudHSM is useful when your existing software needs a connection KMS does not provide, or your company requires hardware reserved for its own use.\n\nThink of a company's official stamp locked inside a stamping machine. Existing equipment feeds documents through a particular opening. Replacing it with a service that accepts requests another way means changing the equipment. CloudHSM gives compatible programs their expected connection to dedicated security devices.\n\nYou can create a secret key inside those devices and configure it so applications can use it without taking a copy. AWS maintains the hardware. You manage who can use the keys and how many devices you need. An application allowed to use a key can still misuse it, so protecting the application remains necessary. Choose KMS unless you need CloudHSM's particular connections or dedicated hardware.",
+      "key_capabilities": [
+        "Dedicated, single-tenant hsm2m.medium HSMs with FIPS 140-3 Level 3 validation in FIPS mode",
+        "Hardware-based encryption, digital signing, and message authentication using supported algorithms",
+        "Application integration through PKCS #11, Java JCE, and Windows CNG/KSP using supported client software",
+        "HSM users, key permissions, and non-extractable key settings managed separately from AWS resource administration",
+        "Persistent-key replication, client-side load balancing, and automatic encrypted cluster backups",
+        "KMS custom key stores for symmetric encryption keys backed by your cluster; asymmetric KMS keys and automatic key rotation are unsupported"
+      ],
+      "architectural_deep_dive": "CloudHSM provides dedicated, single-tenant hardware security modules (HSMs) in your VPC. Applications use Client SDK 5 through interfaces such as PKCS #11, Java JCE, or Windows KSP. These support existing HSM-based software, including Oracle database encryption and Windows certificate services. Standard KMS uses AWS APIs, so it cannot directly replace those integrations. Choose CloudHSM for interface compatibility or an explicit dedicated-hardware requirement.\n\nAWS maintains the hardware and creates encrypted backups. You manage HSM users, key permissions, client software, and capacity. Persistent keys replicate across HSMs; sensitive keys need non-extractable settings.\n\nGotcha #1: HSM credentials are separate from IAM. AWS cannot recover lost HSM credentials; keep two HSM admins.\n\nGotcha #2: Each HSM incurs hourly charges until deleted, even when idle. A compromised authorized application can still misuse a protected key.\n\nConstraints: Clusters are regional. Use multiple Availability Zones; AWS recommends three HSMs across different zones for newly generated key durability. Retry interrupted operations and check supported algorithms for your client interface and cluster mode.",
+      "scenario_example": "Illustrative scenario: an insurer moves two Oracle databases containing customer records from its data center to EC2. Its existing encryption setup uses PKCS #11 to access a master key held in an on-premises HSM. The migration must preserve that supported database integration.\n\nA regular KMS customer-managed key cannot directly replace the HSM because the database expects a PKCS #11 library, while KMS provides AWS API operations. The insurer chooses CloudHSM and configures Oracle to use AWS's PKCS #11 library. CloudHSM protects the master encryption key; Oracle continues encrypting the database files.\n\nThe team deploys three hsm2m.medium HSMs across three Availability Zones. It verifies the master-key transition and restores a test database backup before cutover. Separate HSM credentials control access to the keys. The team also tests cluster recovery and retries during HSM replacement.\n\nResult: the databases move to AWS while retaining their supported HSM-based key-management approach, with the added responsibility of operating the CloudHSM cluster.",
+      "aws_user_guide_documentation": "https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html",
+      "search_keywords": [
+        "hardware security module",
+        "PKCS #11",
+        "JCE",
+        "TDE",
+        "certificate authority"
       ]
     },
     {
@@ -901,23 +925,6 @@
         "Job bookmarks track which data has already been processed so incremental ETL runs only handle new data, avoiding reprocessing",
         "Glue DataBrew provides visual, no-code data profiling and transformation for analysts without Spark knowledge",
         "Dynamic frames extend Spark DataFrames with flexible schema handling for inconsistent or evolving source data structures"
-      ]
-    },
-    {
-      "service_name": "Amazon EMR",
-      "category": "Analytics & Business Intelligence",
-      "description": "Managed Hadoop framework for processing big data workloads",
-      "feynman_definition": "EMR is like renting a supercomputer cluster for big data processing. When you have petabytes of data to analyze, too much for a single server, you need distributed computing. EMR runs Hadoop, Spark, Presto, and other big data frameworks on clusters of EC2 instances. You submit a job (process this 10TB dataset), EMR spins up a cluster, processes the data in parallel across hundreds of nodes, and shuts down when done. It's like having a temporary army of workers who show up, complete the job, and leave; you only pay for the time they work.",
-      "architectural_deep_dive": "EMR creates clusters with master nodes (coordinate), core nodes (run tasks and store HDFS data), and task nodes (run tasks only). You choose instance types, cluster size, and applications (Hadoop, Spark, Hive, Presto, HBase). EMR supports transient clusters (terminate after job completes) and long-running clusters. Key features: EMR Notebooks (Jupyter for interactive analysis), EMR Serverless (no cluster management), and integration with S3 (use S3 instead of HDFS for storage). Gotcha #1: Core nodes store HDFS data; terminating them causes data loss. Use S3 for persistent storage. Gotcha #2: EMR charges EC2 instance costs plus EMR service fees; costs can be high for large clusters. Constraints: Maximum 2,000 instances per instance group (adjustable), cluster launch takes 5-10 minutes, and spot instances can be terminated (use task nodes for spot).",
-      "scenario_example": "A genomics research lab processes DNA sequencing data; each sample generates 100GB of raw data, and they process 1,000 samples/month (100TB total). Running this on a single server would take months. They use EMR with Spark: upload raw data to S3, launch a transient EMR cluster (100 r5.4xlarge instances), run Spark jobs to align sequences and identify variants, write results to S3, and terminate the cluster. Processing completes in 4 hours instead of 4 months. They use spot instances for task nodes (70% cost savings) and on-demand for core nodes (reliability). For interactive analysis, they use EMR Notebooks to query processed data with Spark SQL. When they need to reprocess data with updated algorithms, they launch a new cluster with the same configuration. Result: 100x faster processing, pay-per-use pricing, and scalable to any data volume.",
-      "aws_user_guide_documentation": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html",
-      "key_capabilities": [
-        "Provisions and manages clusters of EC2 instances running Apache Spark, Hadoop, Hive, Presto, HBase, Flink, and other big data frameworks",
-        "EMR Serverless removes cluster management entirely, auto-scaling compute for Spark and Hive jobs without provisioning or resizing instances",
-        "EMR on EKS runs Spark jobs on existing EKS clusters, sharing compute resources between big data workloads and containerized applications",
-        "Instance fleets mix On-Demand and Spot instances within a cluster for cost optimization; Spot is recommended for Task nodes only to avoid data loss on interruption",
-        "EMRFS enables S3 to be used as the primary storage layer in place of HDFS, so data persists after cluster termination",
-        "EMR Studio provides a Jupyter-based notebook environment for data scientists to develop and run jobs interactively against running or serverless clusters"
       ]
     },
     {
