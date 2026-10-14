@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
 import { searchServices, getServiceSlug, getCategoryBySlug } from "@/lib/aws-data";
+import { ServiceIcon } from "@/components/ServiceIcon";
 import type { AWSService } from "@/types/aws";
 
 interface SearchBarProps {
@@ -113,6 +114,7 @@ export function SearchBar({
                 ${index !== results.length - 1 ? "border-b border-border" : ""}
               `}
             >
+              <ServiceIcon icon={service.icon} className="h-5 w-5 mt-0.5" />
               <div className="flex-1 min-w-0">
                 <div className="font-medium text-foreground">
                   {service.service_name}
