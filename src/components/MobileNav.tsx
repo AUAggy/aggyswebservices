@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { getCategories, getServicesByCategory, getServiceSlug } from "@/lib/aws-data";
+import { ServiceIcon } from "@/components/ServiceIcon";
 
 interface MobileNavProps {
   currentCategory?: string;
@@ -85,14 +86,15 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
                           to={`/category/${category.slug}/${slug}`}
                           onClick={() => setIsOpen(false)}
                           className={`
-                            block py-2 text-sm transition-colors
+                            flex items-center gap-2 py-2 text-sm transition-colors
                             ${isServiceActive
                               ? "text-accent font-medium"
                               : "text-sidebar-foreground/70 hover:text-sidebar-foreground"
                             }
                           `}
                         >
-                          {service.service_name}
+                          <ServiceIcon icon={service.icon} className="h-5 w-5" />
+                          <span className="truncate">{service.service_name}</span>
                         </Link>
                       );
                     })}

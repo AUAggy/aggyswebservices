@@ -45,6 +45,15 @@ describe("AWS CloudHSM entry format", () => {
     );
   });
 
+  it("ships a bundled icon reference for every service", () => {
+    const slugify = (name: string) =>
+      name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+$/, "");
+    for (const service of getAllServices()) {
+      expect(service.icon).toBe(slugify(service.service_name));
+    }
+    expect(cloudhsm.icon).toBe("aws-cloudhsm");
+  });
+
   it("is findable through name and curated search terms", () => {
     for (const term of [
       "CloudHSM",

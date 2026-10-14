@@ -25,6 +25,7 @@
   "services": [
     {
       "service_name": "Amazon EC2",
+      "icon": "amazon-ec2",
       "category": "Compute",
       "description": "Virtual servers in the cloud with configurable compute capacity",
       "feynman_definition": "Imagine you need a computer to run your software, but you don't want to buy one, maintain it, or worry about it breaking. EC2 is like renting a computer by the hour from Amazon's massive warehouse of computers. You pick the size; maybe you need a tiny laptop's worth of power, or maybe you need a supercomputer. You turn it on, use it, and turn it off. You only pay for the hours you use it, just like renting a car. If your computer 'breaks' (which it won't, really), Amazon just gives you another one instantly. And if you suddenly need 100 computers instead of one, you get them in minutes, not months.",
@@ -42,6 +43,7 @@
     },
     {
       "service_name": "AWS Lambda",
+      "icon": "aws-lambda",
       "category": "Compute",
       "description": "Serverless compute service that runs code in response to events",
       "feynman_definition": "Imagine you need to hire someone to do a specific job, but you only want to pay them for the exact seconds they're working, not for coffee breaks, not for sitting idle. Lambda is like having an infinite pool of workers who appear instantly when there's work to do, complete the task in milliseconds or minutes, then vanish. You don't manage the workers, don't give them desks, don't worry about them getting sick. You just write down the instructions (your code), and whenever an event happens: a file uploaded, a button clicked, a timer going off, a worker appears, executes your instructions, and disappears. You pay only for the compute time consumed, measured in milliseconds. It's the ultimate 'pay for what you use' model.",
@@ -63,6 +65,7 @@
     },
     {
       "service_name": "AWS Elastic Beanstalk",
+      "icon": "aws-elastic-beanstalk",
       "category": "Compute",
       "description": "Managed platform for deploying and scaling web applications",
       "feynman_definition": "Think of Elastic Beanstalk as a smart assistant who handles all the boring infrastructure work so you can focus on writing code. You give it your application code (Java, Python, Node.js, whatever), and it figures out everything else, such as spinning up servers, configuring load balancers, setting up auto-scaling, monitoring health. It's like having a DevOps team in a box. You still own and control everything underneath, but Beanstalk automates the tedious setup. If you want to tweak something, you can dive in and adjust it. But if you just want to deploy your app and get back to coding, Beanstalk handles it all.",
@@ -80,6 +83,7 @@
     },
     {
       "service_name": "AWS Fargate",
+      "icon": "aws-fargate",
       "category": "Compute",
       "description": "Serverless compute engine for containers",
       "feynman_definition": "Imagine you have a shipping container full of your application, and you need someone to run it. Normally, you'd rent a truck (EC2 instance), load the container on it, and drive it yourself. Fargate is like calling a delivery service where you hand them the container, tell them how much CPU and memory it needs, and they handle everything else. You don't manage trucks, don't worry about maintenance, don't even see the trucks. You just pay for the time your container is running. It's serverless containers: all the benefits of containerization without managing the underlying servers.",
@@ -100,6 +104,7 @@
     },
     {
       "service_name": "Amazon Lightsail",
+      "icon": "amazon-lightsail",
       "category": "Compute",
       "description": "Easy-to-use virtual private servers with simplified management",
       "feynman_definition": "Lightsail is like AWS for beginners; it's a simplified version of EC2 with training wheels. Instead of choosing from 400 instance types and configuring VPCs, security groups, and load balancers, you pick a bundle (small, medium, large) and click launch. It's perfect for simple websites, blogs, or small apps where you don't need the full power and complexity of AWS. Think of it as the difference between a smartphone and a flip phone: the smartphone (EC2) can do everything, but the flip phone (Lightsail) is simpler and gets the job done for basic needs.",
@@ -117,6 +122,7 @@
     },
     {
       "service_name": "AWS Transform MGN",
+      "icon": "aws-transform-mgn",
       "category": "Migration & Transfer",
       "description": "Automated lift-and-shift migration service for moving applications to AWS",
       "feynman_definition": "Moving your applications from on-premises servers to AWS is like moving houses; you could pack everything yourself, rent a truck, and hope nothing breaks, or you could hire professional movers. AWS Transform MGN is the professional moving service for servers. You install a small agent on your source servers, and MGN continuously replicates them to AWS in the background. When you're ready to migrate, you click a button, and MGN launches identical copies in AWS with minimal downtime. It's like having a perfect clone of your server ready to go, so you can test it, tweak it, and switch over when you're confident.",
@@ -134,6 +140,7 @@
     },
     {
       "service_name": "Amazon S3",
+      "icon": "amazon-s3",
       "category": "Storage",
       "description": "Scalable object storage for any type of data with high durability",
       "feynman_definition": "Think of S3 as an infinitely large filing cabinet where you can store anything: photos, videos, documents, backups, entire databases. This filing cabinet never gets full, never catches fire, and makes 11 copies of everything you put in it, spreading them across multiple buildings. You don't organize files in folders exactly; you throw them in 'buckets' and give each file a unique name (a key). Want to find your file? Just ask for it by name. It's like having a librarian with perfect memory who never sleeps. And unlike a real filing cabinet, you can give specific people keys to specific drawers, or even make some files public so anyone on the internet can grab them.",
@@ -151,6 +158,7 @@
     },
     {
       "service_name": "Amazon EBS",
+      "icon": "amazon-ebs",
       "category": "Storage",
       "description": "Block-level storage volumes for use with EC2 instances",
       "feynman_definition": "EBS is like a hard drive for your EC2 instances, except it's not physically attached; it's connected over a super-fast network. When you launch an EC2 instance, you need somewhere to store the operating system and your data. That's EBS. It acts just like a regular hard drive: you can format it, partition it, install software on it. The cool part? You can detach it from one instance and attach it to another, like unplugging a USB drive and plugging it into a different computer. And you can take snapshots (backups) anytime, storing them in S3 for disaster recovery.",
@@ -168,6 +176,7 @@
     },
     {
       "service_name": "Amazon EFS",
+      "icon": "amazon-efs",
       "category": "Storage",
       "description": "Scalable, elastic file storage for Linux-based workloads",
       "feynman_definition": "EFS is like a shared network drive that multiple computers can access simultaneously. Unlike EBS (which is like a hard drive for one computer), EFS lets hundreds or thousands of EC2 instances read and write to the same files at the same time. It's perfect for situations where you need shared storage, like a team of servers all processing files from the same directory, or a content management system where multiple web servers need access to the same uploaded images. EFS automatically grows and shrinks as you add or remove files, so you never run out of space or pay for unused capacity.",
@@ -185,6 +194,7 @@
     },
     {
       "service_name": "Amazon S3 Glacier",
+      "icon": "amazon-s3-glacier",
       "category": "Storage",
       "description": "Low-cost archival storage for long-term data retention",
       "feynman_definition": "Glacier is like a deep freeze for your data; it's incredibly cheap storage for stuff you rarely need but must keep for years (think legal documents, old backups, compliance records). The trade-off? Retrieving data takes time, anywhere from minutes to hours, depending on how much you're willing to pay. It's like storing boxes in a warehouse basement: super cheap rent, but when you need something, it takes a while to dig it out. Perfect for 'write once, read never (or almost never)' scenarios. You're trading access speed for massive cost savings of up to 95% cheaper than regular S3 storage.",
@@ -202,6 +212,7 @@
     },
     {
       "service_name": "AWS Backup",
+      "icon": "aws-backup",
       "category": "Storage",
       "description": "Centralized backup service across AWS services",
       "feynman_definition": "AWS Backup is like having a personal assistant who remembers to back up everything important on a schedule you set. Instead of manually creating snapshots for EC2, backups for RDS, and copies of S3 data, you define backup policies once, and AWS Backup handles everything automatically. It works across multiple AWS services (EC2, EBS, RDS, DynamoDB, EFS, S3) and even across multiple AWS accounts. You set rules like 'back up my production databases daily and keep them for 30 days,' and AWS Backup does it all, tracks everything in one place, and makes restores simple.",
@@ -219,6 +230,7 @@
     },
     {
       "service_name": "Amazon RDS",
+      "icon": "amazon-rds",
       "category": "Database",
       "description": "Managed relational database service supporting MySQL, PostgreSQL, Oracle, SQL Server",
       "feynman_definition": "RDS is like hiring a database administrator who never sleeps, never takes vacation, and handles all the boring maintenance tasks. You want a MySQL or PostgreSQL database? RDS sets it up in minutes, handles backups automatically, applies security patches, and can even create read replicas for you. It's the difference between buying a car and maintaining it yourself versus leasing a car where the dealer handles all maintenance. You still control your data and queries, but AWS handles the infrastructure: server provisioning, OS patching, backup management, and high availability setup.",
@@ -236,6 +248,7 @@
     },
     {
       "service_name": "Amazon DynamoDB",
+      "icon": "amazon-dynamodb",
       "category": "Database",
       "description": "Fast, flexible NoSQL database with single-digit millisecond latency",
       "feynman_definition": "Imagine a massive spreadsheet that can handle millions of rows and thousands of people reading and writing to it simultaneously, and every lookup takes less than 10 milliseconds, faster than you can blink. That's DynamoDB. Unlike traditional databases where you design tables with rigid columns, DynamoDB is flexible; each row (item) can have different attributes. You organize data by a partition key (like a filing cabinet drawer) and optionally a sort key (like tabs within that drawer). Need to find something? Give DynamoDB the key, and it retrieves it in milliseconds, no matter if you have 10 rows or 10 billion. It's like having a librarian who's memorized the location of every book and can fetch any one in the blink of an eye, even if the library is the size of a city.",
@@ -253,6 +266,7 @@
     },
     {
       "service_name": "Amazon Aurora",
+      "icon": "amazon-aurora",
       "category": "Database",
       "description": "High-performance MySQL and PostgreSQL-compatible relational database",
       "feynman_definition": "Aurora is a relational database that's MySQL and PostgreSQL compatible, but re-engineered by AWS to be faster, more durable, and more scalable. It replicates your data across 6 copies in 3 Availability Zones automatically, can handle 5x more throughput than standard MySQL, and can scale read capacity by adding up to 15 read replicas. It's like having a race car that looks and drives like your familiar sedan but goes three times faster and never breaks down. You use the same SQL queries and tools you're used to, but Aurora handles the heavy lifting of replication, failover, and scaling.",
@@ -273,6 +287,7 @@
     },
     {
       "service_name": "Amazon ElastiCache",
+      "icon": "amazon-elasticache",
       "category": "Database",
       "description": "In-memory caching service with Valkey, Redis OSS, and Memcached engines",
       "feynman_definition": "ElastiCache is like having a super-fast memory assistant who remembers things you've looked up recently so you don't have to go back to the slow filing cabinet (database) every time. When your application needs data, it checks ElastiCache first; if it's there (a cache hit), you get it in microseconds. If not (a cache miss), you fetch it from the database and store a copy in ElastiCache for next time. It's perfect for things like session data, frequently accessed database queries, or API responses. Think of it as short-term memory that's lightning fast but doesn't store everything forever, just the hot data you need right now.",
@@ -295,6 +310,7 @@
     },
     {
       "service_name": "Amazon Redshift",
+      "icon": "amazon-redshift",
       "category": "Database",
       "description": "Fully managed petabyte-scale data warehouse service",
       "feynman_definition": "Redshift is like a massive warehouse optimized for analyzing huge amounts of data. While regular databases (like RDS) are great for transactional workloads (insert this order, update that user), Redshift is built for analytical queries, such as 'show me total sales by region for the last 5 years' or 'which products are most popular among customers aged 25-35?' It stores data in columns instead of rows, which makes aggregations blazingly fast. Think of it as the difference between a retail store (RDS) where you handle individual transactions, and a data analysis center (Redshift) where you crunch numbers on millions of records at once.",
@@ -312,6 +328,7 @@
     },
     {
       "service_name": "Amazon Neptune",
+      "icon": "amazon-neptune",
       "category": "Database",
       "description": "Fully managed graph database for connected datasets",
       "feynman_definition": "Neptune is a database designed for relationships, not just storing data, but understanding how things connect. Imagine Facebook's friend network, or Amazon's product recommendations ('customers who bought X also bought Y'). Traditional databases struggle with these 'who knows who' or 'what's related to what' queries. Neptune is built for this; it stores data as a graph (nodes and edges), making relationship queries lightning fast. Instead of asking 'show me all friends of friends of friends' with complex SQL joins that take minutes, Neptune answers in milliseconds. It's like having a map of connections where you can instantly trace any path.",
@@ -334,6 +351,7 @@
     },
     {
       "service_name": "Amazon DocumentDB",
+      "icon": "amazon-documentdb",
       "category": "Database",
       "description": "MongoDB-compatible document database service",
       "feynman_definition": "DocumentDB is like a filing cabinet where each file (document) can have a completely different structure. Unlike traditional databases with rigid tables and columns, DocumentDB stores JSON documents, which are flexible, nested data structures. It's MongoDB-compatible, meaning if you're using MongoDB, you can switch to DocumentDB with minimal code changes. AWS handles all the infrastructure: replication, backups, scaling, patching, while you focus on your application. Think of it as managed MongoDB that's deeply integrated with AWS services, more reliable, and easier to scale.",
@@ -354,6 +372,7 @@
     },
     {
       "service_name": "AWS DMS (Database Migration Service)",
+      "icon": "aws-dms-database-migration-service",
       "category": "Database",
       "description": "Migrate databases to AWS with minimal downtime and continuous data replication",
       "feynman_definition": "DMS is like a moving company for databases; it helps you migrate data from one database to another with minimal downtime. You could be moving from Oracle on-premises to Aurora in AWS, or from MySQL to PostgreSQL, or even from a database to S3 for analytics. DMS handles the heavy lifting: it copies your existing data (full load), then continuously replicates ongoing changes (CDC - change data capture) so your source and target stay in sync. When you're ready to cut over, you switch your application to the new database with minimal downtime. It's like moving houses while still living in the old one; you gradually move stuff over, and when everything's ready, you make the final switch.",
@@ -371,6 +390,7 @@
     },
     {
       "service_name": "Amazon VPC",
+      "icon": "amazon-vpc",
       "category": "Networking & Content Delivery",
       "description": "Isolated virtual network environment to launch AWS resources",
       "feynman_definition": "Think of a VPC as your own private neighborhood inside AWS's massive city. In this neighborhood, you control everything: which houses (EC2 instances) go on which streets (subnets), who can enter through the gates (security groups), and whether your neighborhood connects to the outside world (Internet Gateway) or stays completely private. You can even build a private tunnel (VPN or Direct Connect) from your neighborhood back to your office. Just like a real neighborhood, you can have public streets where anyone can visit (public subnets) and private streets where only residents can go (private subnets). Your neighborhood is completely isolated from everyone else's; your neighbor can't peek into your windows unless you explicitly allow it.",
@@ -388,6 +408,7 @@
     },
     {
       "service_name": "Amazon Route 53",
+      "icon": "amazon-route-53",
       "category": "Networking & Content Delivery",
       "description": "Scalable DNS and domain name registration service",
       "feynman_definition": "Route 53 is like the phone book of the internet: when someone types your website name (like example.com), Route 53 translates it into the actual address (IP address) where your website lives. But it's smarter than a regular phone book. It can route people to the closest server (latency-based routing), send traffic to healthy servers only (health checks), or split traffic between multiple servers (weighted routing). It's called Route 53 because DNS uses port 53, and it's a nod to the famous U.S. Route 66, a highway that gets you where you need to go. Route 53 ensures your users always reach your application, even if some servers fail.",
@@ -405,6 +426,7 @@
     },
     {
       "service_name": "Amazon CloudFront",
+      "icon": "amazon-cloudfront",
       "category": "Networking & Content Delivery",
       "description": "Global content delivery network (CDN) for fast content distribution",
       "feynman_definition": "CloudFront is like having copies of your website stored in warehouses all over the world. When someone in Australia visits your site (hosted in Virginia), instead of fetching data from Virginia (slow), they get it from a nearby warehouse in Sydney (fast). CloudFront automatically caches your content at 600+ edge locations worldwide. The first person in Sydney might wait a bit while CloudFront fetches from Virginia, but everyone after that gets instant access from the Sydney cache. It's like how Netflix doesn't stream every movie from one location; they cache popular content closer to viewers. CloudFront makes your website faster globally without you managing servers in every country.",
@@ -422,6 +444,7 @@
     },
     {
       "service_name": "AWS Direct Connect",
+      "icon": "aws-direct-connect",
       "category": "Networking & Content Delivery",
       "description": "Dedicated network connection from on-premises to AWS",
       "feynman_definition": "Direct Connect is like building a private highway between your office and AWS, instead of using the public internet. Imagine you're shipping valuable cargo daily, you could use public roads (internet), but they're unpredictable, congested, and not very secure. Direct Connect gives you a dedicated lane that's faster, more reliable, and more secure. It's a physical fiber optic connection from your data center to AWS, bypassing the internet entirely. Perfect for workloads requiring consistent network performance, large data transfers, or strict security requirements. It's like having a private tunnel that only you use, guaranteeing speed and privacy.",
@@ -439,6 +462,7 @@
     },
     {
       "service_name": "Elastic Load Balancing (ALB/NLB)",
+      "icon": "elastic-load-balancing-alb-nlb",
       "category": "Networking & Content Delivery",
       "description": "Automatically distributes incoming traffic across multiple targets",
       "feynman_definition": "A load balancer is like a traffic cop at a busy intersection, directing cars (requests) to different lanes (servers) to prevent any one lane from getting overwhelmed. Imagine a restaurant with 5 waiters; if all customers went to one waiter, they'd be swamped while others stand idle. A load balancer distributes customers evenly across all waiters. AWS offers three types: Application Load Balancer (ALB) for HTTP/HTTPS traffic with smart routing, Network Load Balancer (NLB) for ultra-high performance TCP/UDP traffic, and Classic Load Balancer (legacy). Load balancers also do health checks; if a server fails, they stop sending traffic to it automatically, ensuring users always reach healthy servers.",
@@ -456,6 +480,7 @@
     },
     {
       "service_name": "AWS Transit Gateway",
+      "icon": "aws-transit-gateway",
       "category": "Networking & Content Delivery",
       "description": "Cloud router connecting VPCs and on-premises networks through a central hub",
       "feynman_definition": "Imagine you live in a city with 50 neighborhoods, and each one has its own little road system. If you want to visit a friend across town, you could build a direct road from your neighborhood to theirs. But now think about it: if every neighborhood needs to connect to every other neighborhood, you'd need 50 × 49 ÷ 2 = 1,225 roads. That's unmanageable. So instead, the city builds one massive hub, a train station right in the center. Every neighborhood builds just one connection to that hub. Now, to get anywhere, you just go to the hub and transfer. You've gone from 1,225 connections to 50. That's Transit Gateway. In AWS, each VPC is like a neighborhood. Without Transit Gateway, you'd need VPC peering connections between every pair; a full mesh that gets unwieldy fast. Transit Gateway is your central hub that connects VPCs, on-premises networks via Direct Connect or VPN, and even other Transit Gateways in different regions.",
@@ -473,6 +498,7 @@
     },
     {
       "service_name": "AWS IAM",
+      "icon": "aws-iam",
       "category": "Security, Identity & Compliance",
       "description": "Manage user access and encryption keys securely",
       "feynman_definition": "IAM is like the security system for your AWS account; it controls who can do what. Think of it as a building with many rooms (AWS services). IAM lets you create badges (users) with specific permissions: some people can enter all rooms, others only specific ones, and some can only look but not touch. You can also create group badges (IAM groups) for teams, and temporary visitor passes (IAM roles) for applications. It's free, and it follows the principle of least privilege: give people only the permissions they absolutely need, nothing more. IAM is the foundation of AWS security.",
@@ -490,6 +516,7 @@
     },
     {
       "service_name": "AWS KMS",
+      "icon": "aws-kms",
       "category": "Security, Identity & Compliance",
       "description": "Managed service for creating and controlling encryption keys",
       "feynman_definition": "KMS is like a high-security vault for encryption keys. Imagine you have a diary with a lock, and you need to keep the key safe. You could hide it under your mattress (risky), or you could put it in a bank vault where it's protected by guards, cameras, and alarms. KMS is that vault for your encryption keys. When you encrypt data (EBS volumes, S3 objects, RDS databases), KMS stores and manages the keys. You never see the actual key; you just tell KMS 'encrypt this' or 'decrypt that,' and KMS does it securely. KMS integrates with most AWS services, making encryption easy and automatic.",
@@ -507,6 +534,7 @@
     },
     {
       "service_name": "AWS CloudHSM",
+      "icon": "aws-cloudhsm",
       "category": "Security, Identity & Compliance",
       "description": "Dedicated cryptographic hardware for existing HSM-based applications and single-tenant key protection",
       "feynman_definition": "CloudHSM is easy to mistake for a stronger version of KMS. KMS already protects your keys in tamper-resistant security hardware, and that is all most people need.\n\nThink of a bank. KMS is the vault service: staff use your keys only on your instruction. CloudHSM rents you a private vault room in the same bank. The steel is no stronger; the room, its rules, and the work of running it are yours.\n\nThe room is important for two reasons. Some existing software, like certain database and certificate-authority products, was built to talk to a dedicated key device; KMS doesn't speak that language and CloudHSM does, so the software keeps working. Others simply must have hardware reserved for them alone.\n\nKeys created inside can be set so applications use them without copying. Guard the application too: anything allowed to use a key can still abuse it. If neither reason is yours, stay with KMS.",
@@ -531,6 +559,7 @@
     },
     {
       "service_name": "AWS WAF",
+      "icon": "aws-waf",
       "category": "Security, Identity & Compliance",
       "description": "Web application firewall to protect against common web exploits",
       "feynman_definition": "WAF is like a bouncer at a nightclub who checks everyone at the door. Some people are on the VIP list (allowed), some are known troublemakers (blocked), and some need extra screening (rate limited). WAF protects your web applications from common attacks like SQL injection (hackers trying to mess with your database), cross-site scripting (XSS), and bots scraping your site. You define rules: block requests from certain countries, block requests with suspicious patterns, or rate-limit requests from a single IP. WAF sits in front of your application (CloudFront, ALB, API Gateway) and filters bad traffic before it reaches your servers.",
@@ -548,6 +577,7 @@
     },
     {
       "service_name": "AWS CloudTrail",
+      "icon": "aws-cloudtrail",
       "category": "Security, Identity & Compliance",
       "description": "Records AWS API calls for governance and compliance auditing",
       "feynman_definition": "CloudTrail is like a security camera system that records everything happening in your AWS account. Every action, such as launching an EC2 instance, deleting an S3 object, changing a security group, is recorded with who did it, when, and from where. It's your audit trail for compliance, security investigations, and troubleshooting. If someone accidentally deletes a database or a hacker gains access, CloudTrail shows exactly what happened. Think of it as a detailed logbook that answers 'who did what, when, and how' for every AWS action. It's essential for security, compliance, and operational troubleshooting.",
@@ -565,6 +595,7 @@
     },
     {
       "service_name": "AWS Secrets Manager",
+      "icon": "aws-secrets-manager",
       "category": "Security, Identity & Compliance",
       "description": "Centrally manage and rotate database credentials and API keys",
       "feynman_definition": "Secrets Manager is like a password manager for your applications. Instead of hardcoding database passwords or API keys in your code (terrible idea; anyone who sees the code sees the secrets), you store them in Secrets Manager. Your application asks Secrets Manager for the password at runtime, and Secrets Manager provides it securely. Secrets Manager can also automatically rotate passwords; change your database password every 30 days without you lifting a finger. It's like having a security guard who not only protects your keys but also changes the locks regularly to keep things secure.",
@@ -582,6 +613,7 @@
     },
     {
       "service_name": "Amazon Cognito",
+      "icon": "amazon-cognito",
       "category": "Security, Identity & Compliance",
       "description": "User authentication and access control for web and mobile apps",
       "feynman_definition": "Cognito is like a bouncer and membership system for your app. Instead of building your own user registration, login, and password reset system (complex and risky), Cognito handles it all. Users can sign up with email/password, or use social logins (Google, Facebook, Apple). Cognito manages user profiles, handles password resets, sends verification emails, and even supports multi-factor authentication. It's like having a complete identity management system in a box. For mobile apps, Cognito provides temporary AWS credentials so users can access resources (upload photos to S3) without embedding AWS keys in your app.",
@@ -599,6 +631,7 @@
     },
     {
       "service_name": "AWS Shield",
+      "icon": "aws-shield",
       "category": "Security, Identity & Compliance",
       "description": "Managed DDoS protection service for applications",
       "feynman_definition": "Shield is like having a security team that protects your website from DDoS attacks: when bad actors flood your site with fake traffic to take it down. Imagine a restaurant where someone sends 10,000 fake customers to overwhelm the staff so real customers can't get in. Shield detects and blocks this fake traffic automatically. AWS Shield Standard is free and protects against common attacks. Shield Advanced (paid) provides enhanced protection, 24/7 DDoS Response Team support, and cost protection (AWS credits if you scale up due to DDoS). It's like having bodyguards who not only protect you but also reimburse you if you had to hire extra security during an attack.",
@@ -616,6 +649,7 @@
     },
     {
       "service_name": "AWS Security Hub CSPM",
+      "icon": "aws-security-hub-cspm",
       "category": "Security, Identity & Compliance",
       "description": "Cloud security posture management: aggregated security findings and compliance checks across AWS accounts",
       "feynman_definition": "Security Hub CSPM is a security dashboard that shows everything wrong with your AWS setup in one place. Instead of checking GuardDuty for threats, Config for compliance, and IAM Access Analyzer for permissions separately, Security Hub CSPM collects findings from all of them, plus third-party tools like Palo Alto and Trend Micro. It is like a security manager who collects reports from every department and hands you one prioritized to-do list. It also runs its own continuous checks against standards such as CIS, PCI DSS, and the AWS Foundational Security Best Practices, grading each resource pass or fail so you know what to fix first. Every finding arrives in one common format, so your tools and scripts treat all alerts the same way. A newer companion product called Security Hub sits above it, correlating these signals into exposure findings; this entry covers the posture-management service underneath, the one most teams start with.",
@@ -637,6 +671,7 @@
     },
     {
       "service_name": "Amazon GuardDuty",
+      "icon": "amazon-guardduty",
       "category": "Security, Identity & Compliance",
       "description": "Intelligent threat detection service that continuously monitors your AWS environment for malicious activity",
       "feynman_definition": "GuardDuty is like a security guard who never sleeps and watches everything happening in your AWS account. Instead of you manually reviewing thousands of log entries every day looking for suspicious activity, GuardDuty does it automatically using machine learning and threat intelligence. It watches who's calling your AWS APIs (CloudTrail), what traffic is flowing in and out of your servers (VPC Flow Logs), and what DNS lookups your instances are making. If an EC2 instance suddenly starts mining cryptocurrency, an IAM user logs in from Russia at 3am, or someone is quietly copying data out of your S3 buckets, GuardDuty notices and alerts you. It doesn't block anything on its own; it's a detector, not a blocker. Think of it as a smoke alarm: it tells you there's a fire, but you still need to decide how to respond.",
@@ -655,6 +690,7 @@
     },
     {
       "service_name": "AWS CloudFormation",
+      "icon": "aws-cloudformation",
       "category": "Management & Governance",
       "description": "Infrastructure as code for provisioning AWS resources via templates",
       "feynman_definition": "CloudFormation is like having blueprints for building a house, except for cloud infrastructure. Instead of manually clicking through the AWS console to create servers, databases, and networks (tedious and error-prone), you write a template (YAML or JSON) describing what you want. CloudFormation reads the blueprint and builds everything automatically, in the right order, with the right dependencies. Need to build the same infrastructure in another region? Use the same template. Need to tear it all down? One click deletes everything. It's infrastructure as code: version controlled, repeatable, and automated.",
@@ -672,6 +708,7 @@
     },
     {
       "service_name": "Amazon CloudWatch",
+      "icon": "amazon-cloudwatch",
       "category": "Management & Governance",
       "description": "Monitoring and observability service for AWS resources and applications",
       "feynman_definition": "CloudWatch is like having a dashboard in your car that shows speed, fuel level, engine temperature, and alerts you when something's wrong. For AWS, CloudWatch collects metrics (CPU usage, disk I/O, network traffic) from all your resources and displays them in dashboards. It can alert you when things go wrong: 'CPU above 80% for 5 minutes' triggers an SNS notification. CloudWatch also collects logs from applications, Lambda functions, and AWS services, making it your central monitoring hub. Think of it as the eyes and ears of your AWS infrastructure, constantly watching and ready to alert you to problems.",
@@ -689,6 +726,7 @@
     },
     {
       "service_name": "AWS Organizations",
+      "icon": "aws-organizations",
       "category": "Management & Governance",
       "description": "Centrally manage and govern multiple AWS accounts",
       "feynman_definition": "Organizations is like a corporate structure for your AWS accounts. Instead of managing 50 separate AWS accounts independently (each with its own billing, security policies, and users), Organizations lets you group them into a hierarchy with a master account at the top. You can apply policies across all accounts: 'no one can launch instances outside us-east-1' or 'all S3 buckets must be encrypted.' You get consolidated billing (one bill for all accounts), volume discounts, and centralized governance. It's like having a parent company that sets rules for all subsidiaries while letting them operate independently within those guardrails.",
@@ -706,6 +744,7 @@
     },
     {
       "service_name": "AWS Auto Scaling",
+      "icon": "aws-auto-scaling",
       "category": "Management & Governance",
       "description": "Automatically adjust capacity to maintain performance at lowest cost",
       "feynman_definition": "Auto Scaling is like having a smart thermostat that adjusts heating and cooling based on the weather and your schedule. For AWS, it automatically adds or removes resources (EC2 instances, ECS tasks, DynamoDB capacity) based on demand. When traffic spikes, Auto Scaling launches more instances. When traffic drops, it terminates extras to save money. You define the rules: 'keep CPU around 50%' or 'scale based on request count', and Auto Scaling handles the rest. It's like having an operations team that never sleeps, constantly adjusting capacity to match demand while minimizing costs.",
@@ -723,6 +762,7 @@
     },
     {
       "service_name": "AWS Systems Manager",
+      "icon": "aws-systems-manager",
       "category": "Management & Governance",
       "description": "Unified interface for viewing operational data from AWS services",
       "feynman_definition": "Systems Manager is like a Swiss Army knife for managing your AWS infrastructure. It's a collection of tools for common operational tasks: run commands on multiple servers simultaneously (no SSH needed), patch servers automatically, store configuration parameters securely, create maintenance windows, and track inventory. Instead of logging into each server individually, you use Systems Manager to manage hundreds of servers from one interface. It's like having a remote control for your entire infrastructure; you can see what's running, make changes, and automate routine tasks without touching individual servers.",
@@ -740,6 +780,7 @@
     },
     {
       "service_name": "AWS Config",
+      "icon": "aws-config",
       "category": "Management & Governance",
       "description": "Track resources; Configurations and compliance over time",
       "feynman_definition": "Config is like a security camera system that records every change to your AWS resources. It tracks configuration history: 'who changed this security group and when?' or 'what did this S3 bucket's settings look like last month?' Config also evaluates resources against rules: 'are all EBS volumes encrypted?' or 'do all EC2 instances have approved AMIs?' It's like having a compliance auditor who continuously checks your infrastructure and alerts you when something violates your policies. Perfect for security, compliance, and troubleshooting, since you can see exactly what changed and when.",
@@ -757,6 +798,7 @@
     },
     {
       "service_name": "AWS IAM Identity Center",
+      "icon": "aws-iam-identity-center",
       "category": "Security, Identity & Compliance",
       "description": "Single sign-on and central workforce access management for AWS accounts and applications",
       "feynman_definition": "Think of how a hotel works. Guests don't get a key cut for every room in the building; they check in at the front desk and get one card that opens exactly the rooms they're allowed into, for exactly as long as they're staying. IAM Identity Center is the front desk for your AWS organization. Each person signs in once, and their card (a permission set) opens the accounts their job requires, with temporary credentials that expire. Connect it to your company's directory, like Okta or Microsoft Entra ID, and when someone leaves the company, HR disables one account and every door in AWS locks behind them. No more IAM users with long-lived passwords taped to monitors.",
@@ -781,6 +823,7 @@
     },
     {
       "service_name": "Amazon SQS",
+      "icon": "amazon-sqs",
       "category": "Application Integration",
       "description": "Fully managed message queuing service for decoupling applications",
       "feynman_definition": "SQS is like a post office mailbox for your applications. When one application needs to send work to another, instead of calling it directly (which fails if the receiver is busy or down), it drops a message in the SQS queue. The receiving application picks up messages when it's ready, processes them, and deletes them from the queue. It's perfect for decoupling systems: the sender doesn't wait for the receiver, and if the receiver crashes, messages stay safe in the queue. Think of it as a buffer between applications that smooths out traffic spikes and makes systems more resilient.",
@@ -798,6 +841,7 @@
     },
     {
       "service_name": "Amazon SNS",
+      "icon": "amazon-sns",
       "category": "Application Integration",
       "description": "Pub/sub messaging and mobile push notification service",
       "feynman_definition": "SNS is like a radio station that broadcasts messages to multiple listeners simultaneously. Instead of sending the same message to 10 different systems individually, you publish it once to an SNS topic, and all subscribers receive it automatically. Subscribers can be email addresses, phone numbers (SMS), Lambda functions, SQS queues, or HTTP endpoints. It's perfect for fan-out scenarios: one event triggers multiple actions. Think of it as a megaphone that announces news to everyone who's interested, whether they're listening via email, text, or application.",
@@ -815,6 +859,7 @@
     },
     {
       "service_name": "Amazon SES",
+      "icon": "amazon-ses",
       "category": "Application Integration",
       "description": "Managed email platform for sending and receiving email without running mail servers",
       "feynman_definition": "Every application on earth needs to send email: password resets, order confirmations, invoices, newsletters. The hard part is not sending; it's getting the message into the inbox instead of the spam folder. Mailbox providers judge senders by reputation, and a random server in your garage has none. SES is Amazon's mailroom. You hand it a message, it signs it with the cryptographic signatures (DKIM) that prove it really came from your domain, and it pushes it out through infrastructure that mailbox providers already trust. It also works in reverse: mail sent to your domain can land in S3, fire a Lambda function, or ping an SNS topic. And the price is almost embarrassing: about a dime per thousand messages.",
@@ -839,6 +884,7 @@
     },
     {
       "service_name": "AWS Step Functions",
+      "icon": "aws-step-functions",
       "category": "Application Integration",
       "description": "Orchestration service for coordinating distributed applications",
       "feynman_definition": "Step Functions is like a conductor for an orchestra; it coordinates multiple services to work together in a specific sequence. Imagine a workflow: upload file to S3, trigger Lambda to process it, store results in DynamoDB, send notification via SNS, and if anything fails, retry or send an error alert. Step Functions orchestrates this entire workflow, handling retries, error handling, and state management. You define the workflow as a state machine (visual diagram), and Step Functions executes it, tracking progress and handling failures. It's perfect for complex, multi-step processes that involve multiple AWS services.",
@@ -856,6 +902,7 @@
     },
     {
       "service_name": "Amazon API Gateway",
+      "icon": "amazon-api-gateway",
       "category": "Application Integration",
       "description": "Create, publish, and manage APIs at any scale",
       "feynman_definition": "API Gateway is like a receptionist for your backend services. When clients (web apps, mobile apps) need to call your backend (Lambda functions, EC2 servers, databases), they don't call directly; they go through API Gateway. API Gateway handles authentication, rate limiting, request validation, and routing. It's like having a front desk that checks IDs, enforces visiting hours, and directs visitors to the right department. API Gateway also transforms requests/responses, caches responses for performance, and provides detailed metrics. It's the front door to your APIs, making them secure, scalable, and easy to manage.",
@@ -873,6 +920,7 @@
     },
     {
       "service_name": "Amazon EventBridge",
+      "icon": "amazon-eventbridge",
       "category": "Application Integration",
       "description": "Serverless event bus for connecting applications with real-time data",
       "feynman_definition": "Think of EventBridge like a super-smart post office that doesn't just deliver mail; it reads the envelopes, sorts them by topic, and sends them to anyone who's subscribed to that kind of news. Instead of your application asking 'Did anything happen yet?' a million times (like a kid on a road trip asking 'Are we there yet?'), EventBridge tells your application the moment something interesting happens. It's pub-sub messaging, but with built-in pattern matching and routing to dozens of AWS services.",
@@ -890,6 +938,7 @@
     },
     {
       "service_name": "Amazon Kinesis",
+      "icon": "amazon-kinesis",
       "category": "Analytics & Business Intelligence",
       "description": "Real-time streaming data collection and processing",
       "feynman_definition": "Kinesis is like a fire hose for data streams. Imagine thousands of sensors, mobile apps, or servers all sending data continuously: clickstreams, logs, IoT telemetry. Kinesis captures this data in real-time, buffers it, and lets you process it immediately. It's like having a conveyor belt that never stops: data flows in one end, you process it in the middle, and results come out the other end, all in real-time. Perfect for scenarios where you need to react to data immediately, not hours later after batch processing.",
@@ -912,6 +961,7 @@
     },
     {
       "service_name": "AWS Glue",
+      "icon": "aws-glue",
       "category": "Analytics & Business Intelligence",
       "description": "Fully managed ETL service for data preparation and loading",
       "feynman_definition": "Glue is like a data janitor that cleans, transforms, and organizes your data automatically. You have data scattered across S3, RDS, Redshift; different formats, different schemas, messy and inconsistent. Glue crawls your data sources, figures out the schema automatically, and creates a catalog. Then it runs ETL (Extract, Transform, Load) jobs to clean and transform data: convert CSV to Parquet, join tables, filter records, aggregate values, and load it into your data warehouse or data lake. It's serverless, so you don't manage servers, and it scales automatically.",
@@ -929,6 +979,7 @@
     },
     {
       "service_name": "Amazon Athena",
+      "icon": "amazon-athena",
       "category": "Analytics & Business Intelligence",
       "description": "Query data in S3 using standard SQL without infrastructure",
       "feynman_definition": "Athena is like having a SQL database, except your data stays in S3 and you don't manage any servers. You have terabytes of data in S3 (logs, CSV files, Parquet files), and you want to query it with SQL. Athena lets you run SQL queries directly on S3 data: no loading, no ETL, no infrastructure. You pay only for the data scanned by your queries. It's like having a librarian who can instantly search through millions of books without moving them off the shelves. Perfect for ad-hoc analysis and interactive queries on data lakes.",
@@ -950,6 +1001,7 @@
     },
     {
       "service_name": "Amazon Quick",
+      "icon": "amazon-quick",
       "category": "Analytics & Business Intelligence",
       "description": "AI-powered workspace for data analysis, dashboards, automation, and research, evolved from Amazon QuickSight",
       "feynman_definition": "Amazon Quick is a workspace where you ask for things in plain English and AI agents do them: analyze your data, build dashboards, automate busywork, run research, even build small web apps. Picture a new hire who reads all your company data on day one and never sleeps. You type what you want, like show me last quarter's sales by region, and Quick queries the connected databases and draws the chart. Need a report on a competitor? It reads the web and your documents and hands back a cited summary. Repetitive task? Describe it once and Quick Automate handles it. The dashboarding part, called Quick Sight, is the piece AWS built first: it connects to Redshift, Athena, RDS, and S3, caches data in memory for fast charts, and scales to thousands of viewers. You can start free on the web with just an email, no AWS account, or run it inside your company's AWS billing.",
@@ -972,6 +1024,7 @@
     },
     {
       "service_name": "Amazon Bedrock",
+      "icon": "amazon-bedrock",
       "category": "AI & Machine Learning",
       "description": "Build and scale generative AI applications with foundation models",
       "feynman_definition": "Bedrock is like having access to leading AI models through a single API. Instead of training your own AI models (expensive, time-consuming, requires expertise), you use pre-trained foundation models from companies like Anthropic (Claude), Meta (Llama), Amazon (Nova), and others. You can use them as-is for tasks like text generation, summarization, or question-answering, or customize them with your own data. It's like renting a genius who can write, analyze, and create content, without needing to teach them from scratch. Perfect for building chatbots, content generation, or AI-powered applications.",
@@ -995,6 +1048,7 @@
     },
     {
       "service_name": "Amazon SageMaker AI",
+      "icon": "amazon-sagemaker-ai",
       "category": "AI & Machine Learning",
       "description": "Complete machine learning platform to build, train, and deploy models, renamed from Amazon SageMaker in 2024",
       "feynman_definition": "Training a machine learning model means juggling chores: prepping data, renting GPU machines, tuning settings, deploying the winner, watching it decay in production. Amazon SageMaker AI is a workshop that handles those chores so data scientists can focus on the model. You open a notebook in the browser, experiment on a sample of your data, then kick off a managed training job that borrows a cluster of GPUs, runs your script, and disappears when it finishes. Automatic tuning tries hundreds of setting combinations and keeps the best. One click turns a finished model into an HTTPS endpoint any app can call. Built-in monitoring watches live predictions and flags when real-world data drifts from the training data. Bring your own TensorFlow or PyTorch code, use Amazon's prebuilt algorithms, or start from a pre-trained model. You pay only while instances run, so shutting down idle notebooks is the single biggest cost control.",
@@ -1015,6 +1069,7 @@
     },
     {
       "service_name": "Amazon Rekognition",
+      "icon": "amazon-rekognition",
       "category": "AI & Machine Learning",
       "description": "Computer vision service for image and video analysis",
       "feynman_definition": "Rekognition is like having a computer that can see and understand images and videos. You give it a photo, and it tells you what's in it: people, objects, text, scenes. It can detect faces, recognize celebrities, identify unsafe content, and even track people across video frames. It's pre-trained on millions of images, so you don't need ML expertise. Perfect for applications like photo tagging, content moderation, security surveillance, or identity verification. Think of it as giving your application the ability to see and understand visual content.",
@@ -1032,6 +1087,7 @@
     },
     {
       "service_name": "Amazon OpenSearch Service",
+      "icon": "amazon-opensearch-service",
       "category": "Analytics & Business Intelligence",
       "description": "Managed search, log analytics, and observability at scale (OpenSearch and Elasticsearch)",
       "feynman_definition": "Amazon OpenSearch Service is often pictured as just the search box on a website, but most teams actually reach for it to make sense of mountains of logs. Imagine every server, application, and device you run is constantly scribbling notes about what it is doing, millions of lines a day. OpenSearch swallows all of that, indexes it so you can find any needle in seconds, and gives you dashboards to watch trends and spot trouble in real time. It is the managed version of the open-source OpenSearch project, a fork of Elasticsearch, so AWS runs the cluster, handles upgrades, and keeps it available. You just ask a question like show me every error in the last hour and get an answer almost instantly.",
@@ -1058,6 +1114,7 @@
     },
     {
       "service_name": "Amazon Polly",
+      "icon": "amazon-polly",
       "category": "AI & Machine Learning",
       "description": "Convert text to lifelike speech with neural text-to-speech",
       "feynman_definition": "Polly is like having a professional voice actor who can read any text aloud in dozens of languages and voices. You give it text, and it returns audio: natural-sounding speech that sounds almost human. It supports multiple languages, accents, and speaking styles. Perfect for applications like audiobooks, voice assistants, accessibility features, or automated phone systems. Think of it as giving your application a voice; instead of users reading text, they can listen to it.",
@@ -1075,6 +1132,7 @@
     },
     {
       "service_name": "Amazon Transcribe",
+      "icon": "amazon-transcribe",
       "category": "AI & Machine Learning",
       "description": "Automatic speech recognition service to convert audio to text",
       "feynman_definition": "Transcribe is like having a stenographer who listens to audio and types out every word. You give it an audio file (or stream audio in real-time), and it returns text transcription. It handles multiple speakers, background noise, and technical jargon. Perfect for applications like meeting transcriptions, subtitles for videos, call center analytics, or voice-controlled applications. Think of it as giving your application the ability to hear and understand spoken language.",
@@ -1092,6 +1150,7 @@
     },
     {
       "service_name": "Amazon Translate",
+      "icon": "amazon-translate",
       "category": "AI & Machine Learning",
       "description": "Neural machine translation service for language translation",
       "feynman_definition": "Translate is like having a professional translator who can translate text between 75+ languages instantly. You give it text in one language, specify the target language, and it returns the translation. It uses neural networks trained on billions of words, so translations are natural and contextually accurate. Perfect for applications like multilingual websites, customer support, or document translation. Think of it as breaking down language barriers; your application can communicate with users in their native language.",
@@ -1109,6 +1168,7 @@
     },
     {
       "service_name": "AWS CodePipeline",
+      "icon": "aws-codepipeline",
       "category": "Developer Tools",
       "description": "Continuous integration and delivery service for automated releases",
       "feynman_definition": "CodePipeline is like an assembly line for software releases. Instead of manually building, testing, and deploying code (error-prone and slow), CodePipeline automates the entire process. When a developer commits code to Git, CodePipeline automatically builds it, runs tests, and deploys to production, all without human intervention. It's like having a robot that takes your code from development to production, ensuring every step is executed correctly and consistently. Perfect for teams practicing continuous delivery: release software faster and more reliably.",
@@ -1126,6 +1186,7 @@
     },
     {
       "service_name": "AWS CodeDeploy",
+      "icon": "aws-codedeploy",
       "category": "Developer Tools",
       "description": "Automated application deployment to EC2, Lambda, or on-premises",
       "feynman_definition": "CodeDeploy is like a smart deployment robot that updates your applications without downtime. When you have new code to deploy to 100 servers, doing it manually is risky because something breaks halfway through? CodeDeploy automates deployments with strategies like blue/green (deploy to new servers, switch traffic) or rolling (update servers gradually). It monitors deployments and automatically rolls back if errors occur. It's like having a deployment expert who ensures updates happen smoothly, safely, and can be undone if something goes wrong.",
@@ -1143,6 +1204,7 @@
     },
     {
       "service_name": "AWS CodeCommit",
+      "icon": "aws-codecommit",
       "category": "Developer Tools",
       "description": "Fully managed source control service for Git repositories",
       "feynman_definition": "CodeCommit is like GitHub, but fully managed by AWS and deeply integrated with AWS services. It's a Git repository where you store your code, track changes, and collaborate with your team. You get all the Git features (branches, pull requests, merges) plus AWS integration (IAM for access control, encryption at rest, CloudWatch for monitoring). Think of it as a secure, scalable place to store and version your code without managing your own Git server.",
@@ -1160,6 +1222,7 @@
     },
     {
       "service_name": "AWS CodeBuild",
+      "icon": "aws-codebuild",
       "category": "Developer Tools",
       "description": "Fully managed continuous integration service that compiles and tests code",
       "feynman_definition": "CodeBuild is like having a build server that appears when you need it and disappears when you're done. When you commit code, you need to compile it, run tests, and create artifacts (Docker images, JAR files, etc.). Instead of maintaining build servers 24/7, CodeBuild spins up a build environment, executes your build, and shuts down. You only pay for build minutes. It scales automatically: if 10 developers push code simultaneously, CodeBuild runs 10 builds in parallel. It's like having an infinite pool of build servers that appear on demand.",
@@ -1177,6 +1240,7 @@
     },
     {
       "service_name": "Amazon ECS",
+      "icon": "amazon-ecs",
       "category": "Containers & Orchestration",
       "description": "Fully managed container orchestration service for Docker",
       "feynman_definition": "ECS is like a manager for your Docker containers. You have containerized applications (packaged with all dependencies), and you need to run them, scale them, and ensure they stay healthy. ECS handles all of this: it schedules containers on servers, monitors health, restarts failed containers, and scales based on demand. You define tasks (what containers to run) and services (how many copies, load balancing), and ECS handles the rest. It's like having an operations team that ensures your containers are always running optimally, without you managing the underlying infrastructure.",
@@ -1194,6 +1258,7 @@
     },
     {
       "service_name": "Amazon EKS",
+      "icon": "amazon-eks",
       "category": "Containers & Orchestration",
       "description": "Managed Kubernetes service for running Kubernetes on AWS",
       "feynman_definition": "EKS is like having a Kubernetes expert manage your Kubernetes clusters. Kubernetes is powerful but complex: setting up control planes, managing etcd, upgrading versions, ensuring high availability. EKS handles all of this: it runs the Kubernetes control plane (API server, scheduler, controller manager) across multiple AZs, automatically patches and upgrades it, and ensures it's highly available. You just deploy your applications using standard Kubernetes tools (kubectl, Helm), and EKS handles the infrastructure. It's like having a managed Kubernetes service that lets you focus on applications, not cluster management.",
@@ -1211,6 +1276,7 @@
     },
     {
       "service_name": "Amazon ECR",
+      "icon": "amazon-ecr",
       "category": "Containers & Orchestration",
       "description": "Fully managed Docker container registry",
       "feynman_definition": "ECR is like a secure warehouse for your Docker images. When you build Docker images, you need to store them somewhere before deploying to ECS, EKS, or other container platforms. ECR is a private Docker registry: you push images to ECR, and your container services pull them when deploying. It's integrated with IAM for access control, encrypted at rest, and scans images for vulnerabilities. Think of it as Docker Hub, but private, secure, and deeply integrated with AWS services.",
@@ -1228,6 +1294,7 @@
     },
     {
       "service_name": "AWS DataSync",
+      "icon": "aws-datasync",
       "category": "Migration & Transfer",
       "description": "Automated high-speed data transfer between on-premises storage, other clouds, and AWS",
       "feynman_definition": "Moving files from one place to another sounds simple, but at scale it becomes a nightmare. You have 180TB on your old NAS and need it in S3. You could write scripts to copy files one by one, but they break halfway through, skip files silently, and take weeks. DataSync is like a high-speed automated moving truck with a detailed manifest. You tell it where the data lives and where it is going, and it handles everything: it validates every byte was copied correctly, encrypts the transfer, and moves files in parallel across 10 lanes at once instead of one. It picks up exactly where it left off if interrupted. It works with your existing storage (NFS, SMB, HDFS, object storage), lands data in S3, EFS, or FSx, and even moves data cross-cloud from Google Cloud Storage or Azure Blob directly into AWS. You pay per gigabyte transferred, not per hour.",
@@ -1245,6 +1312,7 @@
     },
     {
       "service_name": "AWS Transfer Family",
+      "icon": "aws-transfer-family",
       "category": "Storage",
       "description": "Fully managed SFTP, FTPS, FTP, and AS2 file transfer directly into S3 and EFS",
       "feynman_definition": "Thousands of businesses exchange files using SFTP, a decades-old but deeply entrenched protocol used by banks, hospitals, insurers, and retailers to securely send files to partners. The problem is running your own SFTP server: you have to maintain the OS, patch it, manage SSH keys for every partner, scale it during peak loads, and make sure it never goes down. Transfer Family is a managed SFTP (and FTPS, FTP, AS2) endpoint that AWS runs for you. Your trading partners connect using their existing SFTP clients with their existing credentials. Nothing changes for them. Files land directly into your S3 buckets or EFS file systems. No servers to patch, no scaling to think about. For partners in regulated industries using AS2, a protocol used in healthcare and retail supply chains for signed and encrypted EDI messages, Transfer Family handles that too.",
@@ -1270,6 +1338,7 @@
     },
     {
       "service_name": "Amazon Connect Customer",
+      "icon": "amazon-connect-customer",
       "category": "Application Integration",
       "description": "Cloud contact center for voice, chat, and SMS, renamed from Amazon Connect, with AI agents that resolve routine contacts",
       "feynman_definition": "A call center used to mean a room full of phones and a rack of hardware you bought, housed, and repaired. Connect Customer is that call center as a cloud service. You log into a browser, claim a phone number, and draw your call menu as a flowchart (press 1 for billing, press 2 for support). Agents wear headsets and sign in from anywhere. You pay for what you use instead of buying agent seats, so adding 50 people for a busy month needs no purchase order. The newest part is who answers first: an AI agent picks up, works out why the caller rang, and often finishes the job outright, speaking more than 50 languages. When it cannot, it hands the human agent the call, the transcript, and its notes. The flowchart still runs the show; the AI works inside it. You build that AI conversation on a visual canvas called the Agentic CX designer, the same draw-it-out way you built the call menu.",

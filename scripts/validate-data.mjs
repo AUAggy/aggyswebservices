@@ -119,6 +119,17 @@ services.forEach((service, i) => {
     }
   }
 
+  // Optional icon: must reference a bundled official icon asset
+  if (service.icon !== undefined) {
+    if (typeof service.icon !== "string" || service.icon.trim() === "") {
+      err(`${label}: icon must be a non-empty string when present`);
+    } else if (
+      !fs.existsSync(path.join(rootDir, "public", "icons", "aws", `${service.icon}.svg`))
+    ) {
+      err(`${label}: icon "${service.icon}" has no file at public/icons/aws/${service.icon}.svg`);
+    }
+  }
+
   // ---- warnings (style drift, non-blocking) ----
   if (typeof service.architectural_deep_dive === "string") {
     const words = wordCount(service.architectural_deep_dive);

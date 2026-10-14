@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { MobileNav } from "@/components/MobileNav";
 import { BackButton } from "@/components/BackButton";
 import { ServiceAccordion } from "@/components/ServiceAccordion";
+import { ServiceIcon } from "@/components/ServiceIcon";
 import { getCategoryBySlug, getServiceBySlug, getServiceSlug } from "@/lib/aws-data";
 import Seo from "@/components/Seo";
 import SiteFooter from "@/components/SiteFooter";
@@ -66,9 +67,12 @@ const ServiceDetail = () => {
               <span>{category.name}</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3">
-              {service.service_name}
-            </h1>
+            <div className="flex items-center gap-3 mb-3">
+              <ServiceIcon icon={service.icon} className="h-7 w-7" />
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+                {service.service_name}
+              </h1>
+            </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
               {service.description}

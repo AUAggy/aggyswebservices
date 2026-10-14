@@ -1,5 +1,6 @@
 export interface AWSService {
   service_name: string;
+  icon?: string;
   category: string;
   description: string;
   feynman_definition: string;

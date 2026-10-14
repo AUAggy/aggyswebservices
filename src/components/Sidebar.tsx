@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { getCategories, getServicesByCategory, getServiceSlug } from "@/lib/aws-data";
 import type { CategoryInfo } from "@/types/aws";
+import { ServiceIcon } from "@/components/ServiceIcon";
 
 interface SidebarProps {
   currentCategory?: string;
@@ -53,14 +54,15 @@ export function Sidebar({ currentCategory, currentService }: SidebarProps) {
                           key={slug}
                           to={`/category/${category.slug}/${slug}`}
                           className={`
-                            block py-1.5 text-sm transition-colors truncate
+                            flex items-center gap-2 py-1.5 text-sm transition-colors
                             ${isServiceActive
                               ? "text-accent font-medium"
                               : "text-sidebar-foreground/70 hover:text-sidebar-foreground"
                             }
                           `}
                         >
-                          {service.service_name}
+                          <ServiceIcon icon={service.icon} className="h-5 w-5" />
+                          <span className="truncate">{service.service_name}</span>
                         </Link>
                       );
                     })}
