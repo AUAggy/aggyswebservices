@@ -20,6 +20,7 @@ anti-ai-slop.md
 # Private planning / AI-assistant docs (keep out of the eventual public repo)
 CLAUDE.md
 AGENTS.md
+/plans/
 upgrade-plan.md
 .env 
 .env.* 
