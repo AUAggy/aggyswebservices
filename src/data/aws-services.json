@@ -5,7 +5,7 @@
     "version": "1.2",
     "total_services": 69,
     "author": "Richard Feynman AI",
-    "last_updated": "2026-10-14",
+    "last_updated": "2026-10-23",
     "categories": [
       "Compute",
       "Storage",
@@ -670,6 +670,31 @@
       ]
     },
     {
+      "service_name": "Amazon Inspector",
+      "icon": "amazon-inspector",
+      "category": "Security, Identity & Compliance",
+      "description": "Finds software vulnerabilities and exposed EC2 network paths so you can prioritize fixes",
+      "feynman_definition": "Inspector finds weaknesses in your software and helps you decide what to fix first.\n\nThink of a mechanic checking a delivery fleet against manufacturers' recall notices. A van can run perfectly and still contain a faulty part. The mechanic records which vans have it and which need attention first. A new recall means checking the list again, even if no van has changed.\n\nInspector does this with supported software in AWS. It can also flag network settings that let people reach your servers from outside their private network. You get a list of affected systems and suggested repairs. Your team fixes them; Inspector checks again. An empty report does not prove everything is safe: some systems may not have been checked.",
+      "key_capabilities": [
+        "EC2 software-package checks using agent inventories or EBS snapshots of eligible instances",
+        "ECR enhanced scanning for operating-system and language packages, with continuous rescans inside configured coverage windows",
+        "Lambda dependency scanning, plus optional code scanning for flaws such as injection and weak cryptography",
+        "Optional Code Security scanning of repository source code, dependencies, and infrastructure-as-code; findings do not flow to Security Hub CSPM",
+        "EC2 network-path analysis and exposure-aware package scoring where supported",
+        "Delegated administration for workload scanning, with Security Hub CSPM aggregation and EventBridge response workflows"
+      ],
+      "architectural_deep_dive": "Amazon Inspector compares software inventories from EC2 instances, ECR images, and eligible Lambda functions with published vulnerability advisories. EC2 inventories come from agents or, in hybrid mode, EBS snapshots of eligible instances. ECR enhanced scanning covers operating-system and language packages; continuous scanning reassesses eligible images when relevant vulnerabilities are added. Optional Lambda code scanning checks application code. EC2 network reachability findings analyze network configuration rather than attempting break-ins. EC2 package scores can account for network exposure. Delegated administration centralizes workload findings, with Security Hub CSPM and EventBridge integrations.\n\nGotcha #1: Inspector reports problems; you patch servers, rebuild images, or redeploy functions. Findings also close when scanning eligibility expires, so closed does not always mean fixed.\n\nGotcha #2: Enabled does not mean covered. Check collection failures, unsupported systems, repository filters, and image re-scan windows.\n\nConstraints: Activate scanning per Region; feature availability varies. Lambda scanning covers eligible $LATEST functions invoked or updated within 90 days, not published versions or deployment packages encrypted with customer managed keys. Costs vary by scan type; ECR enhanced scanning is billed through Inspector.",
+      "scenario_example": "Illustrative scenario: an online retailer operates across 12 AWS accounts and two Regions, with 80 EC2 instances and 30 ECS services. Its security team can see suspicious activity in GuardDuty but lacks a consistent inventory of vulnerable software.\n\nUsing a delegated security account, the team enables Inspector across the organization in both Regions, confirms EC2 coverage, and configures production ECR repositories for continuous enhanced scanning. It checks image eligibility and re-scan windows rather than assuming every stored image is monitored.\n\nWhen a new advisory is added, Inspector flags a patchable library vulnerability in 18 stored images and six EC2 instances. Its image-to-container mapping shows that six affected images support six live production services. An EventBridge rule invokes a Lambda function that opens tickets for the owning teams.\n\nDevelopers rebuild the six live-service images with the fixed library, test them, push them to ECR, and roll out new ECS tasks. Operations patches the six EC2 instances. The team blocks redeployment of the old images and checks deployment records to confirm they are no longer running. Leaving an old image in ECR does not patch it.\n\nResult: within 48 hours, all six affected production services run patched images and all six affected servers are patched. Fresh scans verify the replacements; the old images remain flagged while stored and eligible for scanning.",
+      "aws_user_guide_documentation": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+      "search_keywords": [
+        "CVE",
+        "enhanced scanning",
+        "dependency scanning",
+        "SAST",
+        "IaC"
+      ]
+    },
+    {
       "service_name": "Amazon GuardDuty",
       "icon": "amazon-guardduty",
       "category": "Security, Identity & Compliance",
@@ -1065,24 +1090,6 @@
       ],
       "search_keywords": [
         "ML"
-      ]
-    },
-    {
-      "service_name": "Amazon Rekognition",
-      "icon": "amazon-rekognition",
-      "category": "AI & Machine Learning",
-      "description": "Computer vision service for image and video analysis",
-      "feynman_definition": "Rekognition is like having a computer that can see and understand images and videos. You give it a photo, and it tells you what's in it: people, objects, text, scenes. It can detect faces, recognize celebrities, identify unsafe content, and even track people across video frames. It's pre-trained on millions of images, so you don't need ML expertise. Perfect for applications like photo tagging, content moderation, security surveillance, or identity verification. Think of it as giving your application the ability to see and understand visual content.",
-      "architectural_deep_dive": "Rekognition provides APIs for image and video analysis. Image APIs: detect labels (objects, scenes), detect faces (age, gender, emotions), recognize celebrities, detect text (OCR), and detect unsafe content. Video APIs analyze stored video to track people, detect activities, and recognize celebrities. Note that the Streaming Video and Bulk Image Analysis features are closed to new customers effective April 30, 2026, so new accounts should process live frames or large batches through the standard image APIs instead. Rekognition also supports custom labels, letting you train models to detect your specific objects (logos, products). Key features: face comparison (verify identity), face search (find person in collection), and PPE detection (detect safety equipment). Gotcha #1: Rekognition charges per image/video minute analyzed, and costs can add up for high-volume applications. Gotcha #2: Accuracy varies by image quality; low-resolution or poorly lit images may have lower accuracy. Constraints: Maximum 15MB image size (S3) or 5MB (API), maximum 10GB video size, and face collection limited to 20 million faces.",
-      "scenario_example": "A social media platform needs to moderate user-uploaded content: detect inappropriate images, identify celebrities, and tag photos automatically. Manually reviewing millions of images daily is impossible. They use Rekognition: when a user uploads an image, they call Rekognition's detect moderation labels API. If unsafe content is detected (nudity, violence), the image is flagged for review. They use detect labels to automatically tag images ('beach', 'sunset', 'dog'), making photos searchable. For celebrity detection, they identify famous people in photos and suggest tags. For face verification, they use face comparison to verify user identity during account creation by comparing selfie to ID photo. They process 10 million images/day, and Rekognition handles it all with sub-second latency. Result: 95% reduction in manual moderation, automatic photo tagging, and improved user experience.",
-      "aws_user_guide_documentation": "https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html",
-      "key_capabilities": [
-        "DetectLabels identifies thousands of objects, scenes, and activities in images with confidence scores, requiring no model training",
-        "DetectFaces returns facial attributes (age range, emotions, landmarks, pose, quality) and CompareFaces measures similarity between two faces for verification use cases",
-        "Face Collections store and index facial embeddings for SearchFacesByImage, enabling face search across millions of stored faces",
-        "Custom Labels trains Rekognition on your own image dataset to recognize domain-specific objects or scenes not covered by the general-purpose models",
-        "Video analysis supports both stored video (async S3-based jobs) and live streaming video via Kinesis Video Streams with real-time event alerting",
-        "DetectModerationLabels identifies unsafe or explicit content for content moderation pipelines; DetectText performs OCR on images for text extraction"
       ]
     },
     {
