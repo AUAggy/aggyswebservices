@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import {
   getAllServices,
   getCategories,
@@ -60,6 +60,82 @@ describe("Amazon Inspector replacing Amazon Rekognition", () => {
     }
   });
 });
+
+describe("search relevance and everyday terms", () => {
+  it.each([
+    ["queue", "Amazon SQS"],
+    ["cloud watch", "Amazon CloudWatch"],
+    ["elastic cache", "Amazon ElastiCache"],
+    ["SFTP", "AWS Transfer Family"],
+    ["SSO", "AWS IAM Identity Center"],
+    ["Valkey", "Amazon ElastiCache"],
+    ["CVE", "Amazon Inspector"],
+    ["email", "Amazon SES"],
+    ["monitoring", "Amazon CloudWatch"],
+    ["Trino", "Amazon Athena"],
+    ["SMTP", "Amazon SES"],
+    ["serverless", "AWS Lambda"],
+  ])("finds %s in %s", (query, name) => {
+    expect(searchServices(query).map((service) => service.service_name)).toContain(name)
+  })
+
+  it("normalizes case and whitespace without discarding substring matches", () => {
+    expect(searchServices(" s3 ")).toEqual(searchServices("S3"))
+    expect(searchServices("S3")[0].service_name).toBe("Amazon S3")
+    expect(searchServices("  CLOUD  \t WATCH  ")[0].service_name).toBe("Amazon CloudWatch")
+    expect(searchServices("astiCa").some((service) => service.service_name === "Amazon ElastiCache")).toBe(true)
+    expect(searchServices("#11")).toContain(cloudhsm)
+    for (const query of ["", " \t \n", "s33"]) expect(searchServices(query)).toEqual([])
+  })
+
+  it("puts every exact full name first and never duplicates a service", () => {
+    for (const service of getAllServices()) {
+      expect(searchServices(service.service_name)[0]).toBe(service)
+    }
+    const results = searchServices("a")
+    expect(new Set(results.map((service) => service.service_name)).size).toBe(results.length)
+  })
+
+  it("returns all 12 security services predictably without truncation", () => {
+    const security = getAllServices().filter((service) => service.category === "Security, Identity & Compliance")
+    const results = searchServices("security")
+    expect(results).toHaveLength(12)
+    expect(results).toEqual(expect.arrayContaining(security))
+    expect(searchServices("security")).toEqual(results)
+  })
+
+  it("orders all five relevance tiers, keeps catalog ties, and deduplicates a small fixture", async () => {
+    const entry = (service_name: string, fields = {}) => ({
+      service_name, description: "Example", category: "Examples", ...fields,
+    })
+    const fixture = [
+      entry("Amazon Rewidget"),
+      entry("Keyword Service", { search_keywords: ["widget replacement"] }),
+      entry("AWS Widget Pro"),
+      entry("Description Service", { description: "Works with Amazon Widget" }),
+      entry("Amazon Widget"),
+      entry("AWS Widget"),
+      entry("Category Service", { category: "Widget Category" }),
+      entry("Amazon Widget"),
+      entry("AWS Widget Toolkit"),
+    ]
+    vi.resetModules()
+    vi.doMock("@/data/aws-services.json", () => ({ default: { services: fixture } }))
+    try {
+      const { searchServices: searchFixture, getAllServices: allFixture } = await import("@/lib/aws-data")
+      expect(searchFixture("widget")).toEqual([
+        fixture[4], fixture[5], fixture[2], fixture[8], fixture[0], fixture[1], fixture[3], fixture[6],
+      ])
+      expect(searchFixture("Amazon Widget")).toEqual([fixture[4], fixture[3]])
+      expect(searchFixture("  WIDGET \t PRO  ")).toEqual([fixture[2]])
+      expect(allFixture()).toEqual(fixture)
+      expect(allFixture()[0]).toBe(fixture[0])
+    } finally {
+      vi.doUnmock("@/data/aws-services.json")
+      vi.resetModules()
+    }
+  })
+})
 
 describe("AWS CloudHSM entry format", () => {
   it("has six capabilities and a 150-180 word technical field with parser markers", () => {

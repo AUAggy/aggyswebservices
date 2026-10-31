@@ -5,7 +5,7 @@
     "version": "1.2",
     "total_services": 69,
     "author": "Richard Feynman AI",
-    "last_updated": "2026-10-23",
+    "last_updated": "2026-10-31",
     "categories": [
       "Compute",
       "Storage",
@@ -305,7 +305,8 @@
       "search_keywords": [
         "Valkey",
         "Redis",
-        "Memcached"
+        "Memcached",
+        "elastic cache"
       ]
     },
     {
@@ -736,6 +737,7 @@
       "icon": "amazon-cloudwatch",
       "category": "Management & Governance",
       "description": "Monitoring and observability service for AWS resources and applications",
+      "search_keywords": ["cloud watch"],
       "feynman_definition": "CloudWatch is like having a dashboard in your car that shows speed, fuel level, engine temperature, and alerts you when something's wrong. For AWS, CloudWatch collects metrics (CPU usage, disk I/O, network traffic) from all your resources and displays them in dashboards. It can alert you when things go wrong: 'CPU above 80% for 5 minutes' triggers an SNS notification. CloudWatch also collects logs from applications, Lambda functions, and AWS services, making it your central monitoring hub. Think of it as the eyes and ears of your AWS infrastructure, constantly watching and ready to alert you to problems.",
       "architectural_deep_dive": "CloudWatch collects metrics (time-series data points) from AWS services automatically and custom metrics from applications via PutMetricData API. Metrics have dimensions (key-value pairs for filtering) and statistics (average, sum, min, max). CloudWatch Alarms trigger actions (SNS, Auto Scaling, EC2 actions) when metrics breach thresholds. CloudWatch Logs collects log data from EC2, Lambda, CloudTrail, and custom sources, with log groups, streams, and retention policies. Key features: CloudWatch Insights (query logs with SQL-like syntax), CloudWatch Dashboards (visualize metrics), CloudWatch Events/EventBridge (react to state changes), and CloudWatch Synthetics (monitor endpoints with canaries). Gotcha #1: Detailed monitoring (1-minute intervals) costs extra; basic monitoring (5-minute intervals) is free for most services. Gotcha #2: CloudWatch Logs storage costs add up; set retention policies and use S3 export for long-term storage. Constraints: Metrics are retained for 15 months, custom metrics limited to 10 dimensions, and alarm evaluation can take 1-2 minutes.",
       "scenario_example": "An e-commerce site runs on Auto Scaling EC2 instances behind an ALB. They create CloudWatch dashboards showing ALB request count, target response time, EC2 CPU/memory, and RDS connections. They set up alarms: if ALB 5xx errors exceed 10 in 5 minutes, send SNS alert to on-call engineer; if average CPU exceeds 70%, trigger Auto Scaling to add instances. For application logs, they install CloudWatch agent on EC2 instances to stream application logs to CloudWatch Logs. They use CloudWatch Insights to query logs: 'show all 500 errors in the last hour' or 'count requests by user agent.' During a production incident (database connection pool exhausted), CloudWatch Logs show the exact error messages, and CloudWatch metrics reveal RDS connections maxed out. They increase the connection pool size and create a new alarm to prevent recurrence. Result: proactive monitoring, faster incident response, and data-driven capacity planning.",
@@ -851,6 +853,7 @@
       "icon": "amazon-sqs",
       "category": "Application Integration",
       "description": "Fully managed message queuing service for decoupling applications",
+      "search_keywords": ["queue"],
       "feynman_definition": "SQS is like a post office mailbox for your applications. When one application needs to send work to another, instead of calling it directly (which fails if the receiver is busy or down), it drops a message in the SQS queue. The receiving application picks up messages when it's ready, processes them, and deletes them from the queue. It's perfect for decoupling systems: the sender doesn't wait for the receiver, and if the receiver crashes, messages stay safe in the queue. Think of it as a buffer between applications that smooths out traffic spikes and makes systems more resilient.",
       "architectural_deep_dive": "SQS provides two queue types: Standard (unlimited throughput, at-least-once delivery, best-effort ordering) and FIFO (exactly-once delivery, strict ordering). Messages can be up to 256KB (use S3 for larger payloads). Key features: visibility timeout (hide message while processing), dead-letter queues (capture failed messages), long polling (reduce empty receives), and message delay (delay delivery up to 15 minutes). Gotcha #1: Standard queues can deliver messages out of order and more than once; design consumers to be idempotent. Gotcha #2: Messages are retained for 4 days by default (max 14 days); don't use SQS for long-term storage. Constraints: FIFO queues default to 300 transactions/second per API action per message group, but enabling high throughput mode raises a single FIFO queue to 30,000+ messages/second; message size limited to 256KB, and maximum 120,000 in-flight messages per queue.",
       "scenario_example": "An e-commerce site processes orders: validate inventory, charge credit card, send confirmation email, and update analytics. Previously, the order service called each system synchronously; if email service was slow, order confirmation took 10 seconds. Worse, if payment service crashed, orders were lost. They implement SQS: when an order is placed, the order service publishes a message to an SQS queue and immediately returns success to the user. Four consumer services poll the queue: inventory service, payment service, email service, and analytics service. Each processes messages independently at their own pace. During Black Friday, 10,000 orders/minute flood in; SQS buffers them, and consumers process them over 30 minutes without being overwhelmed. When the payment service crashes, messages stay in the queue; when it recovers, it processes backlogged messages. Failed messages (e.g., invalid credit cards) go to a dead-letter queue for manual review. Result: 95% faster order confirmation, zero lost orders, and resilient architecture.",

@@ -97,16 +97,35 @@ export function getAllServices(): AWSService[] {
   return data.services;
 }
 
+function normalizeSearch(value: string): string {
+  return value.toLowerCase().trim().replace(/\s+/g, " ")
+}
+
 export function searchServices(query: string): AWSService[] {
-  const q = query.toLowerCase().trim();
-  if (!q) return [];
-  
-  return data.services.filter((s) =>
-    s.service_name.toLowerCase().includes(q) ||
-    s.description.toLowerCase().includes(q) ||
-    s.category.toLowerCase().includes(q) ||
-    (s.search_keywords ?? []).some((k) => k.toLowerCase().includes(q))
-  );
+  const q = normalizeSearch(query)
+  if (!q) return []
+
+  const seen = new Set<string>()
+  return data.services
+    .map((service, index) => {
+      const name = normalizeSearch(service.service_name)
+      const names = [name, name.replace(/^(amazon|aws) /, "")]
+      const rank = names.includes(q) ? 0
+        : names.some((value) => value.startsWith(q)) ? 1
+        : names.some((value) => value.includes(q)) ? 2
+        : (service.search_keywords ?? []).some((value) => normalizeSearch(value).includes(q)) ? 3
+        : [service.description, service.category].some((value) => normalizeSearch(value).includes(q)) ? 4
+        : -1
+
+      return { service, index, name, rank }
+    })
+    .filter(({ name, rank }) => {
+      if (rank < 0 || seen.has(name)) return false
+      seen.add(name)
+      return true
+    })
+    .sort((a, b) => a.rank - b.rank || a.index - b.index)
+    .map(({ service }) => service)
 }
 
 export function getMetadata() {
