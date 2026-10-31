@@ -22,6 +22,7 @@ export function SearchBar({
   const [isOpen, setIsOpen] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [isFocused, setIsFocused] = useState(false)
+  const [placement, setPlacement] = useState<"below" | "above">("below")
   const rootRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
@@ -72,6 +73,32 @@ export function SearchBar({
       option.scrollIntoView({ block: "nearest" })
     }
   }, [activeId, results])
+
+  // Keep the popup inside short viewports: clamp its height to the actual
+  // space around the input and flip above the input when there is more room.
+  useEffect(() => {
+    if (!popupOpen) return
+    const fit = () => {
+      const input = inputRef.current
+      const list = listRef.current
+      if (!input || !list) return
+      const inputRect = input.getBoundingClientRect()
+      const margin = 12
+      const below = window.innerHeight - inputRect.bottom - margin
+      const above = inputRect.top - margin
+      const flip = below < 160 && above > below
+      setPlacement(flip ? "above" : "below")
+      list.style.maxHeight = `${Math.max(96, Math.min(384, flip ? above : below))}px`
+    }
+    fit()
+    window.addEventListener("resize", fit)
+    window.addEventListener("scroll", fit, true)
+    return () => {
+      window.removeEventListener("resize", fit)
+      window.removeEventListener("scroll", fit, true)
+      if (listRef.current) listRef.current.style.maxHeight = ""
+    }
+  }, [popupOpen])
 
   const handleSelect = (service: AWSService) => {
     if (!popupOpen || !results.includes(service)) return
@@ -194,7 +221,10 @@ export function SearchBar({
         {popupOpen ? count : ""}
       </div>
       {popupOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-lg shadow-elevated overflow-hidden z-50">
+        <div
+          data-placement={placement}
+          className={`absolute left-0 right-0 bg-card border border-border rounded-lg shadow-elevated overflow-hidden z-50 ${placement === "below" ? "top-full mt-2" : "bottom-full mb-2"}`}
+        >
           <p aria-hidden="true" className="px-4 py-2 text-xs text-muted-foreground border-b border-border">
             {count}
           </p>

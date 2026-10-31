@@ -39,7 +39,7 @@ export function Sidebar({ currentCategory, currentService }: SidebarProps) {
                     }
                   `}
                 >
-                  <span className="mr-2">{category.icon}</span>
+                  <span className="mr-2" aria-hidden="true">{category.icon}</span>
                   {category.name}
                 </Link>
 
