@@ -12,7 +12,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
       className="group block p-6 bg-card border border-border rounded-lg card-hover-glow"
     >
       <div className="flex items-start gap-4">
-        <span className="text-3xl" role="img" aria-label={category.name}>
+        <span className="text-3xl" aria-hidden="true">
           {category.icon}
         </span>
         <div className="flex-1 min-w-0">
@@ -22,7 +22,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
           <p className="text-sm text-muted-foreground leading-relaxed mb-3">
             {category.description}
           </p>
-          <span className="text-xs font-medium text-accent">
+          <span className="text-xs font-medium text-accent-text">
             {category.serviceCount} {category.serviceCount === 1 ? "service" : "services"}
           </span>
         </div>

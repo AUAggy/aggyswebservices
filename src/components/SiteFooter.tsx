@@ -8,7 +8,7 @@ const SiteFooter = () => {
             href="https://miaggy.com"
             target="_blank"
             rel="noreferrer"
-            className="text-foreground/80 font-medium transition-colors hover:text-orange-500"
+            className="text-foreground/80 font-medium transition-colors hover:text-accent-text"
           >
             miaggy.com
           </a>

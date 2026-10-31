@@ -17,7 +17,7 @@ export function Sidebar({ currentCategory, currentService }: SidebarProps) {
       <div className="p-4 flex-1">
         <Link
           to="/"
-          className="block text-lg font-semibold text-sidebar-foreground tracking-tight mb-6 hover:text-accent transition-colors"
+          className="block text-lg font-semibold text-sidebar-foreground tracking-tight mb-6 hover:text-accent-text transition-colors"
         >
           AWS <span className="text-gradient-orange">Explained</span>
         </Link>
@@ -56,7 +56,7 @@ export function Sidebar({ currentCategory, currentService }: SidebarProps) {
                           className={`
                             flex items-center gap-2 py-1.5 text-sm transition-colors
                             ${isServiceActive
-                              ? "text-accent font-medium"
+                              ? "text-accent-text font-medium"
                               : "text-sidebar-foreground/70 hover:text-sidebar-foreground"
                             }
                           `}

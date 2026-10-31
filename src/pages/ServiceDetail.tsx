@@ -63,7 +63,7 @@ const ServiceDetail = () => {
 
           <div className="mt-6 mb-8">
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-              <span>{category.icon}</span>
+              <span aria-hidden="true">{category.icon}</span>
               <span>{category.name}</span>
             </div>
 

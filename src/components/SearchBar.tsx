@@ -63,7 +63,7 @@ export function SearchBar({
   const isLarge = size === "large";
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative min-w-0 ${className}`}>
       <div
         className={`
           relative flex items-center bg-card border rounded-lg
@@ -103,7 +103,7 @@ export function SearchBar({
 
       {/* Results dropdown */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-lg shadow-elevated overflow-hidden z-50">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-lg shadow-elevated max-h-[min(24rem,50dvh)] overflow-y-auto overscroll-contain z-50">
           {results.map((service, index) => (
             <button
               key={service.service_name}
@@ -116,16 +116,16 @@ export function SearchBar({
             >
               <ServiceIcon icon={service.icon} className="h-5 w-5 mt-0.5" />
               <div className="flex-1 min-w-0">
-                <div className="font-medium text-foreground">
+                <div className="font-medium text-foreground break-words">
                   {service.service_name}
                 </div>
-                <div className="text-sm text-muted-foreground truncate">
+                <div className="text-sm text-muted-foreground line-clamp-2 break-words">
                   {service.description}
                 </div>
+                <span className="inline-block max-w-full mt-1 text-xs text-muted-foreground bg-secondary px-2 py-1 rounded break-words">
+                  {service.category}
+                </span>
               </div>
-              <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded shrink-0">
-                {service.category}
-              </span>
             </button>
           ))}
         </div>

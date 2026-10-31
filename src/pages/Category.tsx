@@ -63,7 +63,7 @@ const Category = () => {
 
           <div className="mt-6 mb-8">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-3xl">{category.icon}</span>
+              <span className="text-3xl" aria-hidden="true">{category.icon}</span>
               <h1 className="text-3xl font-bold tracking-tight text-foreground">
                 {category.name}
               </h1>

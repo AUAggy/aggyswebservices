@@ -88,7 +88,7 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
                           className={`
                             flex items-center gap-2 py-2 text-sm transition-colors
                             ${isServiceActive
-                              ? "text-accent font-medium"
+                              ? "text-accent-text font-medium"
                               : "text-sidebar-foreground/70 hover:text-sidebar-foreground"
                             }
                           `}

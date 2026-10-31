@@ -40,6 +40,8 @@
     --accent: 32 100% 50%;
     --accent-glow: 28 100% 48%;
     --accent-foreground: 0 0% 100%;
+    /* Same hue, darker for ordinary text on light surfaces. */
+    --accent-text: 32 100% 32%;
 
     /* Destructive */
     --destructive: 0 84% 60%;
@@ -96,6 +98,7 @@
     --accent: 32 100% 50%;
     --accent-glow: 28 100% 55%;
     --accent-foreground: 0 0% 100%;
+    --accent-text: 32 100% 50%;
 
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
