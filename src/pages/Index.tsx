@@ -14,7 +14,7 @@ import {
 const Index = () => {
   const categories = getCategories();
   const metadata = getMetadata();
-  const description = `${metadata.total_services} cloud services demystified with plain English explanations, real examples, and technical deep dives.`;
+  const description = `${metadata.total_services} cloud services demystified with plain English explanations, practical examples, and technical deep dives.`;
   const jsonLd = [
     getOrganizationJsonLd(),
     getWebSiteJsonLd(),
@@ -47,7 +47,7 @@ const Index = () => {
             {/* Subtitle */}
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-12 max-w-xl mx-auto leading-relaxed">
               {metadata.total_services} cloud services demystified with plain English explanations, 
-              real examples, and technical deep dives.
+              practical examples, and technical deep dives.
             </p>
 
             {/* HUGE Search Bar */}

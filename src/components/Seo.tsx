@@ -53,8 +53,9 @@ const Seo = ({ title, description, canonicalPath, jsonLd = [], noIndex = false }
         <script
           key={`${canonicalUrl}-jsonld-${index}`}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
-        />
+        >
+          {JSON.stringify(item)}
+        </script>
       ))}
     </Helmet>
   );

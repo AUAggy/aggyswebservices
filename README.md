@@ -2,7 +2,7 @@
 
 > Understanding AWS should not require a PhD.
 
-A React + TypeScript site that explains 69 AWS services using plain-language analogies, practical gotchas, and real-world examples.
+A React + TypeScript site that explains 69 AWS services using plain-language analogies, practical gotchas, and practical examples.
 
 ## What This Is
 

@@ -14,10 +14,11 @@ describe.each(services)("ServiceAccordion rendering $service_name", (service) =>
     render(<ServiceAccordion service={service} />);
 
     expect(screen.getByText(service.feynman_definition.replace(/\s+/g, " "))).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /official aws documentation/i })).toHaveAttribute(
-      "href",
-      service.aws_user_guide_documentation
-    );
+    const documentation = screen.getByRole("link", { name: /official aws documentation/i });
+    expect(documentation).toHaveAttribute("href", service.aws_user_guide_documentation);
+    expect(documentation).toHaveAttribute("target", "_blank");
+    expect(documentation).toHaveAttribute("rel", "noopener noreferrer");
+    expect(documentation.querySelector(".lucide-external-link")).toBeInTheDocument();
   });
 
   it("shows six capabilities and separates gotchas in the technical section", () => {
@@ -39,11 +40,17 @@ describe.each(services)("ServiceAccordion rendering $service_name", (service) =>
     expect(screen.getByText(mainContent.replace(/\s+/g, " "))).toBeInTheDocument();
   });
 
-  it("shows the result box in the real-world example section", () => {
+  it("frames the example scenario while preserving its text and result box", () => {
     render(<ServiceAccordion service={service} />);
 
-    fireEvent.click(screen.getByRole("button", { name: /real-world example/i }));
+    fireEvent.click(screen.getByRole("button", { name: "Example Scenario" }));
 
+    expect(screen.queryByRole("button", { name: /real-world example/i })).not.toBeInTheDocument();
+    expect(screen.getByText(
+      "Illustrative scenario; figures are examples, not verified customer results."
+    )).toBeInTheDocument();
+    const scenario = service.scenario_example.split(/\bResult:\s*/)[0].trim();
+    expect(screen.getByText(scenario.replace(/\s+/g, " "))).toBeInTheDocument();
     expect(screen.getByText("The Result")).toBeInTheDocument();
     expect(screen.getByText(service.scenario_example.split(/\bResult:\s*/)[1])).toBeInTheDocument();
   });

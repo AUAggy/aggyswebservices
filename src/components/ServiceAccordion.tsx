@@ -101,7 +101,7 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
     },
     {
       key: "example" as SectionKey,
-      title: "Real-World Example",
+      title: "Example Scenario",
       icon: <BookOpen className="w-5 h-5 text-emerald-500" />,
       content: service.scenario_example,
       bgActive: "bg-emerald-500/10",
@@ -162,6 +162,9 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
 
       return (
         <div className="space-y-6 animate-in fade-in duration-300">
+          <p className="text-sm text-muted-foreground">
+            Illustrative scenario; figures are examples, not verified customer results.
+          </p>
           <div className="flex gap-4">
             <div className="hidden sm:flex flex-col items-center pt-1">
               <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500">

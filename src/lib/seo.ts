@@ -1,6 +1,6 @@
 export const baseUrl = "https://aggyswebservices.com";
 export const brandName = "AWS in Plain English";
-export const brandDescription = "Plain-English explanations of AWS services with real examples and technical deep dives.";
+export const brandDescription = "Plain-English explanations of AWS services with practical examples and technical deep dives.";
 export const ogImage = `${baseUrl}/og-image.png`;
 export const twitterImage = `${baseUrl}/twitter-image.png`;
 export const ogImageAlt = "AWS in Plain English cover image";
