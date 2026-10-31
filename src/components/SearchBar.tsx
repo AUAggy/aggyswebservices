@@ -80,12 +80,11 @@ export function SearchBar({
   // its count line) to the space around the input and flip it above the input
   // when there is more room there. Layout effect so the first paint fits.
   useLayoutEffect(() => {
-    if (!popupOpen) return
+    const input = inputRef.current
+    const popup = popupRef.current
+    const list = listRef.current
+    if (!popupOpen || !input || !popup || !list) return
     const fit = () => {
-      const input = inputRef.current
-      const popup = popupRef.current
-      const list = listRef.current
-      if (!input || !popup || !list) return
       const inputRect = input.getBoundingClientRect()
       const margin = 20 // 12px breathing room plus the popup's own 8px offset
       const below = window.innerHeight - inputRect.bottom - margin
@@ -103,13 +102,11 @@ export function SearchBar({
     }
     fit()
     window.addEventListener("resize", fit)
-    window.addEventListener("scroll", fit, true)
     return () => {
       window.removeEventListener("resize", fit)
-      window.removeEventListener("scroll", fit, true)
       appliedFit.current = null
-      if (popupRef.current) popupRef.current.style.maxHeight = ""
-      if (listRef.current) listRef.current.style.maxHeight = ""
+      popup.style.maxHeight = ""
+      list.style.maxHeight = ""
     }
   }, [popupOpen])
 
