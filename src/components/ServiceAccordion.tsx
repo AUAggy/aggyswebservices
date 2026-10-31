@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useId, useState } from "react";
 import {
   ExternalLink,
   ChevronDown,
@@ -81,6 +81,11 @@ const FormattedText = ({ text, className = "" }: { text: string; className?: str
 
 export function ServiceAccordion({ service }: ServiceAccordionProps) {
   const [openSection, setOpenSection] = useState<SectionKey>("plain");
+  const id = useId();
+
+  useEffect(() => {
+    setOpenSection("plain");
+  }, [service.service_name]);
 
   const sections = [
     {
@@ -124,7 +129,7 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
         : null;
 
       return (
-        <div className="space-y-6 animate-in fade-in duration-300">
+        <div className="space-y-6">
           <FormattedText text={mainContent} className="text-lg" />
 
           {capabilities && capabilities.length > 0 && (
@@ -161,7 +166,7 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
       const { mainContent, results } = parseExampleContent(section.content);
 
       return (
-        <div className="space-y-6 animate-in fade-in duration-300">
+        <div className="space-y-6">
           <p className="text-sm text-muted-foreground">
             Illustrative scenario; figures are examples, not verified customer results.
           </p>
@@ -200,7 +205,7 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
 
     // Plain English Visualization
     return (
-      <div className="animate-in fade-in duration-300">
+      <div>
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <blockquote className="border-l-4 border-amber-500/50 bg-amber-500/5 px-6 py-4 rounded-r-lg not-italic my-0">
             <FormattedText text={section.content} className="text-lg sm:text-xl font-medium leading-relaxed" />
@@ -214,49 +219,59 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
     <div className="space-y-4">
       {sections.map((section) => {
         const isOpen = openSection === section.key;
+        const triggerId = `${id}-${section.key}-trigger`;
+        const panelId = `${id}-${section.key}-panel`;
 
         return (
           <div
             key={section.key}
             className={`
-              border rounded-xl overflow-hidden transition-all duration-300 ease-in-out
+              border rounded-xl overflow-hidden transition-all duration-300 ease-in-out motion-reduce:transition-none
               ${isOpen
                 ? `${section.bgActive} ${section.borderActive} shadow-md`
                 : "bg-card border-border hover:border-border/80 shadow-sm hover:shadow-md"
               }
             `}
           >
-            <button
-              onClick={() => toggleSection(section.key)}
-              className="w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none group"
-            >
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className={`
-                  p-2 rounded-lg transition-colors duration-300
-                  ${isOpen ? "bg-background shadow-sm" : "bg-secondary/50 group-hover:bg-secondary"}
-                `}>
-                  {section.icon}
-                </div>
-                <span className={`
-                  font-semibold text-lg transition-colors
-                  ${isOpen ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"}
-                `}>
-                  {section.title}
+            <h2>
+              <button
+                id={triggerId}
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                aria-disabled={isOpen || undefined}
+                onClick={() => toggleSection(section.key)}
+                className="w-full px-5 py-4 flex items-center justify-between text-left rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-inset group"
+              >
+                <span className="flex items-center gap-3 sm:gap-4">
+                  <span aria-hidden="true" className={`
+                    p-2 rounded-lg transition-colors duration-300 motion-reduce:transition-none
+                    ${isOpen ? "bg-background shadow-sm" : "bg-secondary/50 group-hover:bg-secondary"}
+                  `}>
+                    {section.icon}
+                  </span>
+                  <span className={`
+                    font-semibold text-lg transition-colors motion-reduce:transition-none
+                    ${isOpen ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"}
+                  `}>
+                    {section.title}
+                  </span>
                 </span>
-              </div>
-              <ChevronDown
-                className={`
-                  w-5 h-5 text-muted-foreground transition-transform duration-300 ease-in-out shrink-0
-                  ${isOpen ? "rotate-180 text-foreground" : "group-hover:text-foreground"}
-                `}
-              />
-            </button>
+                <ChevronDown
+                  aria-hidden="true"
+                  className={`
+                    w-5 h-5 text-muted-foreground transition-transform duration-300 ease-in-out shrink-0 motion-reduce:transition-none
+                    ${isOpen ? "rotate-180 text-foreground" : "group-hover:text-foreground"}
+                  `}
+                />
+              </button>
+            </h2>
 
             <div
-              className={`
-                grid transition-all duration-300 ease-in-out
-                ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
-              `}
+              id={panelId}
+              role="region"
+              aria-labelledby={triggerId}
+              hidden={!isOpen}
             >
               <div className="overflow-hidden">
                 <div className="px-5 pb-6 sm:px-20 sm:pb-8 pt-2">
@@ -277,18 +292,19 @@ export function ServiceAccordion({ service }: ServiceAccordionProps) {
           mt-6 group flex items-center justify-between px-5 py-4 
           border border-border/60 rounded-xl bg-card/50 
           hover:bg-card hover:border-primary/20 hover:shadow-md 
-          transition-all duration-300
+          transition-all duration-300 motion-reduce:transition-none
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2
         "
       >
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-md bg-secondary/50 group-hover:bg-primary/10 transition-colors">
-            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          <div className="p-2 rounded-md bg-secondary/50 group-hover:bg-primary/10 transition-colors motion-reduce:transition-none">
+            <ExternalLink aria-hidden="true" className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors motion-reduce:transition-none" />
           </div>
-          <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+          <span className="font-medium text-muted-foreground group-hover:text-foreground transition-colors motion-reduce:transition-none">
             Official AWS Documentation
           </span>
         </div>
-        <ArrowRight className="w-4 h-4 text-muted-foreground/50 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+        <ArrowRight aria-hidden="true" className="w-4 h-4 text-muted-foreground/50 group-hover:text-primary group-hover:translate-x-1 transition-all motion-reduce:transition-none motion-reduce:transform-none" />
       </a>
     </div>
   );
