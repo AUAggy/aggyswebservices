@@ -97,8 +97,12 @@ export function SearchBar({
       appliedFit.current = { placement, height: available }
       setPlacement(placement)
       popup.style.maxHeight = `${available}px`
-      const chrome = Math.max(0, popup.scrollHeight - list.scrollHeight)
-      list.style.maxHeight = `${Math.max(64, available - chrome)}px`
+      // Reserve the popup's count line and borders so the list itself can
+      // never be clipped by the popup's overflow: long lists were measured
+      // with scrollHeight far beyond the popup, so popup.scrollHeight cannot
+      // be used to derive this.
+      const header = popup.firstElementChild instanceof HTMLElement ? popup.firstElementChild.offsetHeight : 0
+      list.style.maxHeight = `${Math.max(64, available - header - 2)}px`
     }
     fit()
     window.addEventListener("resize", fit)

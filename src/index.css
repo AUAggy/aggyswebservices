@@ -134,6 +134,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
     background: linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(var(--background-subtle)) 100%);
