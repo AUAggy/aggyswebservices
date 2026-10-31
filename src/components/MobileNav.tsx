@@ -89,7 +89,11 @@ export function MobileNav({ currentCategory, currentService }: MobileNavProps) {
       </div>
 
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" />
+        <Dialog.Overlay
+          data-testid="mobile-menu-overlay"
+          className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
+          onClick={() => setOpenAtLocation(null)}
+        />
         <Dialog.Content
           aria-modal="true"
           aria-describedby={undefined}

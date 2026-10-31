@@ -147,6 +147,15 @@ describe("MobileNav", () => {
     expect(document.querySelector('[href="/category/compute"]')).not.toBeInTheDocument()
   })
 
+  it("dismisses the first backdrop click immediately after opening", async () => {
+    renderPage()
+    const { trigger } = openMenu()
+    fireEvent.click(screen.getByTestId("mobile-menu-overlay"))
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument()
+    await waitFor(() => expect(trigger).toHaveFocus())
+    expect(document.body).not.toHaveAttribute("data-scroll-locked")
+  })
+
   it("opens a named modal with a small shared search and an internal close button", async () => {
     renderPage()
     const heading = screen.getByRole("heading", { name: "Compute" })
