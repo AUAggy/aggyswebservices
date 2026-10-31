@@ -1,4 +1,4 @@
-import { useState, useEffect, useId, useMemo, useRef } from "react"
+import { useState, useEffect, useId, useLayoutEffect, useMemo, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { Search, X } from "lucide-react"
 import { searchServices, getServiceSlug, getAllServices } from "@/lib/aws-data"
@@ -26,6 +26,8 @@ export function SearchBar({
   const rootRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
+  const popupRef = useRef<HTMLDivElement>(null)
+  const appliedFit = useRef<{ placement: "below" | "above"; height: number } | null>(null)
   const pointerInPopup = useRef(false)
   const isComposing = useRef(false)
   const id = useId()
@@ -74,21 +76,30 @@ export function SearchBar({
     }
   }, [activeId, results])
 
-  // Keep the popup inside short viewports: clamp its height to the actual
-  // space around the input and flip above the input when there is more room.
-  useEffect(() => {
+  // Keep the popup inside short viewports: clamp the whole popup (including
+  // its count line) to the space around the input and flip it above the input
+  // when there is more room there. Layout effect so the first paint fits.
+  useLayoutEffect(() => {
     if (!popupOpen) return
     const fit = () => {
       const input = inputRef.current
+      const popup = popupRef.current
       const list = listRef.current
-      if (!input || !list) return
+      if (!input || !popup || !list) return
       const inputRect = input.getBoundingClientRect()
-      const margin = 12
+      const margin = 20 // 12px breathing room plus the popup's own 8px offset
       const below = window.innerHeight - inputRect.bottom - margin
       const above = inputRect.top - margin
       const flip = below < 160 && above > below
-      setPlacement(flip ? "above" : "below")
-      list.style.maxHeight = `${Math.max(96, Math.min(384, flip ? above : below))}px`
+      const placement = flip ? "above" : "below"
+      const available = Math.max(96, Math.min(384, flip ? above : below))
+      const applied = appliedFit.current
+      if (applied && applied.placement === placement && Math.abs(applied.height - available) < 1) return
+      appliedFit.current = { placement, height: available }
+      setPlacement(placement)
+      popup.style.maxHeight = `${available}px`
+      const chrome = Math.max(0, popup.scrollHeight - list.scrollHeight)
+      list.style.maxHeight = `${Math.max(64, available - chrome)}px`
     }
     fit()
     window.addEventListener("resize", fit)
@@ -96,6 +107,8 @@ export function SearchBar({
     return () => {
       window.removeEventListener("resize", fit)
       window.removeEventListener("scroll", fit, true)
+      appliedFit.current = null
+      if (popupRef.current) popupRef.current.style.maxHeight = ""
       if (listRef.current) listRef.current.style.maxHeight = ""
     }
   }, [popupOpen])
@@ -222,6 +235,7 @@ export function SearchBar({
       </div>
       {popupOpen && (
         <div
+          ref={popupRef}
           data-placement={placement}
           className={`absolute left-0 right-0 bg-card border border-border rounded-lg shadow-elevated overflow-hidden z-50 ${placement === "below" ? "top-full mt-2" : "bottom-full mb-2"}`}
         >
