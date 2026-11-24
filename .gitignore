@@ -14,14 +14,10 @@ dist-ssr
 *.local
 deploy.sh
 .terraform/*
-.claude/*
-anti-ai-slop.md
 
-# Private planning / AI-assistant docs (keep out of the eventual public repo)
-CLAUDE.md
+# Private planning docs; anything else of that kind goes under plans/
 AGENTS.md
 /plans/
-upgrade-plan.md
 .env 
 .env.* 
 !.env.example
