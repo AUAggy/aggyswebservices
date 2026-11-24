@@ -1,6 +1,6 @@
 {
   "name": "aws-in-plain-english",
-  "description": "A beautifully designed educational resource that explains 69 AWS services using clear analogies and practical examples. No jargon, no confusion: just straightforward explanations.",
+  "description": "69 AWS services explained with plain-language analogies, gotchas that bite in practice, worked scenarios, and links to the official docs. Free, no account. Live at aggyswebservices.com.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
